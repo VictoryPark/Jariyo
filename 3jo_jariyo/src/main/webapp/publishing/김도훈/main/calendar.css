@@ -1,0 +1,150 @@
+@import url(https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Rosarivo);
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  display: box;
+  box-align: center;
+  box-pack: center;
+  transform: translate3d(0, 0, 0);
+}
+
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.clearfix:after {
+  clear: both;
+}
+
+main {
+  background: #F2F1ED;
+  font-family: "Rosarivo";
+  font-size: 16px;
+  line-height: 1.618;
+}
+
+h3 {
+  font-size: 2em;
+  text-align: center;
+  font-weight: 400;
+  margin: 0 0 0.2em;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+.sbc-calendar-wrapper {
+  padding: 2em;
+  border-radius: 0.1em;
+  max-width: 20em;
+}
+.sbc-calendar-wrapper:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 0.4em solid transparent;
+  border-bottom: 0em solid transparent;
+  border-left: 0.7em solid #9c9577;
+  position: absolute;
+  right: 0;
+  top: -0.3em;
+}
+
+.sbc-status {
+  display: block;
+  float: left;
+  width: 2.65em;
+  height: 2.65em;
+  font-size: 0.6em;
+}
+
+.sbc-status-Available {
+  background-color: #83b8bc;
+  position: relative;
+}
+
+.sbc-status-Booked {
+  background-color: #c7c3b2;
+  color: #a7a085;
+}
+
+.sbc-status-Morning {
+  background-color: #bdb7a3;
+  position: relative;
+}
+.sbc-status-Morning:before {
+  width: 0;
+  height: 0;
+  border-bottom: 2.65em solid transparent;
+  border-top: 0em solid transparent;
+  border-left: 2.65em solid #f2b3d1;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.sbc-status-Afternoon {
+  background-color: #bdb7a3;
+  position: relative;
+}
+.sbc-status-Afternoon:before {
+  width: 0;
+  height: 0;
+  border-top: 2.65em solid transparent;
+  border-bottom: 0em solid transparent;
+  border-right: 2.65em solid #d16ea2;
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.sbc-calendar-table {
+  border: 0;
+  border-collapse: separate;
+  border-spacing: 0.1em;
+  table-layout: fixed;
+  margin: 0;
+  width: 100%;
+  padding: 0em 0.5em;
+}
+.sbc-calendar-table span {
+  position: relative;
+  z-index: 1;
+  cursor: help;
+}
+.sbc-calendar-table th, .sbc-calendar-table td {
+  font-size: 0.9em;
+  text-align: center;
+  padding: 0.9em 0;
+  width: 1em;
+  line-height: 1em;
+  vertical-align: middle;
+  border: 0;
+  border-radius: 0.2em;
+}
+
+.sbc-key p {
+  font-size: 0.8em;
+}

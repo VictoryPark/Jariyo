@@ -1,0 +1,8 @@
+@charset "UTF-8";
+div#mapimg {
+    border: 2px solid salmon
+}
+aside, section {
+    margin: 10px;
+    border : 2px solid rgb(27, 116, 93);
+}
