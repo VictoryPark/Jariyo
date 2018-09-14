@@ -38,10 +38,10 @@ table tr:hover{
 	    <center>
 	  <table id="htable">
 			
-	 			<th> <a href=#>받은쪽지함</a>&nbsp</th>
+	 			<th> <a href="messagelist.jsp">받은쪽지함</a>&nbsp</th>
 	  		
 	  		
-	  			<th><a href="sendlist.jsp">보낸쪽지함</a>&nbsp</th>
+	  			<th><a href=#>보낸쪽지함</a>&nbsp</th>
 	  		
 	  	
 	 			<th> <a href="extralist.jsp">임시보관함</a>&nbsp</th>
@@ -57,7 +57,7 @@ table tr:hover{
 	
 	    
 	    <section>
-	    <h2>받은 쪽지함</h2>
+	    <h2>보낸 쪽지함</h2>
 	    <center>
 	     <p> 
 		 </p>  
@@ -65,14 +65,14 @@ table tr:hover{
 		 </p>  
 			    <table id="msglist">
 				     <tr id="title">
-				     	<th>
+				     <th>
 				     	<input type="checkbox">
 				     	</th>
 				     	<th> 
 				   		  분류
 				    	</th>
 				     	<th>
-				  		  보낸사람
+				  		 받은사람
 				   		</th>
 				     	<th> 
 				  		  내용
@@ -126,7 +126,7 @@ table tr:hover{
 				   		 용병 신청
 				    	</th>
 				     	<th>
-				  		  이득재
+				  		 이득재
 				   		</th>
 				     	<th> 
 				  		  자리 있나요?

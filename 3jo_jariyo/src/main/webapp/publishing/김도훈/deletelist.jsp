@@ -7,7 +7,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
-</head>
 <style>
 #htable{
 	width:100%;hight: 100%;
@@ -30,6 +29,10 @@ table tr:hover{
 }
 	
 </style>
+
+</head>
+
+
 <body>
 	<header>
 	    <h1>
@@ -38,7 +41,7 @@ table tr:hover{
 	    <center>
 	  <table id="htable">
 			
-	 			<th> <a href=#>받은쪽지함</a>&nbsp</th>
+	 			<th> <a href="messagelist.jsp">받은쪽지함</a>&nbsp</th>
 	  		
 	  		
 	  			<th><a href="sendlist.jsp">보낸쪽지함</a>&nbsp</th>
@@ -47,7 +50,7 @@ table tr:hover{
 	 			<th> <a href="extralist.jsp">임시보관함</a>&nbsp</th>
 	  	
 	  	
-	  			<th><a href="deletelist.jsp">휴지통</a>&nbsp</th>
+	  			<th><a href=#>휴지통</a>&nbsp</th>
 	  	
 	  </table>
 	    </center>
@@ -57,7 +60,7 @@ table tr:hover{
 	
 	    
 	    <section>
-	    <h2>받은 쪽지함</h2>
+	    <h2>휴지통</h2>
 	    <center>
 	     <p> 
 		 </p>  
@@ -65,7 +68,7 @@ table tr:hover{
 		 </p>  
 			    <table id="msglist">
 				     <tr id="title">
-				     	<th>
+				     <th>
 				     	<input type="checkbox">
 				     	</th>
 				     	<th> 

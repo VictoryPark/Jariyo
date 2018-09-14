@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="<c:url value="/publishing/박아란/main2.css"/>">
+<!--  <link rel="stylesheet" href="<c:url value="/publishing/박아란/main2.css"/>">-->
 </head>
 <style>
 /* tr:nth-child(odd){
@@ -15,208 +15,93 @@
 /* tr:nth-child(even){
 		background: brown;
 } */
-a{
-	color:blue;
+#htable{
+	width:100%;hight: 100%;
+	border : 1px solid black; 
 }
-#title{
-	background: rgb(211,102,102);
-}
-table tr:hover{
-		background: rgb(225,225,225);
-}
-table{
-	width: 500px ; hight: 300px;
-	window-size:fix;
-	
-	}
 table,tr,th{
 	border: 1px solid black;
 
 }
-	
+#write{
+	width:100%;
+}
+
 </style>
 <body>
 	<header>
 	    <h1>
 	      자리Y<img id="ball" src="ball-icon.gif" width="58px"/>
 	    </h1>
-	  <nav am-layout="horizontal">
-	  <a href="#">쪽지쓰기</a>
-	  <a href="#">받은쪽지함</a>
-	  <a href="#">보낸쪽지함</a>
-	  <a href="#">임시보관함</a>
-	  <a href="#">휴지통</a>
-	  </nav>
+	    <center>
+	  <table id="htable">
+				
+	 			<th> <a href="messagelist.jsp">받은쪽지함</a>&nbsp</th>
+	  		
+	  		
+	  			<th><a href="sendlist.jsp">보낸쪽지함</a>&nbsp</th>
+	  		
+	  	
+	 			<th> <a href="extralist.jsp">임시보관함</a>&nbsp</th>
+	  	
+	  	
+	  			<th><a href="deletelist.jsp">휴지통</a>&nbsp</th>
+	  	
+	  </table>
+	    </center>
+	  
 	</header>
 	<main>
-	  <article>
-        <aside>
-	      <h1>
-	       
-	      </h1>
-	    </aside>
-	    
+	
 	    <section>
-	    <center>
+	    
 	     <p> 
 		 </p>  
 		  <p> 
+		  <br>
 		 </p>  
-			    <table>
-				     <tr id="title">
+	    <center>
+			    <table id="write">
+			    <h2 id="cap">쪽지 쓰기</h2>
+		 		
+			    
+				     <tr>
 				     	<th> 
-				   		  분류
+				   		  받는 사람
 				    	</th>
 				     	<th>
-				  		  보낸사람
+				  		  <textarea name="reciver" rows=1 cols=80></textarea>
 				   		</th>
+				   		</tr>
+				   		 <tr>
+				     	<th> 
+				   		  제목
+				    	</th>
+				     	<th>
+				  		  <textarea name="title" rows=1  cols=80></textarea>
+				   		</th>
+				   		</tr>
+				   	 <tr>
 				     	<th> 
 				  		  내용
 				   		</th>
 				    	<th> 
-				   		 받은 날짜
+				   		 <textarea name="contents" rows=20 cols=80></textarea>
 				   		</th>
-				     	
-				    </tr>
-				     <tr>
-				     	<th> 
-				   		 용병모집
-				    	</th>
-				     	<th>
-				  		  박아란
-				   		</th>
-				     	<th> 
-				  		  여기 자리요
-				   		</th>
-				    	<th> 
-				   		 8/15 19:25
-				   		</th>
-				     	
-				    </tr>
-				        <tr>
-				     	<th> 
-				   		 용병모집
-				    	</th>
-				     	<th>
-				  		  박아란
-				   		</th>
-				     	<th> 
-				  		  여기 자리요
-				   		</th>
-				    	<th> 
-				   		9/1  19:25
-				   		</th>
-				     	
-				    </tr>
-				        <tr>
-				     	<th> 
-				   		 용병 신청
-				    	</th>
-				     	<th>
-				  		  이득재
-				   		</th>
-				     	<th> 
-				  		  자리 있나요?
-				   		</th>
-				    	<th> 
-				   		 9/13 19:37
-				   		</th>
-				     	
-				    </tr>
-				        <tr>
-				     	<th> 
-				   		 용병모집
-				    	</th>
-				     	<th>
-				  		정인용
-				   		</th>
-				     	<th> 
-				  		 같이 한게임 뛰어요
-				   		</th>
-				    	<th> 
-				   		8/23  19:25
-				   		</th>
-				    </tr>
-				      
-				        <tr>
-				     	<th> 
-				   		 용병모집
-				    	</th>
-				     	<th>
-				  		김도훈
-				   		</th>
-				     	<th> 
-				  		못해도 상관없습니다.
-				   		</th>
-				    	<th> 
-				   		7/23  12:25
-				   		</th>
-				    </tr>
-				      <tr>
-				     	<th> 
-				   		 용병신청
-				    	</th>
-				     	<th>
-				  		안규영
-				   		</th>
-				     	<th> 
-				  		자리있나요?
-				   		</th>
-				    	<th> 
-				   		8/23  9:25
-				   		</th>
-				    </tr>
-				      <tr>
-				     	<th> 
-				   		팀매칭
-				    	</th>
-				     	<th>
-				  		조용제
-				   		</th>
-				     	<th> 
-				  		물값 내기하시죠
-				   		</th>
-				    	<th> 
-				   		8/23  19:25
-				   		</th>
-				    </tr>
-				      <tr>
-				     	<th> 
-				   		팀매칭
-				    	</th>
-				     	<th>
-				  		정인용
-				   		</th>
-				     	<th> 
-				  		 같이 한판해요
-				   		</th>
-				    	<th> 
-				   		8/23  19:25
-				   		</th>
-				    </tr>
-				    
+				     	</tr>
 				    
 			    </table>
-		    </h1>
-		 <p> 
-		 </p>  
-		    <p> 
-		    <a href=#1 ><</a>   <a href=#1 >1</a>   <a href=#2>2</a>   <a href=#3>3</a>   <a href=#4>4</a>   <a href=#5>5</a>   <a href=#1 >></a>
-		    </p>  
-		    <input type="text" width=8 hight=1><button>검색</button>
+		 	<p>
+		 	</p>
+		    <p>
+		 	</p>
+		    <a href="messagelist.jsp"><button>보내기</button></a>
+		    <a href="messagelist.jsp"><button>취소</button></a>
+		    <a href="extralist.jsp"><button>임시저장</button></a>
 			    </center>
-	    
 	    </section>
-	    <aside>
-	    	<h1>
-	       		
-	        <h1>
-	    </aside>
-	  </article>
+	  
 	</main>
-	<footer>
-	    <p>Footer</p>
-	</footer>
 
 </body>
 </html>
