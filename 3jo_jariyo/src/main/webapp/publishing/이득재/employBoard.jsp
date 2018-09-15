@@ -20,8 +20,9 @@
 	th {
 		border : 10px solid green;
 	}
-	div{
-		
+		aside, section {
+		height: 550px;
+		border : 2px solid black;
 	}
 	a {
 		color: #345;
@@ -95,6 +96,7 @@
 		    </select>
 		    <input type="search" name="search"/>
 		    <button>검색</button>
+		    <button><a href="employWrite.jsp">글쓰기</button></a>
 		    </span>
 		    </div>
 		    </form>

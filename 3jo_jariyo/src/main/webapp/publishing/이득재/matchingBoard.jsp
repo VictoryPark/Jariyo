@@ -20,12 +20,15 @@
 	th {
 		border : 10px solid green;
 	}
-	a {
-		
+	aside, section {
+		height: 550px;
+		border : 2px solid white;
 	}
 	body {
 		background-image: url('matchingBoard2.jpg');
 	}
+	
+
 
 </style>
 </head>
@@ -44,12 +47,14 @@
 	<main>
 	  <article>
         <aside>
+        <div id="menu">
         <p>
 	        <a href="matchingBoard.jsp">팀 매칭 게시판</a>
 	    </p>
 	    <p>    
 	        <a href="employBoard.jsp">용병 게시판</a>
 	    </p>
+	    </div>
 	    </aside>
 	    <section>
 		    <form>
@@ -90,7 +95,7 @@
 		    </select>
 		    <input type="search" name="search"/>
 		    <button>검색</button>
-		    <button>글쓰기</button>
+		    <button><a href="matchingWrite.jsp">글쓰기</button></a>
 		    </span>
 		    </div>
 		    </form>
@@ -106,7 +111,7 @@
 		    		<td>1</td>
 		    		<td>박아란</td>
 		    		<td>수원시</td>
-		    		<td>15일 (토) 권선동 세곡초등학교 경기하실분구합니다.</td>
+		    		<td><a href="matchingDetail.jsp">15일 (토) 권선동 세곡초등학교 경기하실분구합니다.</a></td>
 		    		<td>V</td>
 		    	</tr>
 		    	<tr>
