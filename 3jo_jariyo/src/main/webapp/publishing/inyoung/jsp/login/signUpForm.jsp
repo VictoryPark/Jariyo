@@ -11,7 +11,7 @@
 <body>
 <div id="login-box">
   <div class="left">
-    <h1>자리Y<img id="ball" src="../../../박아란/ball-icon.gif" width="58px"/></h1>
+    <h1>자리Y<img id="ball" src="http://localhost:8000/3jo_jariyo/publishing/common/ball-icon.gif" width="58px"/></h1>
     
     <input type="text" name="id" placeholder="아이디" />
     <input type="text" name="name" placeholder="이름" />

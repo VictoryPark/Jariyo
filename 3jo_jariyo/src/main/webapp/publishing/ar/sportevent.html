@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="headerfooter.css"/>
+    <link rel="stylesheet" href="event.css"/>
+    
+</head>
+<body>
+        <header>
+                <h1>
+                  자리Y<img id="ball" src="./img/ball-icon.gif" width="58px"/>
+                </h1>
+              <nav am-layout="horizontal">
+              <a href="#">검색</a>
+              <a href="#">게시글</a>
+              <a href="#">대회 정보</a>
+              <a href="#">마이 페이지</a>
+              </nav>
+            </header>
+    <main>
+        <article>
+          <aside>
+            <h2>
+              대회 검색 조건
+            </h2>
+            <form action="" method="post">
+            <div id="search-event">
+                <div id="search-title">검색</div>
+                <span>운동 종목</span><br>
+                <select name="kindofsports">
+                    <option value="all">전체</option>
+                    <option value="soccer">축구</option>
+                    <option value="tennis">테니스</option>
+                    <option value="baseball">야구</option>
+                    <option value="basketball">농구</option>
+                    <option value="valleysoccer">족구</option>
+                </select><br>
+                <span>지역</span><br>
+                <select name="kindofsports">
+                    <option value="all">전국</option>
+                    <option value="capitalarea">수도권</option>
+                    <option value="ks">경상도</option>
+                    <option value="cc">충청도</option>
+                    <option value="kw">강원도</option>
+                    <option value="jl">전라도</option>
+                    <option value="jj">제주도</option>
+  
+                </select><br>
+                    <span>날짜</span><br>
+                    <input type="month" name="month"/>
+            </div>
+            </form>
+          </aside>
+          <section>
+              <h3>
+                검색 결과
+              </h3>
+              <div id="result1">
+                  <img id="soccer1" src="./img/soccer.png" width="250px"/>
+                  <p>전국 소방인 축구대회</p>
+                  <p>일시 : 2016년 9월 28~30일</p>
+                  <p>장소 : 경남 함안군 함안스포츠 타운</p>
+                  <a href="">더 자세히 보기</a>
+              </div>
+              <div id="result2">
+                  <img id="soccer1" src="./img/soccer2.png" width="250px"/>
+                  <p>남북 노동자 통일축구대회</p>
+                  <p>일시 : 2016년 9월 28~30일</p>
+                  <p>장소 : 경남 함안군 함안스포츠 타운</p>
+                  <a href="">더 자세히 보기</a>
+              </div>
+          </section>
+        </article>
+      </main>
+      <footer>
+            <p>Footer</p>
+        </footer>
+    
+</body>
+</html>

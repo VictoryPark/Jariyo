@@ -11,22 +11,12 @@
 <link rel="stylesheet" href="<c:url value='/publishing/inyoung/css/section.css' />" />
 </head>
 <body>
-	<header>
-	    <h1>
-	      자리Y<img id="ball" src="../../../박아란/ball-icon.gif" width="58px"/>
-	    </h1>
-	  <nav am-layout="horizontal">
-	  <a href="#">검색</a>
-	  <a href="#">게시글</a>
-	  <a href="#">대회 정보</a>
-	  <a href="myPage.jsp">마이 페이지</a>
-	  </nav>
-	</header>
+	<c:import url="../../../common/mainbarheader.jsp" />
 	<main>
 	  <article>
         <aside class="left">
 	      <div class="user-profile">
-				<img class="avatar" src="../../real.jpg" />
+				<img class="avatar" src="../../img/real.jpg" />
 			    <div class="username">정인용</div>
 			  <div class="bio">
 			  	
@@ -197,9 +187,7 @@
 	    </aside>
 	  </article>
 	</main>
-	<footer>
-	    <p>Footer</p>
-	</footer>
+	<c:import url="../../../common/mainbarfooter.jsp" />
 
 </body>
 </html>
