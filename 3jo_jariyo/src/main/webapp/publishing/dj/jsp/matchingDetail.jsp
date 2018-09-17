@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="<c:url value="/publishing/이득재/main2.css"/>">
+<link rel="stylesheet" href="../../common/headerfooter.css"/>
 
 <style>
 	#photobox {
@@ -42,17 +42,7 @@
 </style>
 </head>
 <body>
-	<header>
-	    <h1>
-	      자리Y<img id="ball" src="ball-icon.gif" width="58px"/>
-	    </h1>
-	  <nav am-layout="horizontal">
-	  <a href="#">검색</a>
-	  <a href="#">게시글</a>
-	  <a href="#">대회 정보</a>
-	  <a href="#">마이 페이지</a>
-	  </nav>
-	</header>
+	<c:import url="../../common/mainbarheader.jsp" />
 	<main>
 	  <article>
         <aside>
@@ -108,9 +98,7 @@
 	    </section>
 	  </article>
 	</main>
-	<footer>
-	    <p>Footer</p>
-	</footer>
+	<c:import url="../../common/mainbarfooter.jsp" />
 	
 </body>
 </html>
