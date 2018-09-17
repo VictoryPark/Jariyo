@@ -8,6 +8,7 @@
 <title>Booking-page</title>
 <link rel="stylesheet" href="../../common/headerfooter.css"/>
 <link rel="stylesheet" href="../css/bookingmain.css"/>
+<link rel="stylesheet" href="../css/calendar.css"/>
 </head>
 <body>
 	<c:import url="../../common/mainbarheader.jsp" />
@@ -18,7 +19,7 @@
 	      	예약 장소 정보
 	      </h2>
 	      <div id="mapimg">
-	      	<img src="./img/map.png" />
+	      	<img src="../img/map.png" />
 	      </div>
 	      <div>
 	      	상세 시설 정보들<br>

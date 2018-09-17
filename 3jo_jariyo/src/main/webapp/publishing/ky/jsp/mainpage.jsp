@@ -67,7 +67,7 @@ A:hover {
 
 <body>
 <c:import url="../../common/mainbarheader.jsp" />
-
+	<main>
 	<center>
 		<div>
 			<select>
@@ -153,5 +153,7 @@ A:hover {
 				</table>
 			</div>
 		</div>
+		</main>
+		<c:import url="../../common/mainbarfooter.jsp" />
 </body>
 </html>
