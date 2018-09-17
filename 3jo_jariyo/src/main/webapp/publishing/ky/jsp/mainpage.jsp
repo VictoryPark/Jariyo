@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../../common/headerfooter.css"/>
 <style>
 A:link {
 	text-decoration: none;
@@ -24,10 +25,10 @@ A:hover {
 }
 
 .more1 {
-	margin-left: 408px;
+	margin-left: 392px;
 }
 .more2 {
-	margin-left: 386px;
+	margin-left: 370px;
 }
 
 .minilist {
@@ -65,13 +66,18 @@ A:hover {
 </head>
 
 <body>
+<c:import url="../../common/mainbarheader.jsp" />
+
 	<center>
 		<div>
 			<select>
 				<option>축구</option>
 				<option>농구</option>
 				<option>테니스</option>
-			</select> <input type="date" name="mydata" /> <input type="text" />
+			</select> 
+			<input type="date" name="startdata" />
+			<input type="date" name="enddata" />
+			<input type="text" />
 			<button>검색</button>
 		</div>
 	</center>
