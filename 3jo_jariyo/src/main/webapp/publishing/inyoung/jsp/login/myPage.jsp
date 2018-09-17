@@ -29,7 +29,7 @@
 			      <a class="my-profile" href="myInfo.jsp"><span class="entypo-heart"> 내정보</span></a>
 			    </li>
 			    <li>
-			      <a class="my-profile"  href="#"><span class="entypo-eye"> 쪽지</span></a>
+			      <a class="my-profile"  href="../../../dohun/jsp/messagelist.jsp"><span class="entypo-eye"> 쪽지</span></a>
 			    </li>
 			</div>
 	    </aside>
