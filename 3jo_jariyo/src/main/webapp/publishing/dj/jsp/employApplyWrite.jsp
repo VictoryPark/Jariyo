@@ -36,8 +36,7 @@
 	    </p>
 	    </aside>
 	    <section>
-			<h4><a href="employWrite.jsp">[용병 모집]</a></h4>
-			<h4><a href="employApplyWrite.jsp">[용병 신청]</a></h4>
+			<h4><a href="employWrite.jsp">[용병 모집]</a><a href="employApplyWrite.jsp">[용병 신청]</a></h4>
 	    
 		   <div id = "photobox"></div>
 			<table>
@@ -65,7 +64,16 @@
 					</td>
 				</tr>
 				<tr>
-					<td colspan="4"><textarea name="area" rows="3" cols="62"></textarea> </td>
+					<td colspan="4">거주지</td>
+				</tr>
+				<tr>
+					<td colspan="4"><textarea name="area" rows="1" cols="62"></textarea> </td>
+				</tr>
+				<tr>
+					<td colspan="4">제목</td>
+				</tr>
+				<tr>
+					<td colspan="4"><textarea name="title" rows="1" cols="62"></textarea> </td>
 				</tr>
 			</table> 
 			<textarea name="content" row="6" cols="96"></textarea>

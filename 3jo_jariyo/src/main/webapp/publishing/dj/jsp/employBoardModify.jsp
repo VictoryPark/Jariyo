@@ -35,8 +35,7 @@
 	    </p>
 	    </aside>
 	    <section>
-		    <h4><a href="employWrite.jsp">[용병 모집]</a></h4>
-			<h4><a href="employApplyWrite.jsp">[용병 신청]</a></h4>
+		    <h4><a href="employWrite.jsp">[용병 모집]</a><a href="employApplyWrite.jsp">[용병 신청]</a></h4>
 	    
 		   <div id = "photobox"></div>
 			<table>

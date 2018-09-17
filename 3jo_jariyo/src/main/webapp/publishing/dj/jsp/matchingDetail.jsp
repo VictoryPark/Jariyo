@@ -16,7 +16,8 @@
 		background-color: gray;
 	}
 	table, th, td{
-		border: 3px solid #345;
+		width: 135px;
+		border: 1px solid #345;
 	}
 	aside, section {
 		height: 550px;
@@ -27,11 +28,15 @@
 	}
 	#area{
 		width : 300px;
-		height : 100px;
+		height : 50px;
 	}
 	#content{
-		width: 605px;
-		height : 150px;
+		width: 860px;
+		height : 80px;
+		border: 1px solid black;
+	}
+	#comment{
+		width: 850px;
 		border: 1px solid black;
 	}
 </style>
@@ -62,6 +67,7 @@
 	      
 	      <h3>팀 매칭 게시판</h3>
 	      <hr>
+	      <h5>15일 (토) 권선동 세곡초등학교 경기하실분구합니다.</h5>
 		  <div id="photobox"></div>
 		  <table>
 		  	<tr>
@@ -86,6 +92,13 @@
 		 <br> 장소 합의 가능하고 무엇보다 안다치고 매너있게 게임하실팀 구합니다.
 	      </div>
 	      </p>
+	      <table id="comment">
+	      	<tr>
+	      		<td>정인용</td>
+	      		<td colspan="2">시간대가 어떻게 되시나요?</td>
+	      		<td>09-14 10:10</td>
+	      	</tr>
+	      </table>
 	      <p>
 	      <button><a href="matchingModify.jsp">수정</a></button>
 	      <button>삭제</button>	      
