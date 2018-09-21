@@ -18,7 +18,7 @@ body {
   position: relative;
   margin: 5% auto;
   width: 600px;
-  height: 550px;
+  height: 700px;
   background: #FFF;
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -31,7 +31,7 @@ body {
   box-sizing: border-box;
   padding: 40px;
   width: 300px;
-  height: 400px;
+  height: 600px;
 }
 
 h1 {
@@ -47,7 +47,7 @@ input[type="password"] {
   box-sizing: border-box;
   margin-bottom: 20px;
   padding: 4px;
-  width: 220px;
+  width: 190px;
   height: 22px;
   border: none;
   border-bottom: 1px solid #AAA;
@@ -55,6 +55,17 @@ input[type="password"] {
   font-weight: 400;
   font-size: 15px;
   transition: 0.2s ease;
+}
+.addr {
+  margin-bottom: 0px;
+  bottom: 0px;
+}
+.searchAddr {
+    position: absolute;
+	font-size: 8px;
+    width: 50px;
+    right: 25%;
+    top: 57%;
 }
 
 .select {
@@ -193,4 +204,12 @@ img {
   display: block;
   height: auto;
   width : 30px;
+}
+ul.selectSports > li {
+	list-style: none;
+}
+.sports {
+	position: absolute;
+    bottom: 24%;
+    right: 35%;
 }

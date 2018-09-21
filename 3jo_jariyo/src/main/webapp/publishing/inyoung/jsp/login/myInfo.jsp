@@ -35,17 +35,32 @@
 			</div>
 	    </aside>
 	    <section>
-	    	<div>
+	    	<div class="left">
 	    	<span>아이디 : </span>
 	    	<input type="text" name="id" placeholder="아이디" value="vlsyddl" />
+	    	<span>이름 : </span>
 		    <input type="text" name="name" placeholder="이름" value="정인용" />
+	    	<span>이메일 : </span>
 		    <input type="text" name="email" placeholder="vlsyddl@a.com" />
+	    	<span>비밀번호 : </span>
 		    <input type="password" name="password" placeholder="비밀번호" />
+	    	<span>비밀번호 확인 : </span>
 		    <input type="password" name="password2" placeholder="비밀번호 확인" />
+	    	<span>휴대폰 번호 : </span>
 		    <input type="text" name="phonenum" placeholder="01012345678" />
-		    <input type="text" name="addr" placeholder="역삼동 637-12" />
-		    <div class="select">
-	    		<a class="birth">생년월일</a><br>
+		    
+				<input type="submit"  class="button" name="signup_submit" value="수정" />
+			</div>
+		<div class="right">
+			<span>우편번호 : </span>
+		    <input type="text" name="postNumber" placeholder="06131" />
+			<span>기본주소 : </span>
+    		<button class="searchAddr" type="button" onclick="">우편번호 찾기</button>
+		    <input type="text" name="basicAddr" placeholder="역삼동 637-12" />
+		    <span>상세주소 : </span>
+		    <input type="text" name="detailAddr" placeholder="1층" />
+			<div class="select">
+	    		<span class="birth">생년월일 : </span><br>
 			    <select name="year">
 			        <option value="0">선택</option>
 			        <option value="2018">2018</option>
@@ -168,9 +183,30 @@
 			        <option value="d-31">31</option>
    			</select>일
 	    	</div>
-				<input type="submit"  class="button" name="signup_submit" value="수정" />
-			</div>
-			</div>
+		    <span>즐기는 스포츠</span>
+		    <ul class="selectSports">
+		    	<li>
+				    <input type="checkbox" id="baseball" name="sports" />
+			    	<label for="baseball">야구</label>
+		    	</li>
+		    	<li>
+				    <input type="checkbox" id="soccer" name="sports" checked="checked" />
+				    <label for="soccer">축구</label>
+		    	</li>
+		    	<li>
+				    <input type="checkbox" id="tenis" name="sports" />
+				    <label for="tenis">테니스</label>
+		    	</li>
+		    	<li>
+				    <input type="checkbox" id="basketball" name="sports" />
+				    <label for="basketball">농구</label>
+		    	</li>
+		    	<li>
+				    <input type="checkbox" id="minisoccer" name="sports" />
+				    <label for="misisoccer">풋살</label>
+		    	</li>
+		    </ul>
+		</div>
 		</section>
 	    <aside>
 	    	<h1>

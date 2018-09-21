@@ -19,7 +19,10 @@
     <input type="password" name="password" placeholder="비밀번호" />
     <input type="password" name="password2" placeholder="비밀번호 확인" />
     <input type="text" name="phonenum" placeholder="-을 제외한 핸드폰 번호" />
-    <input type="text" name="addr" placeholder="주소" />
+    <input class="addr" type="text" name="addr" placeholder="우편번호" />
+    <input class="addr" type="text" name="basicAddr" placeholder="기본주소" />
+    <input class="addr" type="text" name="detailAddr" placeholder="상세주소" />
+    <button class="searchAddr" type="button" onclick="">우편번호 찾기</button>
     <div class="select">
     	<a class="birth">생년월일</a><br>
 	    <select name="year">
@@ -142,8 +145,9 @@
 	        <option value="d-29">29</option>
 	        <option value="d-30">30</option>
 	        <option value="d-31">31</option>
-   		</select>일
+   		</select>일 
     </div>
+    
     <input type="submit"  class="button" name="signup_submit" value="회원가입" />
   </div>
   
@@ -153,7 +157,33 @@
     <button class="social-signin naver">네이버 아이디로 로그인</button>
     <button class="social-signin kakao">카카오 아이디로 로그인</button>
     <button class="social-signin google">구글 아이디로 로그인</button>
+
   </div>
+  <div class="sports">
+        <span>즐기는 스포츠</span>
+	    <ul class="selectSports">
+	    	<li>
+			    <input type="checkbox" id="baseball" name="sports" />
+		    	<label for="baseball">야구</label>
+	    	</li>
+	    	<li>
+			    <input type="checkbox" id="soccer" name="sports" />
+			    <label for="soccer">축구</label>
+	    	</li>
+	    	<li>
+			    <input type="checkbox" id="tenis" name="sports" />
+			    <label for="tenis">테니스</label>
+	    	</li>
+	    	<li>
+			    <input type="checkbox" id="basketball" name="sports" />
+			    <label for="basketball">농구</label>
+	    	</li>
+	    	<li>
+			    <input type="checkbox" id="minisoccer" name="sports" />
+			    <label for="misisoccer">풋살</label>
+	    	</li>
+	    </ul>
+    </div>
   <div class="or">OR</div>
 </div>
 </body>
