@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>employApplyWrite</title>
+<title>employApply</title>
 <link rel="stylesheet" href="../../common/headerfooter.css"/>
 <style>
 	aside, section {
@@ -34,7 +34,6 @@
 	hr{
 		border : 1px solid black;
 	}
-	
 </style>
 </head>
 <body>
@@ -50,24 +49,23 @@
 	    </p>
 	    </aside>
 	    <section>
-			<h4><a href="employRecruitWrite.jsp">[용병 모집]</a><a href="employApplyWrite.jsp">[용병 신청]</a></h4>
-	    	<hr>
-	    	<h4><textarea name="title" rows="1" cols="62">제목을 입력하세요.</textarea></h4>
+			<hr>
+	    	<h4>[신청] 키 189 포지션 상관없습니다</h4>
 		   <div id = "photobox"></div>
 			<table>
 				<tr>
 					<td>이름</td>
-					<td><input type="text" name="name"></td>
+					<td>박아란</td>
 					
 					<td>종목</td>
-					<td><input type="text" name="dictionary" ></td>
+					<td>농구</td>
 				
 				</tr>
 				<tr>
 					<td>나이</td>
-					<td><input type="text" name="age"></td>
+					<td>28</td>
 					<td>포지션</td>
-					<td><input type="text" name="position"></td>
+					<td>무관</td>
 				</tr>
 				<tr>
 					<td>선수출신 여부 </td>
@@ -82,19 +80,27 @@
 					<td colspan="4">거주지</td>
 				</tr>
 				<tr>
-					<td colspan="4"><textarea name="area" rows="1" cols="62"></textarea> </td>
+					<td colspan="4"><textarea name="area" rows="1" cols="62">수원시 권선구,팔달구</textarea> </td>
 				</tr>
 				<tr>
 					<td colspan="4">경기 일자(예 4월 18일 오후 1시)</td>
 				</tr>
 				<tr>
-					<td colspan="4"><input type="text" name="date"></td>
+					<td colspan="4">9월 22일 오후 7시내외</td>
 				</tr>
 			</table> 
-			<textarea name="content" row="6" cols="96">글 내용을 작성해주세요.</textarea>
+			<textarea name="content" row="6" cols="96">자차 있고 차타고 30분거리까지는 경기하러 갈수있습니다.</textarea>
 			</p>
+			<table id="comment">
+				<tr>
+					<td>이득재</td>
+					<td colspan="2">쪽지 보냈습니다 확인해주세요</td>
+					<td>09-16 13:01</td>
+				</tr>
+			</table>
+			
 			<p>
-			<button><a href="employBoard.jsp">작성하기</a></button>
+			<button><a href="employApplyModify.jsp">수정</a></button>
 			<button>이미지 첨부</button>
 			<button><a href="employBoard.jsp">닫기</a></button>
 	    	</p>

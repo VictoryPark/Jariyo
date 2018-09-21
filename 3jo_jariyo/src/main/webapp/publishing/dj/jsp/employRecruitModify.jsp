@@ -5,20 +5,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>employApplyWrite</title>
+<title>employRecruitModify</title>
 <link rel="stylesheet" href="../../common/headerfooter.css"/>
 <style>
-	aside, section {
-		height: 550px;
-		border : 2px solid black;
-	}
-	
 	#photobox {
 		width : 300px;
 		height : 200px;
 		background-color: gray;
 	}
-	tr, td {
+
+	
+	aside, section {
+		height: 550px;
+		border : 2px solid black;
+	}
+		tr, td {
 		width : 145px;
 		border: 1px solid black;
 	}
@@ -31,10 +32,9 @@
 		width : 850px;
 		boarder : 1px solid black;
 	}
-	hr{
+	hr {
 		border : 1px solid black;
 	}
-	
 </style>
 </head>
 <body>
@@ -42,32 +42,30 @@
 	<main>
 	  <article>
         <aside>
-	      <p>
-	       <a href="matchingBoard.jsp">팀 매칭 게시판</a>
+	    <div id="menu">
+        <p>
+	        <a href="matchingBoard.jsp">팀 매칭 게시판</a>
 	    </p>
 	    <p>    
 	        <a href="employBoard.jsp">용병 게시판</a>
 	    </p>
 	    </aside>
 	    <section>
-			<h4><a href="employRecruitWrite.jsp">[용병 모집]</a><a href="employApplyWrite.jsp">[용병 신청]</a></h4>
-	    	<hr>
-	    	<h4><textarea name="title" rows="1" cols="62">제목을 입력하세요.</textarea></h4>
+		    <hr>
+			<h4><input type="text" name="title" value="[모집]매너있으신분 모십니다"></h4>	 
 		   <div id = "photobox"></div>
 			<table>
 				<tr>
-					<td>이름</td>
-					<td><input type="text" name="name"></td>
-					
+					<td>팀명</td>
+					<td><input type="text" name="name" value="서울 FC"></td>
 					<td>종목</td>
-					<td><input type="text" name="dictionary" ></td>
-				
+					<td><input type="text" name="dictionary" value="축구"></td>
 				</tr>
 				<tr>
-					<td>나이</td>
-					<td><input type="text" name="age"></td>
+					<td>평균연령</td>
+					<td><input type="text" name="age" value="40"></td>
 					<td>포지션</td>
-					<td><input type="text" name="position"></td>
+					<td><input type="text" name="position" value="골키퍼"></td>
 				</tr>
 				<tr>
 					<td>선수출신 여부 </td>
@@ -79,29 +77,37 @@
 					</td>
 				</tr>
 				<tr>
-					<td colspan="4">거주지</td>
-				</tr>
-				<tr>
-					<td colspan="4"><textarea name="area" rows="1" cols="62"></textarea> </td>
+					<td>활동지역</td>
+					<td colspan="3"><textarea name="area" rows="1" cols="62">서울시 강남,송파,서초구 일대</textarea> </td>
 				</tr>
 				<tr>
 					<td colspan="4">경기 일자(예 4월 18일 오후 1시)</td>
 				</tr>
 				<tr>
-					<td colspan="4"><input type="text" name="date"></td>
+					<td colspan="4"><input type="text" name="date" value="9월 17일 오전 8시"></td>
 				</tr>
-			</table> 
-			<textarea name="content" row="6" cols="96">글 내용을 작성해주세요.</textarea>
+			</table>
+			<p>
+			<div>
+			<textarea name="content" row="6" cols="115">2012년부터 이어온 팀입니다 실력도 중요하지만 낯가리지 않고 즐겁게 게임하실분 모집합니다 </textarea>
+			</div>
 			</p>
 			<p>
-			<button><a href="employBoard.jsp">작성하기</a></button>
-			<button>이미지 첨부</button>
+			<button><a href="employBoard.jsp">수정완료</a></button>
+			<button><a href="employBoard.jsp">삭제</a></button>
 			<button><a href="employBoard.jsp">닫기</a></button>
 	    	</p>
 	    </section>
 	  </article>
 	</main>
-	<c:import url="../../common/mainbarfooter.jsp" />
+	<footer>
+	    <p>Footer</p>
+	</footer>
 	
+	    </section>
+
+	  </article>
+	</main>
+	<c:import url="../../common/mainbarfooter.jsp" />
 </body>
 </html>

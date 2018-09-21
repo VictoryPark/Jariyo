@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>용병게시판</title>
+<title>employBoard</title>
 <link rel="stylesheet" href="../../common/headerfooter.css"/>
 <style>
 	
@@ -86,34 +86,50 @@
 		    </select>
 		    <input type="search" name="search"/>
 		    <button>검색</button>
-		    <button><a href="employWrite.jsp">글쓰기</button></a>
+		    <button><a href="employRecruitWrite.jsp">글쓰기</button></a>
 		    </span>
 		    </div>
 		    </form>
 		    <table>
 		    	<tr>
-		    		<th>분류</th>
-		    		<th>글 번호</th>
-		    		<th>닉네임</th>
+		    		<th>글번호</th>
+		    		<th>경기 일시</th>
+		    		<th>종목</th>
+		    		<th>포지션</th>
 		    		<th>지역</th>
 		    		<th>제목</th>
-		    		<th>모집여부</th>
+		    		<th>글쓴이</th>
+		    		<th>작성시간</th>
 		    	</tr>
 		    	<tr>
-		    		<td>[모집]</td>
 		    		<td>1</td>
-		    		<td>김도훈</td>
-		    		<td>서울시</td>
-		    		<td><a href="employDetail.jsp">진짜 실력자분들 모십니다(포지션 확인 부탁드립니다)</a></td>
-		    		<td>V</td>
+		    		<td>09-17</td>
+		    		<td>축구</td>
+		    		<td>골키퍼</td>
+		    		<td>강남구</td>
+		    		<td><a href="employRecruitDetail.jsp">[모집]매너있으신분 모십니다</a></td>
+		    		<td>이득재</td>
+		    		<td>09-12 13:16</td>
 		    	</tr>
 		    	<tr>
-		    		<td>[신청]</td>
 		    		<td>2</td>
-		    		<td>정인용</td>
+		    		<td>09-22</td>
+		    		<td>농구</td>
+		    		<td>무관</td>
 		    		<td>수원시</td>
-		    		<td>권선구 근처에 매너있고 오래가는 팀 찾습니다</td>
-		    		<td></td>
+		    		<td><a href="employApplyDetail.jsp">[신청] 키 189 포지션 상관없습니다</td>
+		    		<td>박아란</td>
+		    		<td>09-12 16:30</td>
+		    	</tr>
+		    	<tr>
+		    		<td>3</td>
+		    		<td>09-23</td>
+		    		<td>테니스</td>
+		    		<td>X</td>
+		    		<td>수원시</td>
+		    		<td>[모집]10월에 열리는 생활체육대회 같이 참가하실분 구합니다</td>
+		    		<td>김도훈</td>
+		    		<td>09-19 10:36</td>
 		    	</tr>
 		    </table>
 		    <div>

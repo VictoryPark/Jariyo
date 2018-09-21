@@ -66,10 +66,14 @@
 		  		<td><input type="text" name="averageAge"></td>		  		
 		  	</tr>
 		  	<tr>
-		  		<td colspan="2">활동 지역</td>
+		  		<td>활동 지역</td>
+		  		<td><input type="text" name="area"></td>
 		  	</tr>
 		  	<tr>
-		  		<td colspan="2"><textarea name="area" rows="3" cols="40"></textarea> </td>
+		  		<td colspan="2">제목</td>
+		  	</tr>
+		  	<tr>
+		  		<td colspan="2"><textarea name="title" rows="1" cols="40"></textarea></td>
 		  	</tr>
 		  </table>
 		  

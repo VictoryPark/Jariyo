@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>팀 매칭</title>
+<title>matchingBoard</title>
 <link rel="stylesheet" href="../../common/headerfooter.css"/>
 <style>
 
@@ -91,32 +91,40 @@
 		    </form>
 		    <table>
 		    	<tr>
-		    		<th>번호</th>
-		    		<th>주장명</th>
+		    		<th>글번호</th>
+		    		<th>경기 일시</th>
+		    		<th>구장</th>
 		    		<th>지역</th>
 		    		<th>제목</th>
-		    		<th>모집 종료</th>
+		    		<th>팀명</th>
+		    		<th>모집상태</th>
 		    	</tr>
 		    	<tr>
 		    		<td>1</td>
-		    		<td>박아란</td>
-		    		<td>수원시</td>
+		    		<td>09-15</td>
+		    		<td>세곡초등학교</td>
+		    		<td>권선구</td>
 		    		<td><a href="matchingDetail.jsp">15일 (토) 권선동 세곡초등학교 경기하실분구합니다.</a></td>
-		    		<td>V</td>
+		    		<td>세곡 FC</td>
+		    		<td>모집중</td>
 		    	</tr>
 		    	<tr>
 		    		<td>2</td>
-		    		<td>안규영</td>
-		    		<td>서울특별시</td>
-		    		<td>16일 (일) 잠신중학교 경기하실분 구합니다 시간협의가능</td>
-		    		<td> </td>
+		    		<td>09-19</td>
+		    		<td>서울 월드컵경기장</td>
+		    		<td>서울시</td>
+		    		<td>일요일 올팍경기장 한게임하실분 구합니다 시간협의가능</td>
+		    		<td>서울FC</td>
+		    		<td>모집완료</td>
 		    	</tr>
 		    	<tr>
 		    		<td>3</td>
-		    		<td>이득재</td>
-		    		<td>수원시</td>
-		    		<td>22일 권선동,세류동,인계동 부근 경기하실팀 구합니다</td>
-		    		<td> </td>
+		    		<td>09-22</td>
+		    		<td>잠신중학교</td>
+		    		<td>잠실</td>
+		    		<td>22일 잠실중학교에서 경기하실팀 구합니다</td>
+		    		<td>잠신FC</td>
+		    		<td>모집중</td>
 		    	</tr>
 		    </table>	
 		    <div>

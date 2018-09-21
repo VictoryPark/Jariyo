@@ -28,7 +28,7 @@
 	}
 	#area{
 		width : 300px;
-		height : 50px;
+		height : 30px;
 	}
 	#content{
 		width: 860px;
@@ -61,8 +61,8 @@
 		  <div id="photobox"></div>
 		  <table>
 		  	<tr>
-		  		<th>팀명</th>
-		  		<th>수원 FC</th>
+		  		<td>팀명</td>
+		  		<td>수원 FC</td>
 		  	</tr>
 		  	<tr>
 		  		<td>평균연령</td>
@@ -73,6 +73,16 @@
 		  	</tr>
 		  	<tr>
 		  		<td colspan="2"><div id="area">수원시 권선구 권선동,세류동,인계동</div></td>
+		  	</tr>
+		  	<tr>
+		  		<td>경기 일자</td>
+		  		<td>2018-08-15</td>
+		  	</tr>
+		  	<tr>
+		  		<td colspan="2">경기장</td>
+		  	</tr>
+		  	<tr>
+		  		<td colspan="2">세곡초등학교</td>
 		  	</tr>
 		  </table>
 		  

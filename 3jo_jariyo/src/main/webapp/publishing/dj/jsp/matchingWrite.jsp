@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>matchingWrite</title>
 <link rel="stylesheet" href="../../common/headerfooter.css"/>
 
 <style>
@@ -16,7 +16,7 @@
 		background-color: gray;
 	}
 	table, th, td{
-		border: 3px solid #345;
+		border: 1px solid #345;
 	}
 	aside, section {
 		height: 550px;
@@ -45,6 +45,7 @@
 	      
 	      <h3>글쓰기</h3>
 	      <hr>
+	      <h5><input type="text" name="title" value="제목을 입력하세요."></h5>
 		  <div id="photobox"></div>
 		  <table>
 		  	<tr>
@@ -56,21 +57,27 @@
 		  		<td><input type="text" name="averageAge"></td>		  		
 		  	</tr>
 		  	<tr>
-		  		<td>활동 지역</td>
-		  		<td><input type="text" name="area"></td>
-		  	</tr>
-		  	<tr>
-		  		<td colspan="2">제목</td>
+		  		<td colspan="2">활동 지역</td>
 		  	</tr>
 		  	<tr>
 		  		<td colspan="2"><textarea name="title" rows="1" cols="40"></textarea></td>
 		  	</tr>
+		  	<tr>
+		  		<td>경기 일자</td>
+		  		<td><input type="text" name="date"></td>
+		  	</tr>
+		  	<tr>
+		  		<td colspan="2">경기장</td>
+		  	</tr>
+		  	<tr>
+		  		<td colspan="2"><input type="text" name="stadium" value="세곡초등학교"></td>
+		  	</tr>
 		  </table>
-		  
+		  <p>
 		  <div id = "content">
-		  <textarea name="matchingContent" row="10" cols="50"></textarea>
+		  <textarea name="matchingContent" row="10" cols="50">내용을 입력하세요.</textarea>
 	      </div>
-	      
+	      </p>
 	      <p>
 	      <button><a href="matchingBoard.jsp">작성완료</a></button>	      
 	      <button>이미지 첨부</button>
