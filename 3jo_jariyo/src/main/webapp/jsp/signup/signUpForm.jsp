@@ -10,22 +10,24 @@
 </head>
 <body>
 <div id="login-box">
+    <form action="<c:url value="/signup" />">
   <div class="left">
     <h1>자리Y<img id="ball" src="http://localhost:8000/3jo_jariyo/img/common/ball-icon.gif" width="58px"/></h1>
     
     <input type="text" name="id" placeholder="아이디" />
+    <button class="searchId" type="button" onclick="idCheck('${id}')">중복체크</button>
     <input type="text" name="name" placeholder="이름" />
     <input type="text" name="email" placeholder="이메일" />
     <input type="password" name="password" placeholder="비밀번호" />
     <input type="password" name="password2" placeholder="비밀번호 확인" />
-    <input type="text" name="phonenum" placeholder="-을 제외한 핸드폰 번호" />
-    <input class="addr" type="text" name="addr" placeholder="우편번호" />
-    <input class="addr" type="text" name="basicAddr" placeholder="기본주소" />
+    <input type="text" name="phoneNo" placeholder="-을 제외한 핸드폰 번호" />
+    <input class="addr" type="text" name="postNo" placeholder="우편번호" />
+    <input class="addr" type="text" name="roadAddr" placeholder="기본주소" />
     <input class="addr" type="text" name="detailAddr" placeholder="상세주소" />
     <button class="searchAddr" type="button" onclick="">우편번호 찾기</button>
     <div class="select">
     	<a class="birth">생년월일</a><br>
-	    <select name="year">
+	    <select name="birthYear">
 	        <option value="0">선택</option>
 	        <option value="2018">2018</option>
 	        <option value="2017">2017</option>
@@ -97,60 +99,60 @@
 	        <option value="1951">1951</option>
 	        <option value="1950">1950</option>
     	</select> 년
-    	<select name="month">
+    	<select name="birthMonth">
 	        <option value="m-0">선택</option>
-	        <option value="m-1">1</option>
-	        <option value="m-2">2</option>
-	        <option value="m-3">3</option>
-	        <option value="m-4">4</option>
-	        <option value="m-5">5</option>
-	        <option value="m-6">6</option>
-	        <option value="m-7">7</option>
-	        <option value="m-8">8</option>
-	        <option value="m-9">9</option>
-	        <option value="m-10">10</option>
-	        <option value="m-11">11</option>
-	        <option value="m-12">12</option>
+	        <option value="01">1</option>
+	        <option value="02">2</option>
+	        <option value="03">3</option>
+	        <option value="04">4</option>
+	        <option value="05">5</option>
+	        <option value="06">6</option>
+	        <option value="07">7</option>
+	        <option value="08">8</option>
+	        <option value="09">9</option>
+	        <option value="10">10</option>
+	        <option value="11">11</option>
+	        <option value="12">12</option>
     	</select>월
-   		<select name="day">
+   		<select name="birthDay">
 	        <option value="d-0">선택</option>
-	        <option value="d-1">1</option>
-	        <option value="d-2">2</option>
-	        <option value="d-3">3</option>
-	        <option value="d-4">4</option>
-	        <option value="d-5">5</option>
-	        <option value="d-6">6</option>
-	        <option value="d-7">7</option>
-	        <option value="d-8">8</option>
-	        <option value="d-9">9</option>
-	        <option value="d-10">10</option>
-	        <option value="d-11">11</option>
-	        <option value="d-12">12</option>
-	        <option value="d-13">13</option>
-	        <option value="d-14">14</option>
-	        <option value="d-15">15</option>
-	        <option value="d-16">16</option>
-	        <option value="d-17">17</option>
-	        <option value="d-18">18</option>
-	        <option value="d-19">19</option>
-	        <option value="d-20">20</option>
-	        <option value="d-21">21</option>
-	        <option value="d-22">22</option>
-	        <option value="d-23">23</option>
-	        <option value="d-24">24</option>
-	        <option value="d-25">25</option>
-	        <option value="d-26">26</option>
-	        <option value="d-27">27</option>
-	        <option value="d-28">28</option>
-	        <option value="d-29">29</option>
-	        <option value="d-30">30</option>
-	        <option value="d-31">31</option>
+	        <option value="01">1</option>
+	        <option value="02">2</option>
+	        <option value="03">3</option>
+	        <option value="04">4</option>
+	        <option value="05">5</option>
+	        <option value="06">6</option>
+	        <option value="07">7</option>
+	        <option value="08">8</option>
+	        <option value="09">9</option>
+	        <option value="10">10</option>
+	        <option value="11">11</option>
+	        <option value="12">12</option>
+	        <option value="13">13</option>
+	        <option value="14">14</option>
+	        <option value="15">15</option>
+	        <option value="16">16</option>
+	        <option value="17">17</option>
+	        <option value="18">18</option>
+	        <option value="19">19</option>
+	        <option value="20">20</option>
+	        <option value="21">21</option>
+	        <option value="22">22</option>
+	        <option value="23">23</option>
+	        <option value="24">24</option>
+	        <option value="25">25</option>
+	        <option value="26">26</option>
+	        <option value="27">27</option>
+	        <option value="28">28</option>
+	        <option value="29">29</option>
+	        <option value="30">30</option>
+	        <option value="31">31</option>
    		</select>일 
     </div>
     
     <input type="submit"  class="button" name="signup_submit" value="회원가입" />
   </div>
-  
+  </form>
   <div class="right">
     <span class="loginwith">Sign in with<br />social network</span>
     
@@ -159,32 +161,28 @@
     <button class="social-signin google">구글 아이디로 로그인</button>
 
   </div>
-  <div class="sports">
-        <span>즐기는 스포츠</span>
-	    <ul class="selectSports">
-	    	<li>
-			    <input type="checkbox" id="baseball" name="sports" />
-		    	<label for="baseball">야구</label>
-	    	</li>
-	    	<li>
-			    <input type="checkbox" id="soccer" name="sports" />
-			    <label for="soccer">축구</label>
-	    	</li>
-	    	<li>
-			    <input type="checkbox" id="tenis" name="sports" />
-			    <label for="tenis">테니스</label>
-	    	</li>
-	    	<li>
-			    <input type="checkbox" id="basketball" name="sports" />
-			    <label for="basketball">농구</label>
-	    	</li>
-	    	<li>
-			    <input type="checkbox" id="minisoccer" name="sports" />
-			    <label for="misisoccer">풋살</label>
-	    	</li>
-	    </ul>
-    </div>
   <div class="or">OR</div>
 </div>
+<script>
+	function idCheck(id) {  
+	    // Ajax 통신으로 서버에 Data를 전송하고 Return 받습니다.
+	    $.ajax({
+	        // type을 설정합니다.
+	        type : 'GET',
+	        url : "/login-form",
+	        // 사용자가 입력하여 id로 넘어온 값을 서버로 보냅니다.
+	        data : {"id" : id},
+	        // 성공적으로 값을 서버로 보냈을 경우 처리하는 코드입니다.
+	        success : function (data) {
+	            // 서버에서 Return된 값으로 중복 여부를 사용자에게 알려줍니다.
+	            if (data) {
+	                alert("사용할 수 없는 아이디 입니다."); 
+	            } else {
+	                alert("사용 가능한 아이디 입니다.");
+	            }
+	        }
+   		});
+	}
+</script>
 </body>
 </html>

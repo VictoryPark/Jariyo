@@ -1,3 +1,4 @@
+<%@ page import="com.jariyo.repository.domain.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -37,31 +38,27 @@
 	    <section>
 	    	<div class="left">
 	    	<span>아이디 : </span>
-	    	<input type="text" name="id" placeholder="아이디" value="vlsyddl" />
+	    	<input type="text" name="id" placeholder="아이디 입력" value="${ user.id }" />
 	    	<span>이름 : </span>
-		    <input type="text" name="name" placeholder="이름" value="정인용" />
+		    <input type="text" name="name" placeholder="이름 입력" value="${ user.name }" />
 	    	<span>이메일 : </span>
-		    <input type="text" name="email" placeholder="vlsyddl@a.com" />
+		    <input type="text" name="email" placeholder="이메일 입력" value="${ user.email }" />
 	    	<span>비밀번호 : </span>
-		    <input type="password" name="password" placeholder="비밀번호" />
+		    <input type="password" name="password" placeholder="비밀번호 입력" />
 	    	<span>비밀번호 확인 : </span>
 		    <input type="password" name="password2" placeholder="비밀번호 확인" />
 	    	<span>휴대폰 번호 : </span>
-		    <input type="text" name="phonenum" placeholder="01012345678" />
-		    
-				<input type="submit"  class="button" name="signup_submit" value="수정" />
-			</div>
-		<div class="right">
-			<span>우편번호 : </span>
-		    <input type="text" name="postNumber" placeholder="06131" />
+		    <input type="text" name="phoneNo" placeholder="휴대폰 번호 입력"  value="${ user.phoneNo }" />
+		    <span>우편번호 : </span>
+		    <input type="text" name="postNo" placeholder="우편번호 입력" value="${ user.postNo }" />
 			<span>기본주소 : </span>
     		<button class="searchAddr" type="button" onclick="">우편번호 찾기</button>
-		    <input type="text" name="basicAddr" placeholder="역삼동 637-12" />
+		    <input type="text" name="roadAddr" placeholder="도로명 주소 입력" value="${ user.roadAddr }" />
 		    <span>상세주소 : </span>
-		    <input type="text" name="detailAddr" placeholder="1층" />
+		    <input type="text" name="detailAddr" placeholder="상세 주소 입력" value="${ user.detailAddr }" />
 			<div class="select">
 	    		<span class="birth">생년월일 : </span><br>
-			    <select name="year">
+			    <select name="birthYear">
 			        <option value="0">선택</option>
 			        <option value="2018">2018</option>
 			        <option value="2017">2017</option>
@@ -119,7 +116,7 @@
 			        <option value="1965">1965</option>
 			        <option value="1964">1964</option>
 			        <option value="1963">1963</option>
-			        <option value="1962">1962</option>
+			        <option value="1962">1962<ㅌ`/option>
 			        <option value="1961">1961</option>
 			        <option value="1960">1960</option>
 			        <option value="1959">1959</option>
@@ -133,7 +130,7 @@
 			        <option value="1951">1951</option>
 			        <option value="1950">1950</option>
 		    	</select> 년
-		    	<select name="month">
+		    	<select name="birthMonth">
 			        <option value="m-0">선택</option>
 			        <option value="m-1">1</option>
 			        <option value="m-2">2</option>
@@ -148,7 +145,7 @@
 			        <option value="m-11">11</option>
 			        <option value="m-12">12</option>
 		    	</select>월
-		   		<select name="day">
+		   		<select name="birthDay">
 			        <option value="d-0">선택</option>
 			        <option value="d-1">1</option>
 			        <option value="d-2">2</option>
@@ -183,6 +180,11 @@
 			        <option value="d-31">31</option>
    			</select>일
 	    	</div>
+		    
+				<input type="submit"  class="button" name="signup_submit" value="수정" />
+			</div>
+		<div class="right">
+
 		    <span>즐기는 스포츠</span>
 		    <ul class="selectSports">
 		    	<li>
@@ -190,7 +192,7 @@
 			    	<label for="baseball">야구</label>
 		    	</li>
 		    	<li>
-				    <input type="checkbox" id="soccer" name="sports" checked="checked" />
+				    <input type="checkbox" id="soccer" name="sports" />
 				    <label for="soccer">축구</label>
 		    	</li>
 		    	<li>
@@ -206,6 +208,9 @@
 				    <label for="misisoccer">풋살</label>
 		    	</li>
 		    </ul>
+		    
+		    <span>내 팀 이름 : </span>
+    		<input type="text" name="teamName" placeholder="팀 이름 입력" value="${ user.teamName }" />
 		</div>
 		</section>
 	    <aside>

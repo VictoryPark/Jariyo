@@ -1,5 +1,128 @@
 package com.jariyo.repository.domain;
 
 public class Member {
-
+	private int no;
+	private String id;
+	private String name;
+	private String email;
+	private String password;
+	private String phoneNo;
+	private String roadAddr;
+	private String detailAddr;
+	private String postNo;
+	private double positionX;
+	private double positionY;
+	private String birthDate;
+	private String hobby;
+	private String teamName;
+	private String profileImgReal;
+	private String profileImgSys;
+	
+	
+	public int getNo() {
+		return no;
+	}
+	public void setNo(int no) {
+		this.no = no;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getPhoneNo() {
+		return phoneNo;
+	}
+	public void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
+	}
+	public String getRoadAddr() {
+		return roadAddr;
+	}
+	public void setRoadAddr(String roadAddr) {
+		this.roadAddr = roadAddr;
+	}
+	public String getDetailAddr() {
+		return detailAddr;
+	}
+	public void setDetailAddr(String detailAddr) {
+		this.detailAddr = detailAddr;
+	}
+	public String getPostNo() {
+		return postNo;
+	}
+	public void setPostNo(String postNo) {
+		this.postNo = postNo;
+	}
+	public double getPositionX() {
+		return positionX;
+	}
+	public void setPositionX(double positionX) {
+		this.positionX = positionX;
+	}
+	public double getPositionY() {
+		return positionY;
+	}
+	public void setPositionY(double positionY) {
+		this.positionY = positionY;
+	}
+	public String getBirthDate() {
+		return birthDate;
+	}
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
+	}
+	public String getHobby() {
+		return hobby;
+	}
+	public void setHobby(String hobby) {
+		this.hobby = hobby;
+	}
+	public String getTeamName() {
+		return teamName;
+	}
+	public void setTeamName(String teamName) {
+		this.teamName = teamName;
+	}
+	public String getProfileImgReal() {
+		return profileImgReal;
+	}
+	public void setProfileImgReal(String profileImgReal) {
+		this.profileImgReal = profileImgReal;
+	}
+	public String getProfileImgSys() {
+		return profileImgSys;
+	}
+	public void setProfileImgSys(String profileImgSys) {
+		this.profileImgSys = profileImgSys;
+	}
+	@Override
+	public String toString() {
+		return "Member [no=" + no + ", id=" + id + ", name=" + name + ", email=" + email + ", password=" + password
+				+ ", phoneNo=" + phoneNo + ", roadAddr=" + roadAddr + ", detailAddr=" + detailAddr + ", postNo="
+				+ postNo + ", positionX=" + positionX + ", positionY=" + positionY + ", birthDate=" + birthDate
+				+ ", hobby=" + hobby + ", teamName=" + teamName + ", profileImgReal=" + profileImgReal
+				+ ", profileImgSys=" + profileImgSys + "]";
+	}
+	
+	
 }

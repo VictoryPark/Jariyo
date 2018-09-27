@@ -1730,6 +1730,7 @@ select,
 textarea {
   font-size: inherit;
   line-height: inherit;
+  width: 24%;
 }
 hr {
   border-color: rgba(0, 0, 0, 0.12);

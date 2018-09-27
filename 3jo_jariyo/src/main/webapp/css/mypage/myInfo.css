@@ -2,8 +2,8 @@
 section {
   position: relative;
   margin: 5% auto;
-  width: 600px;
-  height: 550px;
+  width: 100%;
+  height: 83%;
   background: #FFF;
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -105,10 +105,10 @@ div.right {
 }
 .searchAddr {
     position: absolute;
-	font-size: 8px;
+    font-size: 8px;
     width: 50px;
-    right: 25%;
-    top: 8%;
+    left: 24%;
+    bottom: 34%;
 }
 span {
 	font-size: 13px;

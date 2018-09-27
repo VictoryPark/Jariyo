@@ -11,7 +11,7 @@
 <body>
 <div class="form-wrapper">
   <h1>자리Y<img id="ball" src="http://localhost:8000/3jo_jariyo/img/common/ball-icon.gif" width="58px"/></h1>
-  <form>
+  <form action="<c:url value="/login" />">
     <div class="form-item">
       <label for="email"></label>
       <input type="email" name="email" required="required" placeholder="이메일"></input>
@@ -25,8 +25,8 @@
     </div>
   </form>
   <div class="form-footer">
-    <p><a href="../signup/signUpForm.jsp">회원가입</a></p>
-    <p><a href="findPass.jsp">비밀번호를 잊으셨나요?</a></p>
+    <p><a href="<c:url value="/signup-form" />">회원가입</a></p>
+    <p><a href="<c:url value="/findpass" />">비밀번호를 잊으셨나요?</a></p>
   </div>
 </div>
 </body>

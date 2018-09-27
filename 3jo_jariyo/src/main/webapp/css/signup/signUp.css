@@ -60,12 +60,19 @@ input[type="password"] {
   margin-bottom: 0px;
   bottom: 0px;
 }
+.searchId {
+	position: absolute;
+    font-size: 9px;
+    width: 55px;
+    right: 25%;
+    top: 16%;
+}
 .searchAddr {
     position: absolute;
-	font-size: 8px;
-    width: 50px;
+	font-size: 9px;
+    width: 55px;
     right: 25%;
-    top: 57%;
+    top: 56%;
 }
 
 .select {

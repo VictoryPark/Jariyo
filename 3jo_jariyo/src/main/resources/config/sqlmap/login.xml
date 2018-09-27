@@ -2,5 +2,29 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jariyo.repository.mapper.LoginMapper"> <!-- 루트태그 -->
-	
+	<resultMap type="Member" id="memberMap">
+		<result column="no" property="no"/>
+		<result column="id" property="id"/>
+		<result column="name" property="name"/>
+		<result column="email" property="email"/>
+		<result column="password" property="password"/>
+		<result column="phone_no" property="phoneNo"/>
+		<result column="road_addr" property="roadAddr"/>
+		<result column="detail_addr" property="detailAddr"/>
+		<result column="post_no" property="postNo"/>
+		<result column="position_x" property="positionX"/>
+		<result column="position_y" property="positionY"/>
+		<result column="birth_date" property="birthDate"/>
+		<result column="hobby" property="hobby"/>
+		<result column="team_name" property="teamName"/>
+		<result column="profile_img_real" property="profileImgReal"/>
+		<result column="profile_img_sys" property="profileImgSys"/>
+	</resultMap>
+
+	<select id="selectMemberInfo" parameterType="Member" resultMap="memberMap">
+		select *
+		  from jariyo_member
+		 where email = #{email}
+		   and password = #{password}
+	</select>
 </mapper>

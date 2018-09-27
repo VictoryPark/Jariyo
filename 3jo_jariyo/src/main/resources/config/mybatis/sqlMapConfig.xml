@@ -10,7 +10,7 @@
 	
 	<!-- SQL의 결과를 담을 VO 객체들의 별칭을 설정하여 사용의 편의를 도모  -->
 	<typeAliases>
-		<typeAlias alias="Board" type="kr.co.mlec.repository.domain.Board" />
+		<typeAlias alias="Member" type="com.jariyo.repository.domain.Member" />
 	</typeAliases>
 	
 	<environments default="development">
@@ -41,5 +41,6 @@
 		<mapper resource="config/sqlmap/competition.xml"/>
 		<mapper resource="config/sqlmap/searchResult.xml"/>
 		<mapper resource="config/sqlmap/login.xml"/>
+		<mapper resource="config/sqlmap/signup.xml"/>
 	</mappers>
 </configuration>
