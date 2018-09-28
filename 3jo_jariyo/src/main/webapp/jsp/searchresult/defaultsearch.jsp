@@ -14,6 +14,34 @@
 <body>
 	<c:import url="../common/mainbarheader.jsp" />
 	<main>
+	<article>
+	<aside>
+	<div>
+		<form action="/3jo_jariyo/jsp/defaultsearch.jsp" method="post">
+			<div>
+				<h4>검색</h4>
+			</div>
+			<div>
+				<div>
+					<label for="category">시설종류</label> <select id="category">
+						<option value="0">선택</option>
+						<option value="1">체육관</option>
+						<option value="2">풋살장</option>
+					</select>
+				</div>
+			</div>
+			<div>
+				<label for="keyword">지역/시설 이름</label><br> <input type="text"
+					id="keyword" placeholder="검색어">
+			</div>
+			<div>
+				<label for="mydata">시설 이용 날짜</label><br><input type="date" name="mydata" />
+			</div>
+			<button type="submit">검색</button>
+		</form>
+	</div>
+	</aside>
+	<section>
 	<div id="container">
 			<ul class="tablist" role="tablist">
 				<li class="tab" role="tab"><a href="#panel1">거리순</a></li>
@@ -27,47 +55,70 @@
 			</ul>
 			<div class="tabpanel" id="panel1" role="tabpanel">
 				<div id="pan11">
-					<div id="searchimg">
-						<img src="../img/foot.jpg" width="220px" />
-					</div>
-					<div id="searchcontent">
+				<%-- <c:forEach var="distance" items="${placeDistancelist}" begin="1" end="8"
+					varStatus="stat">
+					<div class="searchcontent">
 						<h3>
-							<a href="detail.jsp">서초구 서초초등학교 운동장</a>
+							<a href="detail.jsp">서초구 서초초등학교</a>	//distance.place_name
 						</h3>
-						<p>서울시 서초구에 위치한 서초초등학교. 강남역 도보 5분거리에 위치하고 있으며, 천연잔디 운동장이고 크기도 넓어
-							축구하기 안성맞춤입니다.</p>
-						<button>지도보기</button>
+						<div>시설 주소 : 서울특별시 서초구 서운로 178</div>	//distance.place_detail_addr
+						<div>시설종류 : 공공시설</div>						//distance.
+						<!-- 시설도로명주소 + 상세주소 -->
+						<div>시설 연락처 : 0212345678</div>					// distance.phone_no
+						<button type="button" onclick="">상세보기</button>	
+						<hr>
+					</div>
+				</c:forEach> --%>
+				<div id="searchcontent">
+						<h3>
+							<a href="detail.jsp">운정건강공원1 축구장/테니스장</a>
+						</h3>
+						<div>시설 주소 : 경기도 파주시 와석순환로 198</div><!-- 시설도로명주소 + 상세주소 -->
+						<div>시설종류 : 축구장</div>
+						<div>시설 연락처 : 0212345678</div>
+						<button type="button" onclick="">상세보기</button>
+						<hr>
 					</div>
 				</div>
 				<div id="pan12">
-					<div id="searchimg">
-						<img src="../../img/searchresult/foot.jpg" width="220px" />
-					</div>
 					<div id="searchcontent">
 						<h3>
-							<a href="#">강남구 역삼고등학교 운동장</a>
+							<a href="detail.jsp">이천시 종합운동장 주경기장</a>
 						</h3>
-						<p>서울시 서초구에 위치한 서운중학교. 강남역 도보 10분거리에 위치하고 있으며, 크기는 넓지 않습니다.</p>
-						<button>지도보기</button>
+						<div>시설 주소 : 서울특별시 서초구 서운로 178</div><!-- 시설도로명주소 + 상세주소 -->
+						<div>시설 연락처 : 0212345678</div>
+						<button type="button" onclick="">상세보기</button>
+						<hr>
 					</div>
 				</div>
 				<div id="pan13">
-					<div id="searchimg">
-						<img src="../../img/searchresult/foot.jpg" width="220px" />
-					</div>
 					<div id="searchcontent">
 						<h3>
-							<a href="#">마포구 공설운동장</a>
+							<a href="detail.jsp">서초구 서초초등학교</a>
 						</h3>
-						<p>서울시 마포구에 위치한 공설운동장. .</p>
-						<button>지도보기</button>
+						<div>시설 주소 : 서울특별시 서초구 서운로 178</div><!-- 시설도로명주소 + 상세주소 -->
+						<div>시설 연락처 : 0212345678</div>
+						<button type="button" onclick="">상세보기</button>
 					</div>
 				</div>
 			</div>
 			<div class="tabpanel" id="panel2" role="tabpanel">
 				<div id="pan21">
+				<%-- <c:forEach var="charge" items="${placechargelist}" begin="1" end="8"
+					varStatus="stat">
+					<div id="searchcontent">
+						<h3>
+							<a href="detail.jsp">서초구 서초초등학교</a>	//charge.place_name
+						</h3>
+						<div>시설 주소 : 서울특별시 서초구 서운로 178</div>	//charge.place_detail_addr
+						<!-- 시설도로명주소 + 상세주소 -->
+						<div>시설 연락처 : 0212345678</div>					// charge.phone_no
+						<button type="button" onclick="">상세보기</button>	
+						<hr>
+					</div>
+				</c:forEach> --%>
 					<div id="searchimg">
-						<img src="../../img/searchresult/foot.jpg" width="220px" />
+						<img src="../img/foot.jpg" width="220px" />
 					</div>
 					<div id="searchcontent">
 						<h3>
@@ -75,12 +126,12 @@
 						</h3>
 						<p>서울시 서초구에 위치한 서초초등학교. 강남역 도보 5분거리에 위치하고 있으며, 천연잔디 운동장이고 크기도 넓어
 							축구하기 안성맞춤입니다.</p>
-						<button>지도보기</button>
+						<button type="button">상세보기</button>
 					</div>
 				</div>
 				<div id="pan22">
 					<div id="searchimg">
-						<img src="../../img/searchresult/foot.jpg" width="220px" />
+						<img src="../img/foot.jpg" width="220px" />
 					</div>
 					<div id="searchcontent">
 						<h3>
@@ -88,53 +139,61 @@
 						</h3>
 						<p>서울시 서초구에 위치한 서초초등학교. 강남역 도보 5분거리에 위치하고 있으며, 천연잔디 운동장이고 크기도 넓어
 							축구하기 안성맞춤입니다.</p>
-						<button>지도보기</button>
+						<button type="button">상세보기</button>
 					</div>
 				</div>
 				<div id="pan23">
 					<div id="searchimg">
-						<img src="../../img/searchresult/foot.jpg" width="220px" />
+						<img src="../img/foot.jpg" width="220px" />
 					</div>
 					<div id="searchcontent">
 						<h3>
 							<a href="#">논현 풋살장</a>
 						</h3>
-						<p>서울시 서초구에 위치한 서초초등학교. 강남역 도보 5분거리에 위치하고 있으며, 천연잔디 운동장이고 크기도 넓어
-							축구하기 안성맞춤입니다.</p>
-						<button>지도보기</button>
+						<p>서울특별시 서초구 서운로 178</p><!-- 시설도로명주소 + 상세주소 -->
+						<p>연락처 : 0212345678</p>
+						<button type="button">상세보기</button>
 					</div>
 				</div>
 			</div>
 			<div class="tabpanel" id="panel3" role="tabpanel">
 				<div id="pan31">
-					<div id="searchimg">
-						<img src="../../img/searchresult/foot.jpg" width="220px" />
+				<%-- <c:forEach var="star" items="${placeStarlist}" begin="1" end="8"
+					varStatus="stat">
+					<div class="searchcontent">
+						<h3>
+							<a href="detail.jsp?no=${mv.no}'>${star.place_name}">서초구 서초초등학교</a>	//star.place_name
+						</h3>
+						<div>시설 주소 : 서울특별시 서초구 서운로 178</div>	//star.place_detail_addr
+						<!-- 시설도로명주소 + 상세주소 -->
+						<div>시설 연락처 : 0212345678</div>					// star.phone_no
+						<button type="button" onclick="">상세보기</button>	
+						<hr>
 					</div>
+				</c:forEach> --%>
 					<div id="searchcontent">
 						<h3>
 							<a href="#">논현 풋살장</a>
 						</h3>
 						<p>서울시 서초구에 위치한 서초초등학교. 강남역 도보 5분거리에 위치하고 있으며, 천연잔디 운동장이고 크기도 넓어
 							축구하기 안성맞춤입니다.</p>
-						<button>지도보기</button>
+						<button type="button">상세보기</button>
 					</div>
 				</div>
 				<div id="pan32">
-					<div id="searchimg">
-						<img src="../../img/searchresult/foot.jpg" width="220px" />
-					</div>
+					
 					<div id="searchcontent">
 						<h3>
 							<a href="#">역삼초등학교 운동장</a>
 						</h3>
 						<p>서울시 서초구에 위치한 서초초등학교. 강남역 도보 5분거리에 위치하고 있으며, 천연잔디 운동장이고 크기도 넓어
 							축구하기 안성맞춤입니다.</p>
-						<button>지도보기</button>
+						<button type="button">상세보기</button>
 					</div>
 				</div>
 				<div id="pan33">
 					<div id="searchimg">
-						<img src="../../img/searchresult/foot.jpg" width="220px" />
+						<img src="../img/foot.jpg" width="220px" />
 					</div>
 					<div id="searchcontent">
 						<h3>
@@ -142,11 +201,13 @@
 						</h3>
 						<p>서울시 서초구에 위치한 서초초등학교. 강남역 도보 5분거리에 위치하고 있으며, 천연잔디 운동장이고 크기도 넓어
 							축구하기 안성맞춤입니다.</p>
-						<button>지도보기</button>
+						<button type="button">상세보기</button>
 					</div>
 				</div>
 			</div>
 		</div>
+		</section>
+		</article>
 		</main>
 		<c:import url="../common/mainbarfooter.jsp" />
 		<script>

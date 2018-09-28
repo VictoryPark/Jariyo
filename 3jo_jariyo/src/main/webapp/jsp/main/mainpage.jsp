@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../../css/common/headerfooter.css"/>
+<link rel="stylesheet" href="../../css/common/headerfooter.css" />
 <style>
 A:link {
 	text-decoration: none;
@@ -24,39 +24,54 @@ A:hover {
 	text-decoration: none;
 }
 
-.more1 {
-	margin-left: 392px;
+.search_box {
+	text-align: center;
 }
-.more2 {
-	margin-left: 370px;
+
+.mainpage_box {
+	text-align: center;
+}
+
+.mainpage_box table {
+	margin-top: 5px;
+	text-align: left;
+}
+
+.title_more {
+	width: 100%;
+	display: inherit;
+}
+
+.mini_title {
+	text-align: left;
 }
 
 .minilist {
 	border: 1px solid black
 }
 
-#yellow {
-	width: 40%;
-	height: 120px;
-	margin: auto;
-	display: inline-block;
-}
-
-#pink {
+#box1 {
 	width: 40%;
 	height: 200px;
 	margin: auto;
 	display: inline-block;
 }
 
-#B {
+#box2 {
 	width: 40%;
 	height: 200px;
 	margin: auto;
 	display: inline-block;
 }
 
-#C {
+#box3 {
+	width: 40%;
+	height: 200px;
+	margin: auto;
+	display: inline-block;
+}
+
+#box4 {
 	width: 40%;
 	height: 200px;
 	margin: auto;
@@ -66,94 +81,128 @@ A:hover {
 </head>
 
 <body>
-<c:import url="../common/mainbarheader.jsp" />
+	<c:import url="../common/mainbarheader.jsp" />
 	<main>
-	<center>
-		<div>
-			<select>
-				<option>축구</option>
-				<option>농구</option>
-				<option>테니스</option>
-			</select> 
-			<input type="date" name="startdata" />
-			<input type="date" name="enddata" />
-			<input type="text" />
-			<button>검색</button>
-		</div>
-	</center>
+	<div class="search_box">
+		<form action="" method="post">
+			<select class="custom-select-sm">
+				<option value="1">공공시설</option>
+				<option value="2">체육관</option>
+				<option value="3">야구장</option>
+				<option value="4">족구장</option>
+				<option value="5">농구장</option>
+				<option value="6">축구장</option>
+				<option value="7">테니스장</option>
+			</select> <input type="date" class="form-control-sm" name="startDate" /> <input
+				type="date" class="form-control-sm" name="endDate" /> <input
+				type="text" placeholder="지역/시설을 입력하세요" name="searchWord" />
+			<button type="button" onclick="location.href='/3jo_jariyo/jsp/searchresult/defaultsearch.jsp'">검색</button>
+		</form>
+	</div>
 	<br>
-	<div id="mainpagebox">
-		<div id="yellow">
-			<div>
-				<a>경기매칭</a><span class="more1"><button>더보기(+)</button></span>
+	<div class="mainpage_box">
+		<div id="box1">
+			<div class="title_more">
+				<div class="mini_title">
+					<a href="/3jo_jariyo/jsp/mangather/manGatherBoard.jsp">용병 신청</a>
+				</div>
 			</div>
 			<div class="minilist">
 				<table>
 					<tr>
-						<td colspan="2">
+						<td>
 							<ul>
+								<%-- <c:forEach var="mv" items="${manvolunlist}" begin="1" end="4"
+									varStatus="stat">
+									<li><a href='detailView.do?no=${mv.no}'>${mv.title}</a></li>
+								</c:forEach> --%>
+								<li>1시에 수원 월드컵 경기장 대타 한명 구합니다</li>
+								<li>월 12일 저녁에 풋살 경기 대타 가능하신분 구합니다...</li>
+								<li>월 12일 저녁에 풋살 경기 대타 가능하신분 구합니다...</li>
+								<li>1시에 수원 월드컵 경기장 대타 한명 구합니다</li>
+							</ul>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="box2">
+			<div class="title_more">
+				<div class="mini_title">
+					<a>용병 모집</a>
+				</div>
+			</div>
+			<div class="minilist">
+				<table>
+					<tr>
+						<td>
+							<ul>
+								<%-- <c:forEach var="mg" items="${mangatlist}" begin="1" end="4"
+									varStatus="stat">
+									<li><a href='detailView.do?no=${mg.no}'>${mg.title}</a></li>
+								</c:forEach> --%>
+								<li>1시에 수원 월드컵 경기장 대타 한명 구합니다</li>
+								<li>월 12일 저녁에 풋살 경기 대타 가능하신분 구합니다...</li>
+								<li>월 12일 저녁에 풋살 경기 대타 가능하신분 구합니다...</li>
+								<li>1시에 수원 월드컵 경기장 대타 한명 구합니다</li>
+							</ul>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="box3">
+			<div class="title_more">
+				<div class="mini_title">
+					<a>경기매칭</a>
+				</div>
+			</div>
+			<div class="minilist">
+				<table>
+					<tr>
+						<td>
+							<ul>
+								<%-- <c:forEach var="team" items="${teamlist}" begin="1" end="4"
+									varStatus="stat">
+									<li><a href='detailView.do?no=${team.no}'>${team.title}</a></li>
+								</c:forEach> --%>
 								<li>권선동 5대5 풋살 하실분 구합니다</li>
 								<li>연남동 일요일 축구 가능한 팀 있나요?</li>
 								<li>연남동 일요일 축구 가능한 팀 있나요?</li>
 								<li>연남동 일요일 축구 가능한 팀 있나요?</li>
 							</ul>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="box4">
+			<div class="title_more">
+				<div class="mini_title">
+					<a>경기장 정보</a>
+				</div>
+			</div>
+			<div class="minilist">
+				<table>
+					<tr>
 						<td>
+							<ul>
+								<%-- <c:forEach var="team" items="${teamlist}" begin="1" end="4"
+									varStatus="stat">
+									<li><a href='detailView.do?no=${team.no}'>${team.title}</a></li>
+								</c:forEach> --%>
+								<li>권선동 5대5 풋살 하실분 구합니다</li>
+								<li>연남동 일요일 축구 가능한 팀 있나요?</li>
+								<li>연남동 일요일 축구 가능한 팀 있나요?</li>
+								<li>연남동 일요일 축구 가능한 팀 있나요?</li>
+							</ul>
+						</td>
 					</tr>
 				</table>
 			</div>
 		</div>
-		<div id="pink">
-			<div>
-				<a>사람 구해요</a><span class="more2"><button>더보기(+)</button></span>
-			</div>
-			<div class="minilist">
-				<table>
-					<td colspan="5">
-						<ul>
-							<li>1시에 수원 월드컵 경기장 대타 한명 구합니다</li>
-							<li>월 12일 저녁에 풋살 경기 대타 가능하신분 구합니다...</li>
-							<li>월 12일 저녁에 풋살 경기 대타 가능하신분 구합니다...</li>
-							<li>월 12일 저녁에 풋살 경기 대타 가능하신분 구합니다...</li>
-						</ul>
-				</table>
-			</div>
-		</div>
-		<div id="B">
-			<div>
-				<a>대회정보</a><span class="more1"><button>더보기(+)</button></span>
-			</div>
-			<div class="minilist">
-				<table>
-					<td colspan="5">
-						<ul>
-							<li>제2회 대전광역시축구협회장기 축구대회 2017.05.10(수)</li>
-							<li>화랑대기 유소년 축구대회 2018.08.11(토)</li>
-							<li>진주저축은행배 제 9회 서경방송 직장인 축구대회</li>
-							<li>진주저축은행배 제 9회 서경방송 직장인 축구대회</li>
-						</ul>
-					</tr>
-
-				</table>
-			</div>
-		</div>
-		<div id="C">
-			<div>
-				<a href="#">경기장 정보</a><span class="more2"><button>더보기(+)</button></span>
-			</div>
-			<div class="minilist">
-				<table>
-					<td colspan="5">
-						<ul>
-							<li>난지물재생센터 인조잔디 축구장 (토/일 주말)</li>
-							<li>종로구 한강 다목적 운동장 (천연잔디구장)</li>
-							<li>해누리체육공원 - 인조잔디축구장</li>
-							<li>난지물재생센터 인조잔디 축구장 (토/일 주말)</li>
-						</ul>
-					</tr>
-				</table>
-			</div>
-		</div>
-		</main>
-		<c:import url="../common/mainbarfooter.jsp" />
+	</div>
+	</main>
+	<c:import url="../common/mainbarfooter.jsp" />
 </body>
 </html>
