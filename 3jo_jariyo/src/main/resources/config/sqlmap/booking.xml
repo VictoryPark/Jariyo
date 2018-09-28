@@ -2,5 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jariyo.repository.mapper.BookingMapper"> <!-- 루트태그 -->
+	<resultMap id="bookingMap" type="Booking">
+		<result column="booking_no" property="bookingNo"/>
+		<result column="place_no" property="placeNo"/>
+		<result column="booking_team_name" property="bookingTeamName"/>
+		<result column="booking_email" property="bookingEmail"/>
+		<result column="booking_phone_no" property="bookingPhoneNo"/>
+		<result column="booking_date" property="bookingDate"/>
+		<result column="start_time" property="startTime"/>
+		<result column="end_time" property="endTime"/>
+		<result column="mail_send" property="mailSend"/>
+	</resultMap>
 	
+	<insert id="insertBooking" parameterType="Booking">
+		insert into jariyo_booking (
+			booking_no, place_no, id, booking_team_name, booking_email, booking_phone_no,
+			booking_date, start_time, end_time, mail_send
+		) values (
+			s_jbooking_no.nextval, #{placeNo}, #{id}, #{bookingTeamName}, #{bookingEmail},
+			#{bookingPhoneNo}, #{bookingDate}, #{startTime}, #{endTime}, #{mailSend}
+		)
+	</insert>
 </mapper>
