@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.jariyo.common.db.MyAppSqlConfig;
-import com.jariyo.repository.domain.TestBooking;
-import com.jariyo.repository.domain.TestPlace;
 import com.jariyo.repository.mapper.MyPageMapper;
 
 @WebServlet("/mypage")

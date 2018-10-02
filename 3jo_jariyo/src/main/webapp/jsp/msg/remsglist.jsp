@@ -9,6 +9,8 @@
 
 <%
     	List<Msg> list = (List<Msg>)request.getAttribute("list");
+		Msg msg = new Msg();
+		String kind = (String)request.getAttribute("kind");
     %>
 
 
@@ -99,19 +101,27 @@ table tr:hover{
 				     	
 				    </tr>
 				    <%
-				    for (Msg rec : list) {
-				    %>
+				    for (Msg m : list) {
+				    	%>
+				    	<%
+				    	if(m.getMsgFromTo() == 1){
+				   		 %>
 				    <tr>
 				    
 				    	<td><input type="checkbox"></td>
-				    	<td><%= rec.getMsgNo() %></td>
-				    	<td><%= rec.getKind() %></td>
-				    	<td><%= rec.getFromName() %></td>
-				    	<td><a href='detailmsg.do?no=<%=rec.getNo() %>'><%=rec.getTitle() %></a></td>
-				    	<td><%= rec.getRegDate() %></td>
+				    	<td><%= m.getMsgNo() %></td>
+				    	<td><%= kind %></td>
+				    	<td><%= m.getFromName() %></td>
+				    	<td><a href='redetailmsg.do?no=<%=m.getMsgNo() %>'><%=m.getTitle() %></a></td>
+				    	<td><%= m.getRegDate() %></td>
 				   	</tr>
 				   	<%
 				    }
+				    
+				   	%>
+				   	<%
+				    }
+				    
 				   	%>
 				    
 				   

@@ -72,8 +72,8 @@ public class MyInfo extends HttpServlet {
 			String profileSystemName = mRequest.getFilesystemName("profileImg");
 //			String profileRealPath = realFilePath +"/"+profileOriginName;
 //			String profileSysPath = realFilePath +"/"+profileSystemName;
-			member.setProfileImgSys(profileSystemName);
-			member.setProfileImgReal(f.getParent());
+			member.setProfileImgName(profileSystemName);
+			member.setProfileImgPath(f.getParent());
 		} // if
 		
 		member.setId(id);

@@ -4,8 +4,7 @@ import java.util.Date;
 
 public class Msg {
 	private	int	msgNo;
-	private String id;
-	private String id2;
+	
 	private int no;
 	private String fromName;
 	private String toName;
@@ -13,7 +12,7 @@ public class Msg {
 	private String content;
 	private int trash;
 	private Date regDate;
-	private int kind;
+	private char kind;
 	private int msgFromTo;
 	
 	
@@ -31,24 +30,14 @@ public class Msg {
 	}
 	
 	
-	public int getKind() {
+
+	public char getKind() {
 		return kind;
 	}
-	public void setKind(int kind) {
+	public void setKind(char kind) {
 		this.kind = kind;
 	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getId2() {
-		return id2;
-	}
-	public void setId2(String id2) {
-		this.id2 = id2;
-	}
+
 	public int getNo() {
 		return no;
 	}
@@ -91,6 +80,10 @@ public class Msg {
 	public void setRegDate(Date regDate) {
 		this.regDate = regDate;
 	}
+
+		
+	
+
 
 	
 	

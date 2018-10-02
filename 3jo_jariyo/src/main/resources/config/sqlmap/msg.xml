@@ -5,46 +5,51 @@
 
 	<resultMap id="MsgMap" type="Msg" >
 		<result column="msg_no" property="msgNo"></result>
-		<result column="id" property="id"></result>
-		<result column="id2" property="id2"></result>
 		<result column="msg_from_to" property="msgFromTo"></result>
 		<result column="from_name" property="fromName"></result>
 		<result column="content" property="content"></result>
 		<result column="title" property="title"></result>
 		<result column="trash" property="trash"></result>
+		<result column="kind" property="kind"></result>
 		<result column="reg_date" property="regDate"></result>
 		<result column="to_name" property="toName"></result>
 		
 	</resultMap>
 	
 	<!-- 전체 목록 가져오기 -->
-	<select id ="selectMsg" resultMap="MsgMap">
+	<select id ="selectReMsg" resultMap="MsgMap">
 	select *
 	from jariyo_message
+	  where msg_from_to = 1
 	order by msg_no desc
-	<!--  where id = #{} --> 
 	</select>
-	
-	<insert id="insertMsg" parameterType="Msg">
-	insert into jariyo_message(
-	no, kind, from_name, title, reg_date
-				)values(
-			s_jariyo_no.nextval, #{kind}, #{fromName}, #{title},#{regDate}
-			)
-	</insert>
+	<select id ="selectSeMsg" resultMap="MsgMap">
+	select *
+	from jariyo_message
+	  where msg_from_to = 2
+	order by msg_no desc
+	</select>
 	
 <!-- 	<insert id="insertMsg" parameterType="Msg">
 	insert into jariyo_message(
-	no, id, id2, msg_from_to,from_name,content, title,trash, reg_date, to_name, kind
+	msg_no, kind, to_name, title, reg_date
 				)values(
-			s_jariyo_no.nextval,#{id},#{id2},#{msgFromTo},#{content},#{title},#{regDate}.#{toName}, #{kind}
+			s_jariyo_no.nextval, #{kind}, #{toName}, #{title}, #{regDate}
 			)
 	</insert> -->
+	
+	<insert id="insertMsg" parameterType="Msg">
+	insert into jariyo_message(
+	msg_no, msg_from_to, from_name, content, title, trash, to_name, kind
+				)values(
+			s_jariyo_no.nextval, #{msgFromTo}, #{fromName}, #{content}, #{title}, #{trash}, #{toName}, #{kind}
+			)
+	</insert> 
 	
 	<select id = "selectMsgByNo" parameterType = "int" resultMap ="MsgMap" >
    	 select * 
 	 from jariyo_message
-	 where no = #{no} 
+	 where msg_no = #{msgNo} 
     </select>
     
 	<select id = "selectdelMsg" parameterType = "int" resultMap ="MsgMap" >
@@ -55,7 +60,7 @@
     
     <delete id ="deleteMsg" parameterType = "int">
     delete jariyo_message 
-     where no = #{no}
+     where msg_no = #{msgNo}
     </delete>
     
   <!--      <send id = "sendMsg" parameterType = "Msg">

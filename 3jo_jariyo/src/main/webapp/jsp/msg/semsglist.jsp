@@ -11,7 +11,9 @@
 
 <%
     	List<Msg> list = (List<Msg>)request.getAttribute("list");
-    %>
+   		Msg msg = new Msg();
+   		String kind = (String)request.getAttribute("kind");
+%>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -101,17 +103,23 @@ table tr:hover{
 				     	
 				    </tr>
 				    <%
-				    for (Msg sen : list) {
+				    for (Msg m : list) {
+				    %>
+				    <%
+				    	if(m.getMsgFromTo() == 2){
 				    %>
 				    <tr>
 				    
 				    	<td><input type="checkbox"></td>
-				    	<td><%= sen.getMsgNo() %></td>
-				    	<td><%= sen.getKind() %></td>
-				    	<td><%= sen.getToName() %></td>
-				    	<td><a href='detailmsg.do?no=<%=sen.getNo() %>'><%=sen.getTitle() %></a></td>
-				    	<td><%= sen.getRegDate() %></td>
+				    	<td><%= m.getMsgNo() %></td>
+				    	<td><%= kind %></td>
+				    	<td><%= m.getToName() %></td>
+				    	<td><a href='sedetailmsg.do?no=<%=m.getMsgNo() %>'><%=m.getTitle() %></a></td>
+				    	<td><%= m.getRegDate() %></td>
 				   	</tr>
+				   	<%
+				    }
+				   	%>
 				   	<%
 				    }
 				   	%>

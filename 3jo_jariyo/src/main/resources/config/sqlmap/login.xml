@@ -16,8 +16,8 @@
 		<result column="position_y" property="positionY"/>
 		<result column="birth_date" property="birthDate"/>
 		<result column="team_name" property="teamName"/>
-		<result column="profile_img_real" property="profileImgReal"/>
-		<result column="profile_img_sys" property="profileImgSys"/>
+		<result column="profile_img_path" property="profileImgPath"/>
+		<result column="profile_img_name" property="profileImgName"/>
 		<result column="log_on" property="logOn"/>
 	</resultMap>
 	

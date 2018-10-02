@@ -14,8 +14,8 @@ public class Member {
 	private double positionY;
 	private String birthDate;
 	private String teamName;
-	private String profileImgReal;
-	private String profileImgSys;
+	private String profileImgPath;
+	private String profileImgName;
 	private String logOn;
 	
 	
@@ -97,17 +97,17 @@ public class Member {
 	public void setTeamName(String teamName) {
 		this.teamName = teamName;
 	}
-	public String getProfileImgReal() {
-		return profileImgReal;
+	public String getProfileImgPath() {
+		return profileImgPath;
 	}
-	public void setProfileImgReal(String profileImgReal) {
-		this.profileImgReal = profileImgReal;
+	public void setProfileImgPath(String profileImgPath) {
+		this.profileImgPath = profileImgPath;
 	}
-	public String getProfileImgSys() {
-		return profileImgSys;
+	public String getProfileImgName() {
+		return profileImgName;
 	}
-	public void setProfileImgSys(String profileImgSys) {
-		this.profileImgSys = profileImgSys;
+	public void setProfileImgName(String profileImgName) {
+		this.profileImgName = profileImgName;
 	}
 	public String getLogOn() {
 		return logOn;
@@ -120,8 +120,8 @@ public class Member {
 		return "Member [no=" + no + ", id=" + id + ", name=" + name + ", email=" + email + ", password=" + password
 				+ ", phoneNo=" + phoneNo + ", roadAddr=" + roadAddr + ", detailAddr=" + detailAddr + ", postNo="
 				+ postNo + ", positionX=" + positionX + ", positionY=" + positionY + ", birthDate=" + birthDate
-				+ ", teamName=" + teamName + ", profileImgReal=" + profileImgReal
-				+ ", profileImgSys=" + profileImgSys + "]";
+				+ ", teamName=" + teamName + ", profileImgPath=" + profileImgPath
+				+ ", profileImgName=" + profileImgName + "]";
 	}
 	
 	

@@ -195,7 +195,7 @@
     		
     		<span>프로필 사진 설정 : </span>
     		<div>
-    			<input type="file" name="profileImg" id="profile" title="${user.profileImgSys }" />
+    			<input type="file" name="profileImg" id="profile" title="${user.profileImgName }" />
     		</div>
 		</div>
 		</form>
