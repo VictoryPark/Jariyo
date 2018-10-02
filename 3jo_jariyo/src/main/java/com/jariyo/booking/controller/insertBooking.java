@@ -1,9 +1,7 @@
 package com.jariyo.booking.controller;
 
 import java.io.IOException;
-import java.util.Date;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,42 +13,54 @@ import com.jariyo.repository.domain.Booking;
 import com.jariyo.repository.mapper.BookingMapper;
 
 @WebServlet("/booking/insert.do")
-public class insertBooking extends HttpServlet{
+public class InsertBooking extends HttpServlet{
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("utf-8");
 		
+		int placeNo = Integer.parseInt(request.getParameter("plno"));
 		String teamName = request.getParameter("teamname");
 		String email = request.getParameter("email");
 		String emailSend = request.getParameter("emailsend");
 		String tel = request.getParameter("tel");
+		String date = request.getParameter("date");
+		String st = request.getParameter("starttime");
+		String et = request.getParameter("endtime");
 		
-		System.out.println(teamName);
-		System.out.println(email);
-		System.out.println(emailSend);
-		System.out.println(tel);
+		String year = date.substring(0, 4);
+		//System.out.println(year);
+		String month = date.substring(5, 7);
+		//System.out.println(month);
+		String day = date.substring(8, 10);
+		//System.out.println(day);
+		//System.out.println(st);
+		String hour1 = st.substring(0, 2);
+		String min1 = st.substring(3, 5);
+		
+		String hour2 = et.substring(0, 2);
+		String min2 = et.substring(3, 5);
 		
 		Booking b = new Booking();
 		
-		b.setBookingDate("20180203");
-		b.setBookingTeamName(teamName);
-		b.setBookingEmail(email);
-		b.setMailSend(emailSend);
-		b.setBookingPhoneNo(tel);
-		b.setId("victory");
-		b.setPlaceNo(189);
-		b.setStartTime("0900");
-		b.setEndTime("1300");
-		
-		BookingMapper mapper = 
-				MyAppSqlConfig.getSqlSessionInstance().getMapper(BookingMapper.class);
-		
-		mapper.insertBooking(b);
-		
-		response.sendRedirect("/3jo_jariyo/booking/showbooking.do");
-		
+//		b.setBookingDate(year+month+day);
+//		b.setBookingTeamName(teamName);
+//		b.setBookingEmail(email);
+//		b.setMailSend(emailSend);
+//		b.setBookingPhoneNo(tel);
+//		b.setId("victory");
+//		b.setPlaceNo(placeNo);
+//		b.setStartTime(hour1+min1);
+//		b.setEndTime(hour2+min2);
+//		
+//		BookingMapper mapper = 
+//				MyAppSqlConfig.getSqlSessionInstance().getMapper(BookingMapper.class);
+//		
+//		mapper.insertBooking(b);
+//		
+//		response.sendRedirect("/3jo_jariyo/booking/main.do?"+placeNo);
+//		
 	}
 
 	

@@ -11,6 +11,15 @@
 	<!-- SQL의 결과를 담을 VO 객체들의 별칭을 설정하여 사용의 편의를 도모  -->
 	<typeAliases>
 		<typeAlias alias="Member" type="com.jariyo.repository.domain.Member" />
+		<typeAlias alias="Booking" type="com.jariyo.repository.domain.Booking" />
+		<typeAlias alias="PlaceEval" type="com.jariyo.repository.domain.PlaceEval" />
+		<typeAlias alias="Place" type="com.jariyo.repository.domain.Place" />
+		<typeAlias alias="TeamMatching" type="com.jariyo.repository.domain.TeamMatching" />
+		<typeAlias alias="Competition" type="com.jariyo.repository.domain.Competition" />
+		<typeAlias alias="ManGather" type="com.jariyo.repository.domain.ManGather" />
+		<typeAlias alias="ManVolun" type="com.jariyo.repository.domain.ManVolun" />
+		<typeAlias alias="Comment" type="com.jariyo.repository.domain.Comment" />
+		<typeAlias alias="Msg" type="com.jariyo.repository.domain.Msg" />
 	</typeAliases>
 	
 	<environments default="development">

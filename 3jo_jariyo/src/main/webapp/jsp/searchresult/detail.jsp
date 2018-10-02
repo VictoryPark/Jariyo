@@ -28,7 +28,8 @@
 			<div id="pan11">
 				<div id="map" style="width:100%;height:500px;"></div>
 				<div>
-					<h3>운정건강공원1 축구장/테니스장</h3><button type="button" onclick="location.href='/3jo_jariyo/jsp/booking/booking.jsp'">예약하기</button>
+					<h3>운정건강공원1 축구장/테니스장</h3>
+					<button type="button" onclick="location.href='/3jo_jariyo/jsp/booking/booking.jsp'">예약하기</button>
 					<div>시설 주소 : 경기도 파주시 와석순환로 198</div>
 					<div>시설종류 : 축구장</div>
 					<div>시간당 이용요금 : 60000</div>

@@ -1,21 +1,24 @@
-package com.jariyo.booking.controller;
+package com.jariyo.competition.controller;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/booking/showbooking.do")
-public class showBooking extends HttpServlet{
+@WebServlet("/events/list.do")
+public class ListEvents extends HttpServlet{
 
+	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/jsp/booking/booking.jsp");
-		rd.forward(request, response);
-	
+		
+		
 	}
+
+	
+	
+	//http://openapi.seoul.go.kr:8088/sample/xml/SpClturPhstrn/1/5/
 }

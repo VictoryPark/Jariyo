@@ -23,4 +23,16 @@
 			#{bookingPhoneNo}, #{bookingDate}, #{startTime}, #{endTime}, #{mailSend}
 		)
 	</insert>
+	
+	<delete id="deleteBooking" parameterType="int">
+		delete from jariyo_booking
+			where booking_no = #{bookingNo}
+	</delete>
+	
+	<select id="selectListOnDate" parameterType="string" resultMap="bookingMap">
+		select * from jariyo_booking
+			where booking_date = #{bookingDate} 
+	</select>
+	
+	
 </mapper>

@@ -1,12 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Review</title>
 	<c:import url="reviewCSS.jsp"/>
+	<script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+</script>
 </head>
 <body>
 	<c:import url="../common/mainbarheader.jsp" />
@@ -27,72 +33,161 @@
           등등...<br>
        </div>
      </aside>
-	<section>
+      <main> 
+      <article> 
+      <section>
 	<div class="container">
-		<p>We strive to provide the best possible service for our clients.
-			Please leave a review to let us know how we are doing and to share
-			your experience with others.</p>
-		<form id="review-form" action="index.html" method="post">
-			<h2>Write Your Review</h2>
-			<div id="rating">
-				<svg class="star" id="1" viewBox="0 12.705 512 486.59" x="0px"
-					y="0px" xml:space="preserve" style="fill: #f39c12;"> <polygon
-					points="256.814,12.705 317.205,198.566 512.631,198.566 354.529,313.435 414.918,499.295 256.814,384.427 98.713,499.295 159.102,313.435 1,198.566 196.426,198.566"></polygon>
-				</svg>
-				<svg class="star" id="2" viewBox="0 12.705 512 486.59" x="0px"
-					y="0px" xml:space="preserve" style="fill: #808080;"> <polygon
-					points="256.814,12.705 317.205,198.566 512.631,198.566 354.529,313.435 414.918,499.295 256.814,384.427 98.713,499.295 159.102,313.435 1,198.566 196.426,198.566"></polygon>
-				</svg>
-				<svg class="star" id="3" viewBox="0 12.705 512 486.59" x="0px"
-					y="0px" xml:space="preserve" style="fill: #808080;"> <polygon
-					points="256.814,12.705 317.205,198.566 512.631,198.566 354.529,313.435 414.918,499.295 256.814,384.427 98.713,499.295 159.102,313.435 1,198.566 196.426,198.566"></polygon>
-				</svg>
-				<svg class="star" id="4" viewBox="0 12.705 512 486.59" x="0px"
-					y="0px" xml:space="preserve" style="fill: #808080;"> <polygon
-					points="256.814,12.705 317.205,198.566 512.631,198.566 354.529,313.435 414.918,499.295 256.814,384.427 98.713,499.295 159.102,313.435 1,198.566 196.426,198.566"></polygon>
-				</svg>
-				<svg class="star" id="5" viewBox="0 12.705 512 486.59" x="0px"
-					y="0px" xml:space="preserve" style="fill: #808080;"> <polygon
-					points="256.814,12.705 317.205,198.566 512.631,198.566 354.529,313.435 414.918,499.295 256.814,384.427 98.713,499.295 159.102,313.435 1,198.566 196.426,198.566"></polygon>
-				</svg>
+		<p id="main">
+			자리요를 이용해주셔서 감사합니다.<br> 예약 후 사용하신 시설에 대한 평가를 남기는 곳입니다.<br>
+			건강한 마음을 가진 생활 스포츠인으로써 욕설이나 비방은 삼가하여주시기 바라며, 개선을 원하는 사항은 자세히 정확하게
+			남겨주시면 감사하겠습니다.
+		</p>
+		<form id="review-form" action="<c:url value="/placeeval/insert.do?no=300"/>" method="post">
+			<div id="title">
+				<h2>만족도</h2>
+				<div class="rating">
+					<input type="radio" id="1" name="star" value="5" /> 
+					<span class="star"> </span> 
+					<input type="radio" id="2" name="star" value="4" /> 
+					<span class="star"> </span> 
+					<input type="radio" id="3" name="star" value="3" /> 
+					<span class="star"> </span> 
+					<input type="radio" id="4" name="star" value="2" /> 
+					<span class="star"></span> 
+					<input type="radio" id="5" name="star" value="1" /> 
+					<span class="star"> </span> 
+					<span class="emo"> </span>
+				</div>
 			</div>
-			<span id="starsInfo" class="help-block"> Click on a star to
-				change your rating 1 - 5, where 5 = great! and 1 = really bad </span>
+
 			<div class="form-group">
-				<label class="control-label" for="review">Your Review:</label>
-				<textarea class="form-control" rows="10" placeholder="Your Reivew"
-					name="review" id="review"></textarea>
-				<span id="reviewInfo" class="help-block pull-right"> <span
-					id="remaining">999</span> Characters remaining
-				</span>
+				<textarea class="form-control" rows="10" cols="70"
+					placeholder="후기를 남겨주세요." name="content" id="review"></textarea>
+				<span id="reviewInfo"> <span id="remaining">1000</span> 자 이하로 부탁드려용
+				</span><br>
+			<button>등록</button>
 			</div>
-			<h2>Your Info:</h2>
-			<div class="form-group">
-				<label for="name">Name:</label> <input class="form-control"
-					type="text" placeholder="Name" name="name" id="name" value="">
-			</div>
-			<div class="form-group">
-				<label for="city">City:</label> <input class="form-control"
-					type="text" placeholder="City" name="city" id="city" value="">
-			</div>
-			<div class="form-group">
-				<label for="email">Email:</label> <input class="form-control"
-					type="text" placeholder="Email" name="email" id="email" value="">
-			</div>
-			<a href="#" id="submit" class="btn btn-primary">Submit</a> <input
-				id="submitForm" type="submit" style="display: none;"> <span
-				id="submitInfo" class="help-block"> By clicking <strong>Submit</strong>,
-				I authorize the sharing of my name and review on the web. (email
-				will not be shared)
-			</span>
 		</form>
-		<h2>Read what others have said about us:</h2>
-		<div id="review-container"></div>
+		<div id="list-container">
+		<c:choose>
+		<c:when test="${empty rList}">
+			<table id="review" width="80%">
+					<tr>
+						<td>아직 후기가 없습니다.</td>
+					</tr>
+			</table>
+				</c:when>
+				<c:otherwise>
+					<c:forEach var="re" items="${rList}">
+					<c:if test="${re.evalNo == review.evalNo}">
+						
+						<table id="review${re.evalNo}" width="80%">
+						<form id="updatereview" action="<c:url value="/placeeval/update.do?revno=${review.evalNo}&plno=${review.placeNo}"/>" method="post">
+								<tr>
+									<td class="rating">
+									<input type="radio" id="1" name="star" value="5" /> 
+									<span class="star"> </span> 
+									<input type="radio" id="2" name="star" value="4" /> 
+									<span class="star"> </span> 
+									<input type="radio" id="3" name="star" value="3" /> 
+									<span class="star"> </span> 
+									<input type="radio" id="4" name="star" value="2" /> 
+									<span class="star"></span> 
+									<input type="radio" id="5" name="star" value="1" /> 
+									<span class="star"> </span> 
+									<span class="emo"> </span>
+									</td>
+								</tr>
+								<tr>
+									<td id="content"><textarea name="rContent" rows="4" cols="70">${review.content }</textarea></td>
+								</tr>
+								<tr>
+									<td id="id">${review.id}</td>
+								</tr>
+								<tr>
+									<td id="buttons">
+										<button>수정</button>
+										<a href="<c:url value="/placeeval/list.do?no=${re.placeNo}"/>"> 취소</a>
+									</td>
+								</tr>
+							</form>
+							</table>
+					</c:if>
+					<c:if test="${re.evalNo !=review.evalNo }">
+					<input type="hidden" id="hidden" plno="${re.placeNo}" revno="${re.evalNo }"/> 
+						<table id="review${re.evalNo}" width="80%">
+							<tr>
+								<td id="starPoint"><img src="<c:url value='/img/placeeval/${re.starPoint}.png'/>" /></td>
+							</tr>
+							<tr>
+								<td id="content">${re.content }</td>
+							</tr>
+							<tr>
+								<td id="id">${re.id}</td>
+							</tr>
+							<tr>
+								<td id="regDate"><fmt:formatDate value="${re.regDate}" pattern="yy.MM.dd"/></td>
+							</tr>
+							<tr>
+								<td id="buttons"><a id="update"<%--  href="<c:url value="/placeeval/updateform.do?revno=${re.evalNo}&plno=${re.placeNo}"/>" --%>>수정 </a>
+												 <a href="<c:url value="/placeeval/delete.do?revno=${re.evalNo}"/>"> 삭제</a>
+							</tr>
+						</table>
+					</c:if>
+					</c:forEach>
+					
+				</c:otherwise>
+				</c:choose>
+				
+				
+        </div>
 	</div>
-	</section>
-	</article>
+	</section> 
+	</article> 
 	</main>
 	<c:import url="../common/mainbarfooter.jsp" />
-	<script src="./review.js"></script>
+	<!-- <script src="./review.js"></script> -->
+	 <script src="<c:url value="/jsp/placeeval/review.js"/>"></script>
+	 <script>
+	 $("a[id=update]").click(function(){
+		 var xhr = new XMLHttpRequest();
+	     xhr.onreadystatechange = function() {
+	         if(xhr.readyState==4){
+	             if(xhr.status==200) {
+	                 var pe = JSON.parse(xhr.responseText)
+	                 var form = $("#updatereview")
+					 var stars = '<td class="rating">' +
+					 '<input type="radio" id="1" name="star" value="1"/>' +
+					 '<span class="star"> </span>' +
+					 '<input type="radio" id="2" name="star" value="2"/>' +
+					 '<span class="star"> </span>' +
+					 '<input type="radio" id="3" name="star" value="3"/>' +
+					 '<span class="star"> </span>' +
+					 '<input type="radio" id="4" name="star" value="4"/>' +
+					 '<span class="star"> </span>' +
+					 '<input type="radio" id="5" name="star" value="5"/>' +
+					 '<span class="star"> </span>'+
+					 '<span class="emo"> </span></td>'
+	                 if(pe.length!=0){
+	                   var html = '<table id="review${re.evalNo}" width="80%"><tr>'
+	                   	   html += stars
+	                   	   html += '</tr><tr>'
+	                   	   html += '<td id="content"><textarea name="rContent" rows="4" cols="70">'+pe.content+'</textarea></td>'
+	                   	   html += '</tr><tr>'
+	                   	   html += '<td id="buttons"><button>수정</button>' +
+								   '<a href="<c:url value="/placeeval/list.do?no=${re.placeNo}"/>"> 취소</a>' +
+								   '</td>'
+						   html += '</tr></table>'
+	                 }
+	                 }//200
+	             } //4
+	         }//change
+	         xhr.open("POST", "<c:url value='/placeeval/updateform.do'/>")
+	         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+	         xhr.send("revno="+$("#hidden").attr('revno')+"&plno="+$("#hidden").attr('plno'))
+	      
+	 })
+
+	 </script>
 </body>
 </html>

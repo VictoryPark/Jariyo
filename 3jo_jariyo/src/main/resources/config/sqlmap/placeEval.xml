@@ -2,5 +2,44 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jariyo.repository.mapper.PlaceEvalMapper"> <!-- 루트태그 -->
+	<resultMap id="reviewMap" type="PlaceEval">
+		<result column="place_no" property="placeNo"/>
+		<result column="reg_date" property="regDate"/>
+		<result column="star_point" property="starPoint"/>
+		<result column="eval_no" property="evalNo"/>
+	</resultMap> 
 	
+	<insert id="insertReview" parameterType="PlaceEval">
+		insert into jariyo_place_eval (
+			eval_no, id, place_no, content, reg_date, star_point
+		) values (
+			s_jplace_eval_no.nextval, #{id}, #{placeNo}, #{content}, 
+			#{regDate}, #{starPoint}
+		)
+	</insert>
+	
+	<update id="updateReview" parameterType="PlaceEval">
+		update jariyo_place_eval
+		   set content = #{content},
+			   star_point = #{starPoint}
+		where eval_no = #{evalNo}
+	</update>
+	
+	<delete id="deleteReview" parameterType="int">
+		delete from jariyo_place_eval
+		  where eval_no = #{evalNo}
+	</delete>
+	
+	<select id="selectAllbyPlaceNo" parameterType="int" resultMap="reviewMap">
+		select *
+		  from jariyo_place_eval
+		 where place_no = #{placeNo}
+		 order by eval_no desc
+	</select>
+	
+	<select id="selectOneReview" parameterType="int" resultMap="reviewMap">
+		select *
+		  from jariyo_place_eval
+		 where eval_no = #{evalNo}
+	</select>
 </mapper>

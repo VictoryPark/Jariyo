@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body{
-    background: #F2F1ED;
+    background-color: #F2F1ED;
     overflow: auto;
     
 }
@@ -9,49 +9,110 @@ div#mapimg {
 }
 aside, section {
     margin: 10px;
- 
+    border : 2px solid rgb(27, 116, 93);
+}
+section p#main {
+    width: inherit;
+    font-size : 24px;
+    text-align: center;
+}
+.control-label {
+  font-size : 14px;
 }
 
+.form-group {
+    padding: 20px;
+}
+
+div[id='list-container'] {
+	margin : 30px 20px;
+}
+
+table[id^='review']  {
+	margin-bottom : 15px;
+	border-left : 5px solid #ffada6;
+	padding-left : 3px;
+}
+
+table[id^='review'] td {
+	padding-left: 5px;
+}
+
+body {
+  background: #333;
+} 
 
 
-.star {
-    width: 32px;
-    height: 32px;
-    transition: .6s all;
-  }
-  #rating {
-    cursor: pointer;
-    display: inline-block
-  }
-  #review-form .input-group-addon {
-    min-width: 100px;
-  }
-  #review-form .btn {
-    min-width: 100px;
-  }
-  #review-form input[type="text"],
-  #review-form textarea {
-    width: 100%;
-  }
-  #review-form .form-group {
-    margin-bottom: 15px;
-  }
-  #review-form .help-block {
-    display: block;
-    margin-top: 5px;
-    margin-bottom: 10px;
-  }
-  
-  blockquote {
-    border-left: 5px solid rgb(238, 238, 238);
-    padding-left: 20px;
-  }
-  
-  blockquote .footer{
-    display: block;
-    font-size: 80%;
-  }
+.rating {
+  width: 265px;
+  margin: 200px auto 0;
+  position: relative;
+  direction: rtl;
+  float: left;
+}
 
-  .stars-container {
-    margin-bottom: 5px;
-  }
+.rating .emo {
+  position: absolute;
+  font-family: FontAwesome;
+  color: rgb(224, 157, 157);
+  font-size: 100px;
+  bottom: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  display: inline-block;
+}
+.rating .emo:after {
+  content: '\f119';
+}
+.rating input {
+  position: absolute;
+  width: 35px;
+  height: 50px;
+  cursor: pointer;
+  -webkit-transform: translateX(52px);
+  transform: translateX(52px);
+  opacity: 0;
+  z-index: 5;
+}
+.rating input:nth-of-type(4):checked ~ .emo:after, .rating input:nth-of-type(4):hover ~ .emo:after, .rating input:nth-of-type(3):checked ~ .emo:after, .rating input:nth-of-type(3):hover ~ .emo:after {
+  content: '\f11a';
+}
+.rating input:nth-of-type(1):checked ~ .emo:after, .rating input:nth-of-type(1):hover ~ .emo:after, .rating input:nth-of-type(2):checked ~ .emo:after, .rating input:nth-of-type(2):hover ~ .emo:after {
+  content: '\f118';
+}
+.rating input:nth-of-type(1) {
+  right: 50px;
+}
+.rating input:nth-of-type(2) {
+  right: 100px;
+}
+.rating input:nth-of-type(3) {
+  right: 150px;
+}
+.rating input:nth-of-type(4) {
+  right: 200px;
+}
+.rating input:nth-of-type(5) {
+  right: 250px;
+}
+.rating input:nth-of-type(6) {
+  right: 300px;
+}
+.rating input:checked ~ .star:after, .rating input:hover ~ .star:after {
+  content: '\f005';
+}
+.rating .star {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: 42px;
+  color: #FBB202;
+  cursor: pointer;
+  margin: 3px;
+}
+.rating .star:after {
+  content: '\f006';
+}
+.rating .star:hover ~ .star:after, .rating .star:hover:after {
+  content: '\f005';
+}

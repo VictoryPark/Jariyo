@@ -2,5 +2,28 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jariyo.repository.mapper.PlaceMapper"> <!-- 루트태그 -->
+	<resultMap id="placeMap" type="Place">
+		<result column="place_no" property="placeNo"/>
+		<result column="place_name" property="placeName"/>
+		<result column="place_road_addr" property="placeRoadArrd"/>
+		<result column="place_detail_addr" property="placeDetailArrd"/>
+		<result column="place_post_no" property="placePostNo"/>
+		<result column="place_phone_no" property="placePhoneNo"/>
+		<result column="place_facility" property="placeFacility"/>
+		<result column="place_position_x" property="placePositionX"/>
+		<result column="place_position_y" property="placePositionY"/>
+		<result column="star_point" property="starPoint"/>
+		<result column="weekdays_start" property="weekdaysStart"/>
+		<result column="weekdays_end" property="weekdaysEnd"/>
+		<result column="weekends_start" property="weekendsStart"/>
+		<result column="weekends_end" property="weekendsEnd"/>
+		
+	</resultMap>
+	
+	<select id="selectInfoByNo" parameterType="int" resultMap="placeMap">
+		select * from jariyo_place
+			where place_no = #{placeNo}
+	</select>
+	
 	
 </mapper>
