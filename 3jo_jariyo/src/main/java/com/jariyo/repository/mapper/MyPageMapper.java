@@ -8,6 +8,4 @@ import com.jariyo.repository.domain.TestPlace;
 
 public interface MyPageMapper {
 	void updateMyInfo(Member member);
-	List<TestBooking> selectMyBooking(String id);
-	String selectPlaceName(int no);
 }
