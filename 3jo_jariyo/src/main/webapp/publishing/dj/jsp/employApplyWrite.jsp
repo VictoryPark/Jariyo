@@ -46,12 +46,14 @@
 	       <a href="matchingBoard.jsp">팀 매칭 게시판</a>
 	    </p>
 	    <p>    
-	        <a href="employBoard.jsp">용병 게시판</a>
+	        <a href="employBoard.jsp">용병 모집 게시판</a>
+	    </p>
+	    <p>    
+	        <a href="employBoard.jsp">용병 신청 게시판</a>
 	    </p>
 	    </aside>
 	    <section>
-			<h4><a href="employRecruitWrite.jsp">[용병 모집]</a><a href="employApplyWrite.jsp">[용병 신청]</a></h4>
-	    	<hr>
+			
 	    	<h4><textarea name="title" rows="1" cols="62">제목을 입력하세요.</textarea></h4>
 		   <div id = "photobox"></div>
 			<table>

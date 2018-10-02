@@ -6,8 +6,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>matchingWrite</title>
-<link rel="stylesheet" href="../../css/common/headerfooter.css"/>
+<title>teammatchingWrite</title>
+<link rel="stylesheet" href="<c:url value="/css/common/headerfooter.css"/>">
 
 <style>
 	#photobox {
@@ -15,15 +15,20 @@
 		height : 200px;
 		background-color: gray;
 	}
-	table, th, td{
+	th, td{
+		width : 135px;
 		border: 1px solid #345;
 	}
 	aside, section {
-		height: 550px;
 		border : 2px solid black;
 	}
 	hr{
 		border : 1px solid black;
+	}
+	#content{
+		width: 630px;
+		height : 80px;
+		border: 1px solid black;
 	}
 	
 
@@ -34,55 +39,54 @@
 	<main>
 	  <article>
         <aside>
-	    <p>
-	       <a href="teammatchingBoard.jsp">팀 매칭 게시판</a>
+		<p>
+	        <a href="<c:url value="/teammatching/list.do" />">팀 매칭 게시판</a>
 	    </p>
 	    <p>    
-	        <a href="../manvolun/manVolunBoard.jsp">용병 게시판</a>
+	        <a href="<c:url value="/mangather/list.do"/>">용병 모집 게시판</a>
+	    </p>
+	    <p>
+	    	<a href="<c:url value="/manvolun/list.do"/>">용병 신청 게시판</a>
 	    </p>
 	    </aside>
 	    <section>
 	      
 	      <h3>글쓰기</h3>
 	      <hr>
-	      <h5><input type="text" name="title" value="제목을 입력하세요."></h5>
+	      <form method="post" action="<c:url value='/teammatching/write.do'/>">
+	      <h5><input type="text" name="title"></h5>
 		  <div id="photobox"></div>
 		  <table>
 		  	<tr>
-		  		<th>팀명</th>
-		  		<th><input type="text" name="teamName"></th>
+		  		<td>팀명</td>
+		  		<td><input type="text" name="teamName"></td>
+		  		<td>종목</td>
+		  		<td><input type="text" name="kindofGame"></td>
 		  	</tr>
 		  	<tr>
+		  		<td>활동 지역</td>
+		  		<td><textarea name="area" rows="1" cols="30"></textarea></td>
+		  		<td>경기장</td>
+		  		<td><input type="text" name="placeName"></td>
+		  	</tr>
+		  	<tr>
+		  		<td>경기일자</td>
+		  		<td><input type="text" name="playDate"></td>
 		  		<td>평균연령</td>
-		  		<td><input type="text" name="averageAge"></td>		  		
+		  		<td><input type="text" name="aveAge"></td>		  		
 		  	</tr>
-		  	<tr>
-		  		<td colspan="2">활동 지역</td>
-		  	</tr>
-		  	<tr>
-		  		<td colspan="2"><textarea name="title" rows="1" cols="40"></textarea></td>
-		  	</tr>
-		  	<tr>
-		  		<td>경기 일자</td>
-		  		<td><input type="text" name="date"></td>
-		  	</tr>
-		  	<tr>
-		  		<td colspan="2">경기장</td>
-		  	</tr>
-		  	<tr>
-		  		<td colspan="2"><input type="text" name="stadium" value="세곡초등학교"></td>
-		  	</tr>
+
 		  </table>
 		  <p>
-		  <div id = "content">
-		  <textarea name="matchingContent" row="10" cols="50">내용을 입력하세요.</textarea>
+		  <div>
+		  <textarea name="content" row="10" cols="80">내용을 입력하세요.</textarea>
 	      </div>
 	      </p>
 	      <p>
-	      <button><a href="teammatchingBoard.jsp">작성완료</a></button>	      
-	      <button>이미지 첨부</button>
-	      <button><a href="teammatchingBoard.jsp">닫기</a></button>
+	      <button>작성하기</button>	
+	      <button><a href="<c:url value="/teammatching/list.do"/>">목록</button>
 	      </p>
+	      </form>
 	      
 	    </section>
 	  </article>

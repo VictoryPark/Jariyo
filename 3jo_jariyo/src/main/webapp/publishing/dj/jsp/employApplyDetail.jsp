@@ -45,7 +45,10 @@
 	       <a href="matchingBoard.jsp">팀 매칭 게시판</a>
 	    </p>
 	    <p>    
-	        <a href="employBoard.jsp">용병 게시판</a>
+	        <a href="employBoard.jsp">용병 모집 게시판</a>
+	    </p>
+	    <p>    
+	        <a href="employBoard.jsp">용병 신청 게시판</a>
 	    </p>
 	    </aside>
 	    <section>

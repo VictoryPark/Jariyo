@@ -5,18 +5,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>employApplyModify</title>
-<link rel="stylesheet" href="../../css/common/headerfooter.css"/>
+<title>manVolunModify</title>
+<link rel="stylesheet" href="<c:url value="/css/common/headerfooter.css"/>">
 <style>
 	#photobox {
 		width : 300px;
 		height : 200px;
 		background-color: gray;
 	}
-
-	
 	aside, section {
-		height: 550px;
 		border : 2px solid black;
 	}
 		tr, td {
@@ -43,64 +40,48 @@
 	  <article>
         <aside>
 	    <div id="menu">
-        <p>
-	        <a href="../teammatching/teammatchingBoard.jsp">팀 매칭 게시판</a>
+		 <p>
+	        <a href="<c:url value="/teammatching/list.do"/>">팀 매칭 게시판</a>
 	    </p>
 	    <p>    
-	        <a href="../manvolun/manVolunBoard.jsp">용병 게시판</a>
+	        <a href="<c:url value="/mangather/list.do"/>">용병 모집 게시판</a>
+	    </p>
+	    <p>
+	    	<a href="<c:url value="/manvolun/list.do"/>">용병 신청 게시판</a>
 	    </p>
 	    </aside>
 	    <section>
 		    <hr>
-			<h4><input type="text" name="title" value="[신청] 키 189 포지션 상관없습니다"></h4>	 
+		    <form method="post" action="<c:url value='/manvolun/modify.do'/>">
+			<h4><input type="text" name="title" value='${board.title}'></h4>	 
 		   <div id = "photobox"></div>
+		   <input type="hidden" name ="boardNo" value="${board.boardNo}">
 			<table>
 				<tr>
 					<td>이름</td>
-					<td><input type="text" name="name" value="박아란"></td>
+					<td><input type="text" name="name" value='${board.writerId}'></td>
 					<td>종목</td>
-					<td><input type="text" name="dictionary" value="농구"></td>
+					<td><input type="text" name="kindofGame" value='${board.kindofGame}'></td>
 				</tr>
 				<tr>
-					<td>나이</td>
-					<td><input type="text" name="age" value="28"></td>
-					<td>포지션</td>
-					<td><input type="text" name="position" value="무관"></td>
+					<td>활동 지역</td>
+					<td><textarea name="area" rows="1" cols="30">${board.area}</textarea> </td>
 				</tr>
-				<tr>
-					<td>선수출신 여부 </td>
-					<td colspan="3"><input type="radio" name="career" value="non" checked="checked"/>비선출
-						<input type="radio" name="career" value="elementary"/>초등부
-						<input type="radio" name="career" value="middle"/>중등부
-						<input type="radio" name="career" value="high"/>고등부
-						<input type="radio" name="career" value="university"/>대학 이상
-					</td>
-				</tr>
-				<tr>
-					<td colspan="4">거주지</td>
-				</tr>
-				<tr>
-					<td colspan="4"><textarea name="area" rows="1" cols="62">수원시 권선구,팔달구</textarea> </td>
-				</tr>
-				<tr>
-					<td colspan="4">경기 일자(예 4월 18일 오후 1시)</td>
-				</tr>
-				<tr>
-					<td colspan="4" ><input type="text" name="date" value="9월 22일 오후 7시"></td>
-				</tr>					
+
 			</table>
 			<p>
 			<div>
-			<textarea name="content" row="6" cols="115">자차 있고 차타고 30분거리까지는 경기하러 갈수있습니다.</textarea>
+			<textarea name="content" row="6" cols="115">${board.content}</textarea>
 			</div>
 			</p>
 			<p>
-			<button><a href="manVolunBoard.jsp">수정완료</a></button>
-			<button><a href="manVolunBoard.jsp">삭제</a></button>
-			<button><a href="manVolunBoard.jsp">닫기</a></button>
+			<button>수정완료</button>
+			<button><a href="<c:url value="/manvolun/delete.do?boardNo=${board.boardNo}"/>">삭제</a></button>
+			<button><a href="<c:url value="/manvolun/list.do"/>">목록</a></button>
 	    	</p>
 	    </section>
 	  </article>
+	  </form>
 	</main>
 
 	<c:import url="../common/mainbarfooter.jsp" />

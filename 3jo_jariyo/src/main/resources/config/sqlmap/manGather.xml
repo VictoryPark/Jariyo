@@ -2,5 +2,59 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jariyo.repository.mapper.ManGatherMapper"> <!-- 루트태그 -->
+	<resultMap id="manGatherMap" type="ManGather">
+		<result column="board_no" property="boardNo"/>
+		<result column="writer_id" property="writerId"/>
+		<result column="title" property="title"/>		
+		<result column="kindof_game" property="kindofGame"/>		
+		<result column="play_date" property="playDate"/>		
+		<result column="area" property="area"/>		
+		<result column="content" property="content"/>		
+		<result column="team_name" property="teamName"/>		
+		<result column="ave_age" property="aveAge"/>		
+		<result column="place_addr" property="placeAddr"/>		
+		<result column="reg_date" property="regDate"/>		
+		<result column="complete" property="complete"/>		
+	</resultMap>
+	
+	<select id = "selectManGather" resultMap="manGatherMap">
+		select *
+		 from jariyo_mangather
+		order by board_no desc
+	</select>
+	
+	<select id= "selectManGatherByNo" parameterType="int" resultMap="manGatherMap">
+		select *
+		  from jariyo_mangather
+		 where board_no = #{boardNo}
+	</select>
+	
+	<insert id="insertManGather" parameterType="ManGather">
+		insert into jariyo_mangather (
+			board_no, title, team_name, kindof_game, ave_age, area, play_date, content
+		) values (
+			s_jmangather_no.nextval, #{title}, #{teamName}, #{kindofGame}, #{aveAge},
+			#{area}, #{playDate}, #{content}
+		)
+	</insert>
+	
+	<update id="modifyManGather" parameterType="ManGather">
+		update jariyo_mangather
+		   set title = #{title},
+		   	   team_name = #{teamName},
+		   	   kindof_game = #{kindofGame},
+		   	   ave_age = #{aveAge},
+		   	   area = #{area},
+		   	   play_date = #{playDate},
+		   	   content = #{content}
+		where board_no = #{boardNo}
+	</update>
+	
+	<delete id="deleteManGather" parameterType="int">
+		delete 
+		  from jariyo_mangather
+		 where board_no = #{boardNo}
+	</delete>
+	
 	
 </mapper>

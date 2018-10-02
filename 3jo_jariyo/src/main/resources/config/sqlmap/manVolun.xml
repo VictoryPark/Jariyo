@@ -2,6 +2,54 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jariyo.repository.mapper.ManVolunMapper">
+	<resultMap id="manVolunMap" type="ManVolun" >
+		<result column="board_no" property="boardNo"/>
+		<result column="writer_id" property="writerId"/>
+		<result column="title" property="title"/>
+		<result column="content" property="content"/>
+		<result column="kindof_game" property="kindofGame"/>
+		<result column="career" property="career"/>
+		<result column="area" property="area"/>
+		<result column="reg_date" property="regDate"/>
+	</resultMap>
+	
+	<select id = "selectManVolun" resultMap="manVolunMap">
+		select *
+		 from jariyo_manvolunteer
+		order by board_no desc
+	</select>
+		
+	<select id= "selectManVolunByNo" parameterType="int" resultMap="manVolunMap">
+		select *
+		  from jariyo_manvolunteer
+		 where board_no = #{boardNo}
+	</select>
 
+	<insert id="insertManVolun" parameterType="ManVolun">
+		insert into jariyo_manvolunteer (
+			board_no, title, kindof_game, area, career, content
+		) values (
+			s_jmanvolunteer_no.nextval, #{title}, #{kindofGame},
+			#{area}, #{career}, #{content}
+		)
+	</insert>
+	
+	<update id="modifyManVolun" parameterType="ManVolun">
+		update jariyo_manvolunteer
+		   set title = #{title},
+		   	   kindof_game = #{kindofGame},
+		   	   area = #{area},
+		   	   career = #{career},
+		   	   content = #{content}
+		where board_no = #{boardNo}
+	</update>
+	
+	<delete id="deleteManVolun" parameterType="int">
+		delete 
+		  from jariyo_manvolunteer
+		 where board_no = #{boardNo}
+	</delete>
+	
+	
 	
 </mapper>

@@ -53,36 +53,17 @@
 		    <span>
 		    <select name="시,도">
 		    	<option value ="시, 도" selected>시, 도</option>
-		    	<option value ="서울특별시">서울특별시</option>
-		    	<option value ="경기도">경기도</option>
-		    	<option value ="강원도">강원도</option>
-		    	<option value ="경상도">경상도</option>
-		    	<option value ="전라도">전라도</option>
-		    	<option value ="충청도">충청도</option>
+		    	<option value ="1">서울</option>
+		    	<option value ="2">인천/경기</option>
+		    	<option value ="3">대전/세종/충청</option>
+		    	<option value ="4">대구/경북</option>
+		    	<option value ="5">	부산/울산/경남</option>
+		    	<option value ="6">광주/전라</option>
+		    	<option value ="7">강원</option>
+		    	<option value ="8">제주</option>
 		    </select>
 		    </span>
-		    <span>
-		    <select name="시,군,구">
-		    	<option value ="시,군,구" selected>시,군,구</option>
-		    	<option value ="서울특별시">서울특별시</option>
-		    	<option value ="수원시">수원시</option>
-		    	<option value ="인천광역시">인천광역시</option>
-		    	<option value ="부산광역시">부산광역시</option>
-		    </select>
-		    </span>
-		    <span>
-		    <select name="동,면,읍">
-		    	<option value ="동면읍" selected>동,면,읍</option>
-		    	<option value ="권선동">권선동</option>
-		    	<option value ="세류동">세류동</option>
-		    	<option value ="인계동">인계동</option>
-		    	<option value ="탑동">탑동</option>
-		    </select>
-		    <select name="시설">
-		    	<option value ="시설" selected>시설</option>
-		    	<option value ="수원 월드컵 경기장">수원 월드컵 경기장</option>
-		    	<option value ="서울 올림픽 경기장">서울 올림픽 경기장</option>
-		    	<option value ="인천 축구 전용 경기장">인천 축구 전용 경기장</option>
+
 		    </select>
 		    <input type="search" name="search"/>
 		    <button>검색</button>
