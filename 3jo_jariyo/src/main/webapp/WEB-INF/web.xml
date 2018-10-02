@@ -11,6 +11,27 @@
     <url-pattern>/servlet/basic/test01</url-pattern>
   </servlet-mapping>
   
+   <filter>
+   	<filter-name>logincheck</filter-name>
+   	<filter-class>com.jariyo.filter.LoginCheckFilter</filter-class>
+   	<init-param>
+   		<param-name>pages</param-name>
+   		<param-value>
+   			/;
+   			/login-form;
+   			/login/login.do;
+   			/signup/signup.do;
+   			/signup/signup-form.do;
+   			/board/list.do
+   		</param-value>
+   	</init-param>
+   </filter>
+  
+   <filter-mapping>
+   	<filter-name>logincheck</filter-name>
+   	<url-pattern>/jariyo</url-pattern>
+   </filter-mapping>
+   
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>

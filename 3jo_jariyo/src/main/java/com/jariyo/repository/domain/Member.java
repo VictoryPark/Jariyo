@@ -13,10 +13,10 @@ public class Member {
 	private double positionX;
 	private double positionY;
 	private String birthDate;
-	private String hobby;
 	private String teamName;
 	private String profileImgReal;
 	private String profileImgSys;
+	private String logOn;
 	
 	
 	public int getNo() {
@@ -91,12 +91,6 @@ public class Member {
 	public void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
 	}
-	public String getHobby() {
-		return hobby;
-	}
-	public void setHobby(String hobby) {
-		this.hobby = hobby;
-	}
 	public String getTeamName() {
 		return teamName;
 	}
@@ -115,12 +109,18 @@ public class Member {
 	public void setProfileImgSys(String profileImgSys) {
 		this.profileImgSys = profileImgSys;
 	}
+	public String getLogOn() {
+		return logOn;
+	}
+	public void setLogOn(String logOn) {
+		this.logOn = logOn;
+	}
 	@Override
 	public String toString() {
 		return "Member [no=" + no + ", id=" + id + ", name=" + name + ", email=" + email + ", password=" + password
 				+ ", phoneNo=" + phoneNo + ", roadAddr=" + roadAddr + ", detailAddr=" + detailAddr + ", postNo="
 				+ postNo + ", positionX=" + positionX + ", positionY=" + positionY + ", birthDate=" + birthDate
-				+ ", hobby=" + hobby + ", teamName=" + teamName + ", profileImgReal=" + profileImgReal
+				+ ", teamName=" + teamName + ", profileImgReal=" + profileImgReal
 				+ ", profileImgSys=" + profileImgSys + "]";
 	}
 	

@@ -30,7 +30,7 @@ body {
   left: 0;
   box-sizing: border-box;
   padding: 40px;
-  width: 300px;
+  width: 380px;
   height: 600px;
 }
 
@@ -47,7 +47,7 @@ input[type="password"] {
   box-sizing: border-box;
   margin-bottom: 20px;
   padding: 4px;
-  width: 190px;
+  width: 250px;
   height: 22px;
   border: none;
   border-bottom: 1px solid #AAA;
@@ -67,6 +67,13 @@ input[type="password"] {
     right: 25%;
     top: 16%;
 }
+.searchEmail {
+		position: absolute;
+    font-size: 9px;
+    width: 55px;
+    right: 25%;
+    top: 30%;
+}
 .searchAddr {
     position: absolute;
 	font-size: 9px;
@@ -78,6 +85,7 @@ input[type="password"] {
 .select {
   box-sizing: border-box;
   border: none;
+  width: 84%;
   margin-bottom: 20px;
   padding-bottom: 5px;
   padding-top: 5px;
@@ -134,7 +142,7 @@ input[type="submit"]:active {
 .or {
   position: absolute;
   top: 225px;
-  left: 280px;
+  left: 307px;
   width: 40px;
   height: 40px;
   background: #DDD;
@@ -150,7 +158,7 @@ input[type="submit"]:active {
   right: 0;
   box-sizing: border-box;
   padding: 40px;
-  width: 300px;
+  width: 278px;
   height: 400px;
   background: url('https://goo.gl/YbktSj');
   background-size: cover;

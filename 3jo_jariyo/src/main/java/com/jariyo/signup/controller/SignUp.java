@@ -28,6 +28,8 @@ public class SignUp extends HttpServlet {
 		String postNo = request.getParameter("postNo");
 		String roadAddr = request.getParameter("roadAddr");
 		String detailAddr = request.getParameter("detailAddr");
+		double positionX = Double.parseDouble(request.getParameter("positionX"));
+		double positionY = Double.parseDouble(request.getParameter("positionY"));
 		String birthDate = request.getParameter("birthYear");
 		birthDate += request.getParameter("birthMonth"); 
 		birthDate += request.getParameter("birthDay");
@@ -43,6 +45,8 @@ public class SignUp extends HttpServlet {
 		member.setPostNo(postNo);
 		member.setRoadAddr(roadAddr);
 		member.setDetailAddr(detailAddr);
+		member.setPositionX(positionX);
+		member.setPositionY(positionY);
 		member.setBirthDate(birthDate);
 		
 		mapper.insertMember(member);

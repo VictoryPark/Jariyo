@@ -6,6 +6,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>자리YO 회원가입</title>
+<script
+	src="https://code.jquery.com/jquery-3.3.1.js"
+	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	crossorigin="anonymous">
+</script>
 <c:import url="basicIncludeSignUpCss.jsp" />
 </head>
 <body>
@@ -13,18 +18,21 @@
     <form action="<c:url value="/signup" />">
   <div class="left">
     <h1>자리Y<img id="ball" src="http://localhost:8000/3jo_jariyo/img/common/ball-icon.gif" width="58px"/></h1>
-    
-    <input type="text" name="id" placeholder="아이디" />
-    <button class="searchId" type="button" onclick="idCheck('${id}')">중복체크</button>
-    <input type="text" name="name" placeholder="이름" />
-    <input type="text" name="email" placeholder="이메일" />
-    <input type="password" name="password" placeholder="비밀번호" />
+    <!-- id="idCheck" -->
+    <input type="text" id="id" name="id" placeholder="아이디" />
+    <button class="searchId" type="button" onclick="idCheck()" >중복체크</button>
+    <input type="text" id="name" name="name" placeholder="이름" />
+    <input type="text" id="email" name="email" placeholder="이메일" />
+    <button class="searchEmail" type="button" onclick="emailCheck()" >중복체크</button>
+    <input type="password" id="password" name="password" placeholder="비밀번호" />
     <input type="password" name="password2" placeholder="비밀번호 확인" />
     <input type="text" name="phoneNo" placeholder="-을 제외한 핸드폰 번호" />
-    <input class="addr" type="text" name="postNo" placeholder="우편번호" />
-    <input class="addr" type="text" name="roadAddr" placeholder="기본주소" />
+    <input class="addr" type="text" name="postNo" id="postNo" placeholder="우편번호" />
+    <input class="addr" type="text" name="roadAddr" id="roadAddr" placeholder="기본주소" />
+    <button class="searchAddr" type="button" onclick="findPost()">우편번호 찾기</button>
     <input class="addr" type="text" name="detailAddr" placeholder="상세주소" />
-    <button class="searchAddr" type="button" onclick="">우편번호 찾기</button>
+    <input type="text" name="positionX" id="positionX" style="display: none;" />
+    <input type="text" name="positionY" id="positionY" style="display: none;" />
     <div class="select">
     	<a class="birth">생년월일</a><br>
 	    <select name="birthYear">
@@ -163,26 +171,144 @@
   </div>
   <div class="or">OR</div>
 </div>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script src="/resources/js/addressapi.js"></script>
+<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4f2b154b6617eb0edad20eaff1a2aadc&libraries=services"></script>
 <script>
-	function idCheck(id) {  
-	    // Ajax 통신으로 서버에 Data를 전송하고 Return 받습니다.
-	    $.ajax({
-	        // type을 설정합니다.
-	        type : 'GET',
-	        url : "/login-form",
-	        // 사용자가 입력하여 id로 넘어온 값을 서버로 보냅니다.
-	        data : {"id" : id},
-	        // 성공적으로 값을 서버로 보냈을 경우 처리하는 코드입니다.
-	        success : function (data) {
-	            // 서버에서 Return된 값으로 중복 여부를 사용자에게 알려줍니다.
-	            if (data) {
-	                alert("사용할 수 없는 아이디 입니다."); 
-	            } else {
-	                alert("사용 가능한 아이디 입니다.");
-	            }
-	        }
-   		});
+	
+	function idCheck() {
+		var idArr = new Array();
+		<c:forEach var="item" items="${idList}">
+			idArr.push('${item}');
+		</c:forEach>
+		
+		for (let i = 0; i < idArr.length; i++) {
+			if ($("#id").val() == idArr[i]) {
+				alert("사용할 수 없는 아이디 입니다.");
+				$("#id").val("").focus();
+				return false;
+			}
+		}
+		$("#name").val("").focus();
+		alert("사용가능한 아이디 입니다.")
 	}
+	
+	function emailCheck() {
+		var emailArr = new Array();
+		<c:forEach var="item" items="${emailList}">
+			emailArr.push('${item}');
+		</c:forEach>
+		
+		for (let i = 0; i < emailArr.length; i++) {
+			if ($("#email").val() == emailArr[i]) {
+				alert("사용할 수 없는 이메일 입니다.");
+				$("#email").val("").focus();
+				return false;
+			}
+		}
+		$("#password").val("").focus();
+		alert("사용가능한 이메일 입니다.")
+	}
+	
+	/*
+	$("#idCheck").click(function() {
+		var idArr = new Array();
+		<c:forEach var="item" items="${list}">
+			idArr.push('${item}');
+		</c:forEach>
+		
+		for (let i = 0; i < idArr.length; i++) {
+			if ($("#id").val() == idArr[i]) {
+				alert("사용할 수 없는 아이디 입니다.")
+				$("#id".val("").focus())
+				return false;
+			}
+		}
+		alert("사용가능한 아이디 입니다.")
+		$("#password").focus();
+	});
+	*/
+	/*
+	$("#idCheck").click(function(){
+		var idArr = new Array();
+		<c:forEach var="item" items="${list}">
+			idArr.push( '${item}' );
+		</c:forEach>
+		for(var i = 0; i<idArr.length; i++){
+			if($("#id").val() == idArr[i]){
+				alert("중복된 아이디가 존재합니다.")
+				$("#id").val("").focus()
+				return false;
+			}
+		}
+		alert("중복된 아이디가 없습니다.")
+		$("#password").focus();
+		
+	})
+	*/
+	
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+    mapOption = {
+        center: new daum.maps.LatLng(), // 지도의 중심좌표
+        // level: 5 // 지도의 확대 레벨
+    };
+    var geocoder = new daum.maps.services.Geocoder();
+    function findPost() {
+    new daum.Postcode({
+        oncomplete: function(data) {
+           // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+           // 도로명 주소의 노출 규칙에 따라 주소를 조합한다.
+           // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+           var fullRoadAddr = data.roadAddress; // 도로명 주소 변수
+           var extraRoadAddr = ''; // 도로명 조합형 주소 변수
+
+           // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+           // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+           if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+               extraRoadAddr += data.bname;
+           }
+           // 건물명이 있고, 공동주택일 경우 추가한다.
+           if(data.buildingName !== '' && data.apartment === 'Y'){
+              extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+           }
+           // 도로명, 지번 조합형 주소가 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+           if(extraRoadAddr !== ''){
+               extraRoadAddr = ' (' + extraRoadAddr + ')';
+           }
+           // 도로명, 지번 주소의 유무에 따라 해당 조합형 주소를 추가한다.
+           if(fullRoadAddr !== ''){
+               fullRoadAddr += extraRoadAddr;
+           }
+           
+           
+           document.getElementById('postNo').value = data.zonecode; //5자리 새우편번호 사용
+           document.getElementById('roadAddr').value = fullRoadAddr;
+
+           geocoder.addressSearch(data.address, function(results, status) {
+                // 정상적으로 검색이 완료됐으면
+                if (status === daum.maps.services.Status.OK) {
+
+                    var result = results[0]; //첫번째 결과의 값을 활용
+
+                    // 해당 주소에 대한 좌표를 받아서
+                    var coords = new daum.maps.LatLng(result.y, result.x);
+                    
+                    document.getElementById("positionX").value = result.x;
+                    document.getElementById("positionY").value = result.y;
+                    // // 지도를 보여준다.
+                    // mapContainer.style.display = "block";
+                    // map.relayout();
+                    // // 지도 중심을 변경한다.
+                    // map.setCenter(coords);
+                    // // 마커를 결과값으로 받은 위치로 옮긴다.
+                    // marker.setPosition(coords)
+                }
+            });
+        }
+    }).open();
+}
+	
 </script>
 </body>
 </html>

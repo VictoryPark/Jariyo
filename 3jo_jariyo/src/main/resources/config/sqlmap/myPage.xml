@@ -15,27 +15,55 @@
 		<result column="position_x" property="positionX"/>
 		<result column="position_y" property="positionY"/>
 		<result column="birth_date" property="birthDate"/>
-		<result column="hobby" property="hobby"/>
 		<result column="team_name" property="teamName"/>
 		<result column="profile_img_real" property="profileImgReal"/>
 		<result column="profile_img_sys" property="profileImgSys"/>
+		<result column="log_on" property="logOn"/>
 	</resultMap>
 	
+	<resultMap type="TestBooking" id="bookingMap">
+		<result column="id" property="id"/>
+		<result column="place_no" property="placeNo"/>
+		<result column="booking_date" property="bookingDate"/>
+		<result column="start_time" property="startTime"/>
+		<result column="end_time" property="endTime"/>
+	</resultMap>
+	
+	<resultMap type="TestPlace" id="placeMap">
+		<result column="place_no" property="placeNo"/>
+		<result column="place_name" property="placeName"/>
+	</resultMap>
+	
+	<!-- 회원정보 수정 -->
 	<update id="updateMyInfo" parameterType="Member">
 		update jariyo_member
-		   set name = #{name},
+		   set id = #{id},
+		       name = #{name},
+		       email = #{email},
 		       password = #{password},
+		       phone_no = #{phoneNo},
 		       post_no = #{postNo},
 		       road_addr = #{roadAddr},
 		       detail_addr = #{detailAddr},
 		       position_x = #{positionX},
 		       position_y = #{positionY},
-		       birth_date = #{birth_date},
-		       hobby = #{hobby},
-		       team_name = #{team_name},
+		       birth_date = #{birthDate},
+		       team_name = #{teamName},
 		       profile_img_real = #{profileImgReal},
 		       profile_img_sys = #{profileImgSys}
 		 where id = #{id}
 	</update>
 	
+	<!-- 내가 예약한 내역 출력 중 첫 번째로 -->
+	<select id="selectMyBooking" parameterType="string" resultMap="bookingMap">
+		select *
+		  from t_booking
+		 where id = #{id}
+	</select>
+	
+	<select id="selectPlaceName" parameterType="int" resultMap="placeMap">
+		select *
+		  from t_place
+		 where place_no = #{placeNo}
+	</select>
 </mapper>

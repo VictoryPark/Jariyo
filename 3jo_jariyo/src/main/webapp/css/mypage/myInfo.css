@@ -18,7 +18,7 @@ input[type="password"] {
   box-sizing: border-box;
   margin-bottom: 20px;
   padding: 4px;
-  width: 220px;
+  width: 350px;
   height: 22px;
   border: none;
   border-bottom: 1px solid #AAA;
@@ -31,14 +31,14 @@ input[type="password"] {
 .select {
   box-sizing: border-box;
   border: none;
-  width: 300px;
+  width: 100%;
   margin-bottom: 20px;
   padding-bottom: 5px;
   padding-top: 5px;
   border-bottom: 1px solid #AAA;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 12px;
   transition: 0.2s ease;
 }
 
@@ -105,11 +105,25 @@ div.right {
 }
 .searchAddr {
     position: absolute;
-    font-size: 8px;
-    width: 50px;
-    left: 24%;
-    bottom: 34%;
+    font-size: 12px;
+    height: 7%;
+    width: 8%;
+    left: 33%;
+    bottom: 41%;
 }
 span {
 	font-size: 13px;
+}
+
+input[type="file"] {
+	width: 100%;
+	font-size: 14px;
+}
+.profile-img {
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 20px;
+    background-position: center;
+    background-size: cover;
 }

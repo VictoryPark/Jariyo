@@ -14,10 +14,10 @@
 		<result column="position_x" property="positionX"/>
 		<result column="position_y" property="positionY"/>
 		<result column="birth_date" property="birthDate"/>
-		<result column="hobby" property="hobby"/>
 		<result column="team_name" property="teamName"/>
 		<result column="profile_img_real" property="profileImgReal"/>
 		<result column="profile_img_sys" property="profileImgSys"/>
+		<result column="log_on" property="logOn"/>
 	</resultMap>
 	
 	<insert id="insertMember" parameterType="Member">
@@ -31,6 +31,8 @@
 			post_no,
 			road_addr,
 			detail_addr,
+			position_x,
+			position_y,
 			birth_date
 		) values (
 			s_jmember_no.nextval,
@@ -42,7 +44,21 @@
 			#{postNo},
 			#{roadAddr},
 			#{detailAddr},
+			#{positionX},
+			#{positionY},
 			#{birthDate}
 		)	
 	</insert>
+	
+	<!-- 아이디 중복체크 -->
+	<select id="selectCheckId" resultType="string">
+		select id
+		  from jariyo_member
+	</select>
+	
+	<!-- 이메일 중복체크 -->
+	<select id="selectCheckEmail" resultType="string">
+		select email
+		  from jariyo_member
+	</select>
 </mapper>

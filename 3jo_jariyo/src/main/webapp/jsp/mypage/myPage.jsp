@@ -16,14 +16,12 @@
 	  <article>
         <aside class="left">
 	      <div class="user-profile">
-				<img class="avatar" src="../../img/mypage/real.jpg" />
-			    <div class="username">정인용</div>
+				<div class="profile-img" style="background-image: url('/3jo_jariyo/img/mypage/${user.profileImgSys}');"></div>
+			    <div class="username">${ user.name }</div>
 			  <div class="bio">
 			  	
 			  </div>
-			    <div class="description">
-			    난 축구가 좋아! ㅎㅎ 
-			  </div>
+			    <div class="description">${ user.teamName }</div>
 			  <ul class="data">
 			    <li>
 			      <a class="my-profile" href="myInfo.jsp"><span class="entypo-heart"> 내정보</span></a>
@@ -42,13 +40,13 @@
 	    			<table class="nice-border">
 		    			<tr>
 						    <th>시설</th>
+						    <th>날짜</th>
 						    <th>시간</th>
-						    <th>예약자</th>
 					    </tr>
 					    <tr>
-						    <td>서초초등학교</td>
-						    <td>18:00 ~ 20:00</td>
-						    <td>LeeDJ</td>
+						    <td>${ bList.placeNo }</td>
+						    <td>${ bList.bookingDate }</td>
+						    <td>${ bList.startTime + bList.endTime }</td>
 					    </tr>
 					    <tr>
 						    <td>서원초등학교</td>

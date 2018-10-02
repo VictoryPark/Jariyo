@@ -15,16 +15,38 @@
 		<result column="position_x" property="positionX"/>
 		<result column="position_y" property="positionY"/>
 		<result column="birth_date" property="birthDate"/>
-		<result column="hobby" property="hobby"/>
 		<result column="team_name" property="teamName"/>
 		<result column="profile_img_real" property="profileImgReal"/>
 		<result column="profile_img_sys" property="profileImgSys"/>
+		<result column="log_on" property="logOn"/>
 	</resultMap>
-
+	
+	<!-- 로그인하기 -->
 	<select id="selectMemberInfo" parameterType="Member" resultMap="memberMap">
 		select *
 		  from jariyo_member
 		 where email = #{email}
 		   and password = #{password}
+	</select>
+	
+	<!-- 로그인한 id찾아서 로그인 했다고 표시하기. -->
+	<update id="updateLogonToIn" parameterType="string">
+		update jariyo_member
+		   set log_on = 'y'
+		 where email = #{email}
+	</update>
+	
+	<!-- 로그아웃 -->
+	<update id="updateLogonToOut">
+		update jariyo_member
+		   set log_on = 'n'
+		 where log_on = 'y'
+	</update>
+	
+	<!-- 로그인된 id 찾기 -->
+	<select id="selectLogon" resultType="string">
+		select id
+		  from jariyo_member
+		 where log_on = 'y'
 	</select>
 </mapper>

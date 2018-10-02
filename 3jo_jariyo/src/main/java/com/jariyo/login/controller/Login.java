@@ -27,8 +27,6 @@ public class Login extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		
-		System.out.println(email);
-		
 		LoginMapper mapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(LoginMapper.class);
 		
 		Member member = new Member();
@@ -36,9 +34,8 @@ public class Login extends HttpServlet {
 		member.setEmail(email);
 		member.setPassword(password);
 		
-		
 		Member login = mapper.selectMemberInfo(member);
-		System.out.println(login);
+		mapper.updateLogonToIn(email);
 		if (login == null) {
 			response.sendRedirect(request.getContextPath() + "/login-form");
 			return;
