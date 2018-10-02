@@ -2,5 +2,66 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jariyo.repository.mapper.MsgMapper"> <!-- 루트태그 -->
+
+	<resultMap id="MsgMap" type="Msg" >
+		<result column="msg_no" property="msgNo"></result>
+		<result column="id" property="id"></result>
+		<result column="id2" property="id2"></result>
+		<result column="msg_from_to" property="msgFromTo"></result>
+		<result column="from_name" property="fromName"></result>
+		<result column="content" property="content"></result>
+		<result column="title" property="title"></result>
+		<result column="trash" property="trash"></result>
+		<result column="reg_date" property="regDate"></result>
+		<result column="to_name" property="toName"></result>
+		
+	</resultMap>
+	
+	<!-- 전체 목록 가져오기 -->
+	<select id ="selectMsg" resultMap="MsgMap">
+	select *
+	from jariyo_message
+	order by msg_no desc
+	<!--  where id = #{} --> 
+	</select>
+	
+	<insert id="insertMsg" parameterType="Msg">
+	insert into jariyo_message(
+	no, kind, from_name, title, reg_date
+				)values(
+			s_jariyo_no.nextval, #{kind}, #{fromName}, #{title},#{regDate}
+			)
+	</insert>
+	
+<!-- 	<insert id="insertMsg" parameterType="Msg">
+	insert into jariyo_message(
+	no, id, id2, msg_from_to,from_name,content, title,trash, reg_date, to_name, kind
+				)values(
+			s_jariyo_no.nextval,#{id},#{id2},#{msgFromTo},#{content},#{title},#{regDate}.#{toName}, #{kind}
+			)
+	</insert> -->
+	
+	<select id = "selectMsgByNo" parameterType = "int" resultMap ="MsgMap" >
+   	 select * 
+	 from jariyo_message
+	 where no = #{no} 
+    </select>
+    
+	<select id = "selectdelMsg" parameterType = "int" resultMap ="MsgMap" >
+   	 select * 
+	 from jariyo_message
+	 where trash = #{2} 
+    </select>
+    
+    <delete id ="deleteMsg" parameterType = "int">
+    delete jariyo_message 
+     where no = #{no}
+    </delete>
+    
+  <!--      <send id = "sendMsg" parameterType = "Msg">
+    send jariyo_message set title = #{title}
+     content = #{content} 
+      where no = #{no} 
+    </send> -->
 	
 </mapper>

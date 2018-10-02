@@ -20,29 +20,45 @@
 	border : 1px solid black; 
 }
 table,tr,th{
+
 	border: 1px solid black;
 
 }
 #write{
 	width:100%;
 }
+ textarea.w100 { 
+ width:99%; 
+ height:99%; 
+ } 
+ textarea.title { 
+ width:99%; 
+
+ } 
+ textarea.reciver { 
+ width:99%; 
+ 
+ } 
 
 </style>
 <body>
-
+	<header>
+	    <h1>
+	      자리Y<img id="ball" src="ball-icon.gif" width="58px"/>
+	    </h1>
 	    <center>
 	  <table id="htable">
 				
-	 			<th> <a href="messagelist.jsp">받은쪽지함</a>&nbsp</th>
+	 			<th> <a href="remsglist.jsp">받은쪽지함</a>&nbsp</th>
 	  		
 	  		
-	  			<th><a href="sendlist.jsp">보낸쪽지함</a>&nbsp</th>
+	  			<th><a href="semsglist.jsp">보낸쪽지함</a>&nbsp</th>
 	  		
 	  	
-	 			<th> <a href="extralist.jsp">임시보관함</a>&nbsp</th>
+	 			<!-- <th> <a href="extralist.jsp">임시보관함</a>&nbsp</th> -->
 	  	
 	  	
-	  			<th><a href="deletelist.jsp">휴지통</a>&nbsp</th>
+	  			<th><a href="delmsglist.jsp">휴지통</a>&nbsp</th>
 	  	
 	  </table>
 	    </center>
@@ -62,12 +78,13 @@ table,tr,th{
 			    <h2 id="cap">쪽지 쓰기</h2>
 		 		
 			    
+				     <form action= "writemsg.do" method="post">
 				     <tr>
 				     	<th> 
 				   		  받는 사람
 				    	</th>
 				     	<th>
-				  		  <textarea name="reciver" rows=1 cols=80></textarea>
+				  		  <textarea class="reciver" name="toName"rows=1 cols=60></textarea>
 				   		</th>
 				   		</tr>
 				   		 <tr>
@@ -75,7 +92,7 @@ table,tr,th{
 				   		  제목
 				    	</th>
 				     	<th>
-				  		  <textarea name="title" rows=1  cols=80></textarea>
+				  		  <textarea class="title" name="title"rows=1  cols=60></textarea>
 				   		</th>
 				   		</tr>
 				   	 <tr>
@@ -83,7 +100,7 @@ table,tr,th{
 				  		  내용
 				   		</th>
 				    	<th> 
-				   		 <textarea name="contents" rows=20 cols=80></textarea>
+				   		 <textarea class="w100" name="content" rows=20 cols=60></textarea>
 				   		</th>
 				     	</tr>
 				    
@@ -92,9 +109,9 @@ table,tr,th{
 		 	</p>
 		    <p>
 		 	</p>
-		    <a href="messagelist.jsp"><button>보내기</button></a>
-		    <a href="messagelist.jsp"><button>취소</button></a>
-		    <a href="extralist.jsp"><button>임시저장</button></a>
+		    <button>보내기</button>
+		   </form>
+		    <a href="<c:url value="/msg/remsglist.do"/>"><button>취소</button></a>
 			    </center>
 	    </section>
 	  

@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
+</head>
 <style>
 #htable{
 	width:100%;hight: 100%;
@@ -29,26 +30,24 @@ table tr:hover{
 }
 	
 </style>
-
-</head>
-
-
 <body>
 	<header>
-	    
+	    <h1>
+	      자리Y<img id="ball" src="ball-icon.gif" width="58px"/>
+	    </h1>
 	    <center>
 	  <table id="htable">
 			
 	 			<th> <a href="messagelist.jsp">받은쪽지함</a>&nbsp</th>
 	  		
 	  		
-	  			<th><a href="sendlist.jsp">보낸쪽지함</a>&nbsp</th>
+	  			<th><a href=#>보낸쪽지함</a>&nbsp</th>
 	  		
 	  	
-	 			<th> <a href="extralist.jsp">임시보관함</a>&nbsp</th>
+	 			<!-- <th> <a href="extralist.jsp">임시보관함</a>&nbsp</th> -->
 	  	
 	  	
-	  			<th><a href=#>휴지통</a>&nbsp</th>
+	  			<th><a href="deletelist.jsp">휴지통</a>&nbsp</th>
 	  	
 	  </table>
 	    </center>
@@ -58,7 +57,7 @@ table tr:hover{
 	
 	    
 	    <section>
-	    <h2>휴지통</h2>
+	    <h2>보낸 쪽지함</h2>
 	    <center>
 	     <p> 
 		 </p>  
@@ -73,7 +72,7 @@ table tr:hover{
 				   		  분류
 				    	</th>
 				     	<th>
-				  		  보낸사람
+				  		 받은사람
 				   		</th>
 				     	<th> 
 				  		  내용
@@ -127,7 +126,7 @@ table tr:hover{
 				   		 용병 신청
 				    	</th>
 				     	<th>
-				  		  이득재
+				  		 이득재
 				   		</th>
 				     	<th> 
 				  		  자리 있나요?
@@ -250,6 +249,9 @@ table tr:hover{
 	    </aside>
 	  </article>
 	</main>
+	<footer>
+	    <p>Footer</p>
+	</footer>
 
 </body>
 </html>

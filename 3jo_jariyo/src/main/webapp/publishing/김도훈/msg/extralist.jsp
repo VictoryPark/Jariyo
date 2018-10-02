@@ -32,17 +32,19 @@ table tr:hover{
 </style>
 <body>
 	<header>
-	    
+	    <h1>
+	      자리Y<img id="ball" src="ball-icon.gif" width="58px"/>
+	    </h1>
 	    <center>
 	  <table id="htable">
 			
-	 			<th> <a href=#>받은쪽지함</a>&nbsp</th>
+	 			<th> <a href="messagelist.jsp">받은쪽지함</a>&nbsp</th>
 	  		
 	  		
 	  			<th><a href="sendlist.jsp">보낸쪽지함</a>&nbsp</th>
 	  		
 	  	
-	 			<th> <a href="extralist.jsp">임시보관함</a>&nbsp</th>
+	 		<!-- 	<th> <a href=#>임시보관함</a>&nbsp</th> -->
 	  	
 	  	
 	  			<th><a href="deletelist.jsp">휴지통</a>&nbsp</th>
@@ -55,7 +57,7 @@ table tr:hover{
 	
 	    
 	    <section>
-	    <h2>받은 쪽지함</h2>
+	    <h2>임시보관함</h2>
 	    <center>
 	     <p> 
 		 </p>  
@@ -63,14 +65,14 @@ table tr:hover{
 		 </p>  
 			    <table id="msglist">
 				     <tr id="title">
-				     	<th>
+				     <th>
 				     	<input type="checkbox">
 				     	</th>
 				     	<th> 
 				   		  분류
 				    	</th>
 				     	<th>
-				  		  보낸사람
+				  		  받는사람
 				   		</th>
 				     	<th> 
 				  		  내용
@@ -88,7 +90,7 @@ table tr:hover{
 				   		 용병모집
 				    	</th>
 				     	<th>
-				  		  박아란
+				  		  
 				   		</th>
 				     	<th> 
 				  		  여기 자리요
@@ -106,7 +108,7 @@ table tr:hover{
 				   		 용병모집
 				    	</th>
 				     	<th>
-				  		  박아란
+				  		  
 				   		</th>
 				     	<th> 
 				  		  여기 자리요
@@ -142,7 +144,7 @@ table tr:hover{
 				   		 용병모집
 				    	</th>
 				     	<th>
-				  		정인용
+				  		
 				   		</th>
 				     	<th> 
 				  		 같이 한게임 뛰어요
@@ -194,7 +196,7 @@ table tr:hover{
 				   		팀매칭
 				    	</th>
 				     	<th>
-				  		조용제
+				  		
 				   		</th>
 				     	<th> 
 				  		물값 내기하시죠
@@ -234,7 +236,7 @@ table tr:hover{
 		    <a href=#4>4</a>   
 		    <a href=#5>5</a>   
 		    <a href=#1 >></a>
-		    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="write.jsp">쪽지쓰기</a>&nbsp&nbsp&nbsp<a href=#><button>삭제하기</button></a>
+		    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="write.jsp"><button>쪽지쓰기</button></a>&nbsp&nbsp&nbsp<a href=#><button>삭제하기</button></a>
 		    </p>  
 		    <input type="text" width=8 hight=1><button>검색</button>
 			    </center>
@@ -247,6 +249,9 @@ table tr:hover{
 	    </aside>
 	  </article>
 	</main>
+	<footer>
+	    <p>Footer</p>
+	</footer>
 
 </body>
 </html>
