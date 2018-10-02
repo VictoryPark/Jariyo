@@ -27,36 +27,35 @@ public class MainpageController extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//용병신청 테이블
-		ManVolunMapper manVmapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(ManVolunMapper.class);
-		// 데이터베이스 게시물 목록 가져오기
-		List<ManVolun> manvolunlist =  manVmapper.selectBoard();
-		
-		// 준비된 데이터를 공유
-		request.setAttribute("manvolunlist", manvolunlist);
+//		//용병신청 테이블
+//		ManVolunMapper manVmapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(ManVolunMapper.class);
+//		// 데이터베이스 게시물 목록 가져오기
+//		List<ManVolun> manvolunlist =  manVmapper.selectBoard();
+//		
+//		// 준비된 데이터를 공유
+//		request.setAttribute("manvolunlist", manvolunlist);
 		
 		//용병모집 테이블
 		ManGatherMapper manGmapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(ManGatherMapper.class);
 		// 데이터베이스 게시물 목록 가져오기
-		List<ManGather> mangatlist =  manGmapper.selectBoard();
-		
+		List<ManGather> mangatlist =  manGmapper.selectManGather();
 		// 준비된 데이터를 공유
-		request.setAttribute("mangatherlist", mangatlist);
+		request.setAttribute("mangatlist", mangatlist);
 		
-		//팀구해요 테이블
-		TeamMatchingMapper teamMapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(TeamMatchingMapper.class);
-		// 데이터베이스 게시물 목록 가져오기
-		List<TeamMatching> teamlist =  teamMapper.selectBoard();
-		
-		// 준비된 데이터를 공유
-		request.setAttribute("teamlist", teamlist);
-		
-		// 시설정보 테이블 접근
-		PlaceMapper placeMapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(PlaceMapper.class);
-		// 게시물 목록 가져오기
-		List<Place> placelist = placeMapper.selectBoard();
-		// 준비된 데이터를 공유
-		request.setAttribute("placelist", placelist);
+//		//팀구해요 테이블
+//		TeamMatchingMapper teamMapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(TeamMatchingMapper.class);
+//		// 데이터베이스 게시물 목록 가져오기
+//		List<TeamMatching> teamlist =  teamMapper.selectBoard();
+//		
+//		// 준비된 데이터를 공유
+//		request.setAttribute("teamlist", teamlist);
+//		
+//		// 시설정보 테이블 접근
+//		PlaceMapper placeMapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(PlaceMapper.class);
+//		// 게시물 목록 가져오기
+//		List<Place> placelist = placeMapper.selectBoard();
+//		// 준비된 데이터를 공유
+//		request.setAttribute("placelist", placelist);
 		
 		//대회정보 테이블 접근
 		// 데이터베이스 게시물 목록 가져오기
@@ -65,7 +64,6 @@ public class MainpageController extends HttpServlet {
 		// 공유가 되었다면 페이지를 이동
 		RequestDispatcher rd = request.getRequestDispatcher("/jsp/main/mainpage.jsp");
 		rd.forward(request, response);
-		
 		
 		
 	}

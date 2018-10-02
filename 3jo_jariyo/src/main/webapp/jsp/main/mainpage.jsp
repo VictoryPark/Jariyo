@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../../css/common/headerfooter.css" />
+<link rel="stylesheet" href="/3jo_jariyo/css/common/headerfooter.css" />
 <style>
 A:link {
 	text-decoration: none;
@@ -81,10 +81,10 @@ A:hover {
 </head>
 
 <body>
-	<c:import url="../common/mainbarheader.jsp" />
+	<c:import url="/jsp/common/mainbarheader.jsp" />
 	<main>
 	<div class="search_box">
-		<form action="" method="post">
+		<form action="/3jo_jariyo/board/searchresult.do" method="get">
 			<select class="custom-select-sm">
 				<option value="1">공공시설</option>
 				<option value="2">체육관</option>
@@ -93,10 +93,11 @@ A:hover {
 				<option value="5">농구장</option>
 				<option value="6">축구장</option>
 				<option value="7">테니스장</option>
-			</select> <input type="date" class="form-control-sm" name="startDate" /> <input
-				type="date" class="form-control-sm" name="endDate" /> <input
-				type="text" placeholder="지역/시설을 입력하세요" name="searchWord" />
-			<button type="button" onclick="location.href='/3jo_jariyo/jsp/searchresult/defaultsearch.jsp'">검색</button>
+			</select> <input type="date" class="form-control-sm"/>
+			<input type="date" class="form-control-sm"/>
+			<input type="text" placeholder="지역/시설을 입력하세요" name="searchword" />
+			<button>검색</button>
+<!-- 			<button type="button" onclick="location.href='/3jo_jariyo/jsp/searchresult/defaultsearch.jsp'">검색</button> -->
 		</form>
 	</div>
 	<br>
@@ -136,17 +137,13 @@ A:hover {
 				<table>
 					<tr>
 						<td>
-							<ul>
-								<%-- <c:forEach var="mg" items="${mangatlist}" begin="1" end="4"
-									varStatus="stat">
-									<li><a href='detailView.do?no=${mg.no}'>${mg.title}</a></li>
-								</c:forEach> --%>
-								<li>1시에 수원 월드컵 경기장 대타 한명 구합니다</li>
-								<li>월 12일 저녁에 풋살 경기 대타 가능하신분 구합니다...</li>
-								<li>월 12일 저녁에 풋살 경기 대타 가능하신분 구합니다...</li>
-								<li>1시에 수원 월드컵 경기장 대타 한명 구합니다</li>
-							</ul>
+						<ul>
+						<c:forEach var="mg" items="${mangatlist}">
+								<li><a href="#">${mg.title}</a></li>
+						</c:forEach>
+						</ul>
 						</td>
+					
 					</tr>
 				</table>
 			</div>
@@ -203,6 +200,6 @@ A:hover {
 		</div>
 	</div>
 	</main>
-	<c:import url="../common/mainbarfooter.jsp" />
+	<c:import url="/jsp/common/mainbarfooter.jsp" />
 </body>
 </html>
