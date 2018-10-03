@@ -16,7 +16,7 @@
 	  <article>
         <aside class="left">
 	      <div class="user-profile">
-				<div class="profile-img" style="background-image: url('/3jo_jariyo/img/mypage/${user.profileImgSys}');"></div>
+				<div class="profile-img" style="background-image: url('/3jo_jariyo/img/mypage/${user.profileImgName}');"></div>
 			    <div class="username">${ user.name }</div>
 			  <div class="bio">
 			  	
@@ -24,7 +24,7 @@
 			    <div class="description">${ user.teamName }</div>
 			  <ul class="data">
 			    <li>
-			      <a class="my-profile" href="myInfo.jsp"><span class="entypo-heart"> 내정보</span></a>
+			      <a class="my-profile" href="<c:url value="/myinfo-form"/>"><span class="entypo-heart"> 내정보</span></a>
 			    </li>
 			    <li>
 			      <a class="my-profile"  href="../msg/messagelist.jsp"><span class="entypo-eye"> 쪽지</span></a>
@@ -41,12 +41,6 @@
 		    			<tr>
 						    <th>시설</th>
 						    <th>날짜</th>
-						    <th>시간</th>
-					    </tr>
-					    <tr>
-						    <td>${ bList.placeNo }</td>
-						    <td>${ bList.bookingDate }</td>
-						    <td>${ bList.startTime + bList.endTime }</td>
 					    </tr>
 					    <tr>
 						    <td>서원초등학교</td>
@@ -62,75 +56,56 @@
 	    			<table class="nice-border">
 		    			<tr>
 						    <th>제목</th>
-						    <th>모집종료여부</th>
-						    <th>작성일</th>
+						    <th>시설이름</th>
+						    <th>이용날짜</th>
 					    </tr>
-					    <tr>
-						    <td>팀 구해요</td>
-						    <td>
-						        <input id="end" type="checkbox" name="endcheck" value="1" />
-	                			<label for="end"></label>
-						    </td>
-						    <td>2018-08-25</td>
-					    </tr>
-					    <tr>
-						    <td>9월 15일 20:00 ~ 22:00 하실 팀?</td>
-						    <td>
-						    	<input id="end" type="checkbox" name="endcheck" value="1" />
-	                			<label for="end"></label>
-						    </td>
-						    <td>2018-09-01</td>
-					    </tr>
+					    <c:forEach var="matchList" items="${matchList}">					    
+						    <tr>
+							    <td><c:out value="${matchList.title}"/></td>
+							    <td><c:out value="${matchList.placeName}"/></td>
+							    <td><c:out value="${matchList.playDate}"/></td>
+						    </tr>
+					    </c:forEach>
 	    			</table>
 		    	</div>
 		    	<div class="player-post">
 		    		<h2 class="nice">
-		    			내가 작성한 용병매칭
+		    			내가 작성한 용병모집
 		    		</h2>
 	    			<table class="nice-border">
 		    			<tr>
 						    <th>제목</th>
-						    <th>모집종료여부</th>
-						    <th>작성일</th>
+						    <th>팀이름</th>
+						    <th>경기날짜</th>
 					    </tr>
-					    <tr>
-						    <td>용병 구합니다.</td>
-						    <td>
-						        <input id="end" type="checkbox" name="endcheck" value="1" />
-	                			<label for="end"></label>
-						    </td>
-						    <td>2018-08-27</td>
-					    </tr>
-					    <tr>
-						    <td>9월 12일 야간 용병 한 분 구해요</td>
-						    <td>
-						    	<input id="end" type="checkbox" name="endcheck" value="1" />
-	                			<label for="end"></label>
-						    </td>
-						    <td>2018-09-10</td>
-					    </tr>
+					    <c:forEach var="gatherList" items="${gatherList}">					    
+						    <tr>
+							    <td><c:out value="${gatherList.title}"/></td>
+							    <td><c:out value="${gatherList.teamName}"/></td>
+							    <td><c:out value="${gatherList.playDate}"/></td>
+						    </tr>
+					    </c:forEach>
 	    			</table>
 		    	</div>
 		    	<div class="playground-score">
 		    		<h2 class="nice">
-		    			내가 평가한 시설
+		    			내가 작성한 용병신청
 		    		</h2>
 	    			<table class="nice-border">
 		    			<tr>
-						    <th>시설</th>
 						    <th>제목</th>
+						    <th>지역</th>
 						    <th>작성일</th>
 					    </tr>
-					    <tr>
-						    <td>서원초등학교</td>
-						    <td>역시 서원초등학교 뀼</td>
-						    <td>2018-08-28</td>
-					    </tr>
-					    <tr>
-						    <td>서초 초등학교</td>
-						    <td>운동장은 넓으나, 주차장이 협소..</td>
-						    <td>2018-09-14</td>
-					    </tr>
+					    <c:forEach var="volunList" items="${volunList}">					    
+						    <tr>
+							    <td><c:out value="${volunList.title}"/></td>
+							    <td><c:out value="${volunList.area}"/></td>
+							    <td><c:out value="${volunList.regDate}"/></td>
+						    </tr>
+					    </c:forEach>
+	    			</table>
+
 	    			</table>
 		    	</div>
 		    	<div class="player-score">

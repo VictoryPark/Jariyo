@@ -9,10 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.jariyo.common.db.MyAppSqlConfig;
-import com.jariyo.repository.domain.Member;
-import com.jariyo.repository.mapper.LoginMapper;
-
 @WebServlet("/myinfo-form")
 public class MyInfoForm extends HttpServlet {
 

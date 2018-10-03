@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jariyo.repository.mapper.MyPageMapper"> <!-- 루트태그 -->
+
 	<resultMap type="Member" id="memberMap">
 		<result column="no" property="no"/>
 		<result column="id" property="id"/>
@@ -20,7 +21,47 @@
 		<result column="profile_img_name" property="profileImgName"/>
 		<result column="log_on" property="logOn"/>
 	</resultMap>
-
+	
+	<resultMap type="TeamMatching" id="teamMatchingMap">
+		<result column="board_no" property="boardNo"/>
+		<result column="writer_id" property="writerId"/>
+		<result column="title" property="title"/>
+		<result column="content" property="content"/>
+		<result column="play_date" property="playDate"/>
+		<result column="team_name" property="teamName"/>
+		<result column="kindof_game" property="kindofGame"/>
+		<result column="area" property="area"/>
+		<result column="ave_age" property="aveAge"/>
+		<result column="place_name" property="placeName"/>
+		<result column="reg_date" property="regDate"/>
+		<result column="complete" property="complete"/>
+	</resultMap>
+	
+	<resultMap type="ManGather" id="manGatherMap">
+		<result column="board_no" property="boardNo"/>
+		<result column="writer_id" property="writerId"/>
+		<result column="kindof_game" property="kindofGame"/>
+		<result column="play_date" property="playDate"/>
+		<result column="area" property="area"/>
+		<result column="title" property="title"/>
+		<result column="content" property="content"/>
+		<result column="team_name" property="teamName"/>
+		<result column="ave_age" property="aveAge"/>
+		<result column="place_addr" property="placeAddr"/>
+		<result column="reg_date" property="regDate"/>
+		<result column="complete" property="complete"/>
+	</resultMap>
+	
+	<resultMap type="ManVolun" id="manVolunMap">
+		<result column="board_no" property="boardNo"/>
+		<result column="writer_id" property="writerId"/>
+		<result column="title" property="title"/>
+		<result column="content" property="content"/>
+		<result column="kindof_game" property="kindofGame"/>
+		<result column="career" property="career"/>
+		<result column="area" property="area"/>
+		<result column="reg_date" property="regDate"/>
+	</resultMap>
 	
 	<!-- 회원정보 수정 -->
 	<update id="updateMyInfo" parameterType="Member">
@@ -42,4 +83,24 @@
 		 where id = #{id}
 	</update>
 	
+	<!-- 내가 작성한 경기매칭 게시글 -->
+	<select id="selectMyTeamMatching" parameterType="string" resultMap="teamMatchingMap">
+		select title, place_name, play_date
+		  from jariyo_matching
+		 where writer_id = #{writerId}
+	</select>
+	
+	<!-- 내가 작성한 용병모집 게시글 -->
+	<select id="selectMyManGather" parameterType="string" resultMap="manGatherMap">
+		select title, team_name, play_date
+		  from jariyo_mangather
+		 where writer_id = #{writerId}
+	</select>
+	
+	<!-- 내가 작성한 용병신청 게시글 -->
+	<select id="selectMyManVolun" parameterType="string" resultMap="manVolunMap">
+		select title, area, reg_date
+		  from jariyo_manvolunteer
+		 where writer_id = #{writerId}
+	</select>
 </mapper>

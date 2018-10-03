@@ -23,13 +23,13 @@
 	  <article>
         <aside class="left">
 	      <div class="user-profile">
-				<div class="profile-img" style="background-image: url('/3jo_jariyo/img/mypage/${user.profileImgSys}');"></div>
+				<div class="profile-img" style="background-image: url('/3jo_jariyo/img/mypage/${user.profileImgName}');"></div>
 			    <div class="username">${ user.name }</div>
 			  <div id="map"></div>
 			    <div class="description">${ user.teamName }</div>
 			  <ul class="data">
 			    <li>
-			      <a class="my-profile" href="myInfo.jsp"><span class="entypo-heart"> 내정보</span></a>
+			      <a class="my-profile" href="<c:url value="/myinfo-form"/>"><span class="entypo-heart"> 내정보</span></a>
 			    </li>
 			    <li>
 			      <a class="my-profile"  href="../msg/messagelist.jsp"><span class="entypo-eye"> 쪽지</span></a>
@@ -195,7 +195,7 @@
     		
     		<span>프로필 사진 설정 : </span>
     		<div>
-    			<input type="file" name="profileImg" id="profile" title="${user.profileImgName }" />
+    			<input type="file" name="profileImg" id="profile" title="${user.profileImgSys }" />
     		</div>
 		</div>
 		</form>
