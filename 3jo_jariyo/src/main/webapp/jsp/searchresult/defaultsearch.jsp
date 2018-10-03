@@ -17,7 +17,7 @@
 	<article>
 	<aside>
 	<div>
-		<form action="/board/searchresult.do" method="post">
+		<form action="/3jo_jariyo/jariyo/searchresult.j" method="post">
 			<div>
 				<h4>검색</h4>
 			</div>
@@ -44,7 +44,7 @@
 	<section>
 	<div id="container">
 			<ul class="tablist" role="tablist">
-				<!-- <li class="tab" role="tab"><a href="#panel1">거리순</a></li> -->
+				<li class="tab" role="tab"><a href="#panel1">거리순</a></li>
 				<li class="tab" role="tab"><a href="#panel2">요금순</a></li>
 				<li class="tab" role="tab"><a href="#panel3">별점순</a></li>
 				<li class="tab-menu">
@@ -55,65 +55,31 @@
 			</ul>
 			<div class="tabpanel" id="panel1" role="tabpanel">
 				<div id="pan11">
-				<%-- <c:forEach var="distance" items="${placeDistancelist}" begin="1" end="8"
-					varStatus="stat">
+				<c:forEach var="distance" items="${distancelistresult}" begin="0" end="7">
 					<div class="searchcontent">
 						<h3>
-							<a href="detail.jsp">서초구 서초초등학교</a>	//distance.place_name
+							<a href="/3jo_jariyo/jariyo/detailView.j?no=${distance.placeNo}">${distance.placeName}</a>
 						</h3>
-						<div>시설 주소 : 서울특별시 서초구 서운로 178</div>	//distance.place_detail_addr
-						<div>시설종류 : 공공시설</div>						//distance.
-						<!-- 시설도로명주소 + 상세주소 -->
-						<div>시설 연락처 : 0212345678</div>					// distance.phone_no
-						<button type="button" onclick="">상세보기</button>	
+						<div>시설 주소 : ${distance.placeRoadAddr}</div>
+						<div>연락처 : ${distance.placePhoneNo}</div>
+						<button type="button" onclick="location.href='/3jo_jariyo/jariyo/detailView.j?no=${distance.placeNo}'">상세보기</button>
 						<hr>
 					</div>
-				</c:forEach> --%>
-				<div id="searchcontent">
-						<h3>
-							<a href="detail.jsp">운정건강공원1 축구장/테니스장</a>
-						</h3>
-						<div>시설 주소 : 경기도 파주시 와석순환로 198</div><!-- 시설도로명주소 + 상세주소 -->
-						<div>시설종류 : 축구장</div>
-						<div>시설 연락처 : 0212345678</div>
-						<button type="button" onclick="">상세보기</button>
-						<hr>
-					</div>
-				</div>
-				<div id="pan12">
-					<div id="searchcontent">
-						<h3>
-							<a href="detail.jsp">이천시 종합운동장 주경기장</a>
-						</h3>
-						<div>시설 주소 : 서울특별시 서초구 서운로 178</div><!-- 시설도로명주소 + 상세주소 -->
-						<div>시설 연락처 : 0212345678</div>
-						<button type="button" onclick="">상세보기</button>
-						<hr>
-					</div>
-				</div>
-				<div id="pan13">
-					<div id="searchcontent">
-						<h3>
-							<a href='/board/detailView.do?no=${b.no}'>서초구 서초초등학교</a>
-						</h3>
-						<div>시설 주소 : 서울특별시 서초구 서운로 178</div><!-- 시설도로명주소 + 상세주소 -->
-						<div>시설 연락처 : 0212345678</div>
-						<button type="button" onclick="">상세보기</button>
-					</div>
+				</c:forEach>
+				
 				</div>
 			</div>
 		<div class="tabpanel" id="panel2" role="tabpanel">
 			<div id="pan21">
-				<c:forEach var="charge" items="${chargelistresult}" begin="1"
-					end="8">
+				<c:forEach var="charge" items="${chargelistresult}" begin="0" end="7">
 					<div id="searchcontent">
 						<h3>
-							<a href="/3jo_jariyo/board/detailView.do?no=${charge.placeNo}">${charge.placeName}</a>
+							<a href="/3jo_jariyo/jariyo/detailView.j?no=${charge.placeNo}">${charge.placeName}</a>
 						</h3>
 						<div>시설 주소 : ${charge.placeRoadAddr}</div>
 						<div>연락처 : ${charge.placePhoneNo}</div>
 						<button type="button"
-							onclick="location.href='/3jo_jariyo/board/detailView.do?no=${charge.placeNo}'">상세보기</button>
+							onclick="location.href='/3jo_jariyo/jariyo/detailView.j?no=${charge.placeNo}'">상세보기</button>
 						<hr>
 					</div>
 				</c:forEach>
@@ -121,14 +87,14 @@
 		</div>
 		<div class="tabpanel" id="panel3" role="tabpanel">
 				<div id="pan31">
-				<c:forEach var="star" items="${placePointlist}" begin="1" end="8">
+				<c:forEach var="star" items="${placePointlist}" begin="0" end="7">
 					<div class="searchcontent">
 						<h3>
-							<a href="/3jo_jariyo/board/detailView.do?no=${star.placeNo}">${star.placeName}</a>
+							<a href="/3jo_jariyo/jariyo/detailView.j?no=${star.placeNo}">${star.placeName}</a>
 						</h3>
 						<div>시설 주소 : ${star.placeRoadAddr}</div>
 						<div>시설 연락처 : ${star.placePhoneNo}</div>
-						<button type="button" onclick="location.href='/3jo_jariyo/board/detailView.do?no=${star.placeNo}'">상세보기</button>	
+						<button type="button" onclick="location.href='/3jo_jariyo/jariyo/detailView.j?no=${star.placeNo}'">상세보기</button>	
 						<hr>
 					</div>
 				</c:forEach>
@@ -170,7 +136,6 @@
 				for (var i = tabs.length - 1; i >= 0; i--) {
 					tabs[i].addEventListener('click', activateTab, false);
 				}
-	
 			})();
 		</script>
 </body>

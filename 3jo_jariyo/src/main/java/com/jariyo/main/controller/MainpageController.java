@@ -51,12 +51,12 @@ public class MainpageController extends HttpServlet {
 		// 준비된 데이터를 공유
 		request.setAttribute("teamlist", teamlist);
 		
-//		// 시설정보 테이블 접근
-//		PlaceMapper placeMapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(PlaceMapper.class);
-//		// 게시물 목록 가져오기
-//		List<Place> placelist = placeMapper.PlaceList();
-//		// 준비된 데이터를 공유
-//		request.setAttribute("placelist", placelist);
+		// 시설정보 테이블 접근
+		PlaceMapper placeMapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(PlaceMapper.class);
+		// 게시물 목록 가져오기
+		List<Place> placelist = placeMapper.PlaceList();
+		// 준비된 데이터를 공유
+		request.setAttribute("placelist", placelist);
 		
 		//대회정보 테이블 접근
 		// 데이터베이스 게시물 목록 가져오기

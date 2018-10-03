@@ -14,12 +14,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.jariyo.common.db.MyAppSqlConfig;
+import com.jariyo.repository.domain.Member;
 import com.jariyo.repository.domain.Place;
 import com.jariyo.repository.mapper.SearchResultMapper;
 
 
 
-@WebServlet("/board/searchresult.do")
+
+@WebServlet("/jariyo/searchresult.j")
 public class SearchResultController extends HttpServlet {
 
 	@Override
@@ -32,11 +34,12 @@ public class SearchResultController extends HttpServlet {
 		String searchWord = request.getParameter("searchword");
 		
 		// 서블릿에서 세션 얻어오기(서버에서 만들어진것을 가져오는것)
-//		HttpSession session = request.getSession();
-		
-//		float mx = session.getpositionX();
-		double mx = 127.0292;
-		double my = 37.4995;
+		HttpSession session = request.getSession();
+		Member user = (Member)session.getAttribute("user");
+		double mx = user.getPositionX();
+		double my = user.getPositionY();
+//		double mx = 127.0843802;
+//		double my = 37.5569892;
 		
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("mx", mx);
@@ -49,7 +52,8 @@ public class SearchResultController extends HttpServlet {
 	 	List<Place> chargelistresult = new ArrayList<>();
 	 	
 	 	for (Place place : placechargelist) {
-			if (place.getPlaceName().contains(searchWord)==true) {
+			if ((place.getPlaceName().contains(searchWord)==true) || (place.getPlaceRoadAddr().contains(searchWord)==true)) 
+			{
 				chargelistresult.add(place);
 			}
 		}
@@ -57,17 +61,25 @@ public class SearchResultController extends HttpServlet {
 	 	List<Place> placePointlist = srmapper.PlaceListByPoint();
 
 	 	List<Place> placedistancelist = srmapper.PlaceListByDistance(map);
+	 	List<Place> distancelistresult = new ArrayList<>();
+
+	 	for (Place place2 : placedistancelist) {
+	 		if ((place2.getPlaceName().contains(searchWord)==true) || (place2.getPlaceRoadAddr().contains(searchWord)==true)) 
+			{
+	 			distancelistresult.add(place2);
+			}
+		}
 	 	
-	 	
+	 	System.out.println(mx);
+	 	System.out.println(my);
 	 	
 	 	request.setAttribute("chargelistresult", chargelistresult);
 	 	request.setAttribute("placePointlist", placePointlist);
-	 	
+	 	request.setAttribute("distancelistresult", distancelistresult);
+	 	 	
 	 	RequestDispatcher rd = request.getRequestDispatcher("/jsp/searchresult/defaultsearch.jsp");
 	 	rd.forward(request, response);
 	 	
-		
 	}
 
-	
 }

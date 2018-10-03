@@ -20,6 +20,15 @@ public class Place {
 	private String weekdaysEnd;
 	private String weekendsStart;
 	private String weekendsEnd;
+	private double distance;
+	
+	
+	public double getDistance() {
+		return distance;
+	}
+	public void setDistance(double distance) {
+		this.distance = distance;
+	}
 	public int getPlaceNo() {
 		return placeNo;
 	}

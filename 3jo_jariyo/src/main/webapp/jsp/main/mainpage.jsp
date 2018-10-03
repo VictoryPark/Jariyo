@@ -84,7 +84,7 @@ A:hover {
 	<c:import url="/jsp/common/mainbarheader.jsp" />
 	<main>
 	<div class="search_box">
-		<form action="/3jo_jariyo/board/searchresult.do" method="get">
+		<form action="/3jo_jariyo/jariyo/searchresult.j" method="get">
 			<select class="custom-select-sm">
 				<option value="1">공공시설</option>
 				<option value="2">체육관</option>
@@ -105,7 +105,7 @@ A:hover {
 		<div id="box1">
 			<div class="title_more">
 				<div class="mini_title">
-					<a href="/3jo_jariyo/jsp/mangather/manGatherBoard.jsp">용병 신청</a>
+					<a href="/3jo_jariyo/manvolun/list.j">용병 신청</a>
 				</div>
 			</div>
 			<div class="minilist">
@@ -174,14 +174,10 @@ A:hover {
 					<tr>
 						<td>
 							<ul>
-								<%-- <c:forEach var="team" items="${teamlist}" begin="1" end="4"
-									varStatus="stat">
-									<li><a href='detailView.do?no=${team.no}'>${team.title}</a></li>
-								</c:forEach> --%>
-								<li>권선동 5대5 풋살 하실분 구합니다</li>
-								<li>연남동 일요일 축구 가능한 팀 있나요?</li>
-								<li>연남동 일요일 축구 가능한 팀 있나요?</li>
-								<li>연남동 일요일 축구 가능한 팀 있나요?</li>
+								<c:forEach var="place" items="${placelist}" begin="0" end="5">
+									<li><a href="/3jo_jariyo/jariyo/detailView.j?no=${place.placeNo}">${place.placeName}</a></li>
+								</c:forEach>
+
 							</ul>
 						</td>
 					</tr>

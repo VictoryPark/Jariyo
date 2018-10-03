@@ -6,8 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../../css/common/headerfooter.css" />
-<link rel="stylesheet" href="../../css/searchresult/defaultsearch.css" />
+<link rel="stylesheet" href="/3jo_jariyo/css/common/headerfooter.css" />
+<link rel="stylesheet" href="/3jo_jariyo/css/searchresult/defaultsearch.css" />
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=bn_2qlSXo7L36N8iYQV6"></script>
@@ -28,13 +28,19 @@
 			<div id="pan11">
 				<div id="map" style="width:100%;height:500px;"></div>
 				<div>
-					<h3>운정건강공원1 축구장/테니스장</h3>
-					<button type="button" onclick="location.href='/3jo_jariyo/jsp/booking/booking.jsp'">예약하기</button>
-					<div>시설 주소 : 경기도 파주시 와석순환로 198</div>
-					<div>시설종류 : 축구장</div>
-					<div>시간당 이용요금 : 60000</div>
-					<div>평일 운영시간 : 07시~22시</div>
-					<div>주말 운영시간 : 07시~22시</div>
+				<c:set var="detail" value="${detailplace}"/>
+				<c:set var="wds" value="${wdsResult}"/>
+				<c:set var="wde" value="${wdeResult}"/>
+				<c:set var="wks" value="${wksResult}"/>
+				<c:set var="wke" value="${wkeResult}"/>
+					<h3>${detail.placeName}</h3>
+					<button type="button" onclick="location.href='/3jo_jariyo/booking/main.j?no=${detail.placeNo}'">예약하기</button>
+					<div>시설 주소 : ${detail.placeRoadAddr}</div>
+					<div>시설 연락처 : ${detail.placePhoneNo}</div>
+					<div>시설종류 : ${detail.kind}</div>
+					<div>시간당 이용요금 : ${detail.price}원</div>
+					<div>평일 운영시간 : ${wds}시~${wde}시</div>
+					<div>주말 운영시간 : ${wks}시~${wke}시</div>
 				</div>
 			</div>
 		</div>
@@ -108,12 +114,14 @@
 	
 			})();
 			var map = new naver.maps.Map('map', {
-			    center: new naver.maps.LatLng(37.719137, 126.754612),
+			    center: new naver.maps.LatLng(`${detail.placePositionY}`, `${detail.placePositionX}`),
+			    /* center: new naver.maps.LatLng(37.719137, 126.754612), */
 			    zoom: 10
 			});
 
 			var marker = new naver.maps.Marker({
-			    position: new naver.maps.LatLng(37.719137, 126.754612),
+			    position: new naver.maps.LatLng(`${detail.placePositionY}`, `${detail.placePositionX}`),
+			    /* position: new naver.maps.LatLng(37.719137, 126.754612), */
 			    map: map
 			});
 		</script>

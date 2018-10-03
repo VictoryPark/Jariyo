@@ -19,7 +19,7 @@ import com.jariyo.repository.mapper.SearchResultMapper;
 
 
 
-@WebServlet("/board/detailView.do")
+@WebServlet("/jariyo/detailView.j")
 public class detailViewController extends HttpServlet {
 
 	@Override
@@ -34,13 +34,25 @@ public class detailViewController extends HttpServlet {
 		SearchResultMapper srmapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(SearchResultMapper.class);
 	 	
 	 	Place detailplace = srmapper.selectPlaceByNo(no);
+	 	String wds = detailplace.getWeekdaysStart();
+	 	String wde = detailplace.getWeekdaysEnd();
+	 	String wks = detailplace.getWeekendsStart();
+	 	String wke = detailplace.getWeekendsEnd();
 	 	
+	 	String wdsResult = wds.substring(0, wds.indexOf("."));
+	 	String wdeResult = wde.substring(0, wde.indexOf("."));
+	 	String wksResult = wks.substring(0, wks.indexOf("."));
+	 	String wkeResult = wke.substring(0, wke.indexOf("."));
 	 	
-	 	
+
 	 	request.setAttribute("detailplace", detailplace);
 	 	
+	 	request.setAttribute("wdsResult", wdsResult);
+	 	request.setAttribute("wdeResult", wdeResult);
+	 	request.setAttribute("wksResult", wksResult);
+	 	request.setAttribute("wkeResult", wkeResult);
 	 	
-	 	
+	 	System.out.println(wdsResult);
 
 	 	
 	 	RequestDispatcher rd = request.getRequestDispatcher("/jsp/searchresult/detail.jsp");

@@ -17,6 +17,7 @@
 		<result column="weekdays_end" property="weekdaysEnd"/>
 		<result column="weekends_start" property="weekendsStart"/>
 		<result column="weekends_end" property="weekendsEnd"/>
+		<result column="distance" property="distance" />
 		
 	</resultMap>
 	
@@ -24,6 +25,12 @@
 		select * from jariyo_place
 			where place_no = #{placeNo}
 	</select>
+	
+	<!-- 장소 리스트 -->
+    <select id="PlaceList" resultMap="placeMap">
+    	select *
+    	  from jariyo_place
+    </select>
 	
 	
 </mapper>
