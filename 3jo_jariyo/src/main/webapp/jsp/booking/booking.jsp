@@ -66,7 +66,7 @@
 	                              ~ <input type="text" name="endtime" value="종료시간" />
 	                 </p>
                      <p>
-                       *이용 금액 : <input type="text" name="fare" value="db에서 계산한 가격" disabled/>
+                       *이용 금액 : <input type="text" name="fare" value="" disabled/>
                      </p>
 	                 <p>
 	                 예약팀 이름 : <input type="text" name="teamname" placeholder="팀 이름을 기입해주세요."/>
@@ -225,9 +225,29 @@
     function settime() {
 	  var bookingtime1 = $("input[name='bookingtime1']")
 	  var bookingtime2 = $("input[name='bookingtime2']")
-        $("input[name='starttime']").val(bookingtime1.val())
-        $("input[name='endtime']").val(bookingtime2.val())    				
-	}
+	  var st = bookingtime1.val();
+	  var et = bookingtime2.val();
+        $("input[name='starttime']").val(st)
+        $("input[name='endtime']").val(et) 
+        //alert($("#hidden").val())
+        
+        $.ajax({
+        	
+        	url : "<c:url value='/booking/calcul.j'/>",
+        	data : {
+        		plno : $("#hidden").val(),
+        		st : st,
+        		et : et
+        	},
+        	dataType : "json",
+        	success : function(fee) {
+        		$("input[name='fare']").val(fee);
+        		
+        	}//success
+        	
+        }) //ajax
+        
+	}//settime
     
     $("button#reset").click(function () {
     	var bookingtime1 = $("input[name='bookingtime1']")
