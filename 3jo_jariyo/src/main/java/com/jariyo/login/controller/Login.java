@@ -44,7 +44,7 @@ public class Login extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("user", login);
 		
-		response.sendRedirect(request.getContextPath() + "/jsp/main/mainpage.jsp");
+		response.sendRedirect(request.getContextPath() + "/jariyo/main.j");
 	}
 
 }

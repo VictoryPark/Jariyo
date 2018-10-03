@@ -26,6 +26,7 @@
   </form>
   <div class="form-footer">
     <p><a href="<c:url value="/signup-form.j" />">회원가입</a></p>
+    <!-- <p><a href="<c:url value="/findpass.j" />">비밀번호를 잊으셨나요?</a></p> -->
   </div>
 </div>
 </body>
