@@ -8,7 +8,7 @@
 	    </h1>
 	  <nav am-layout="horizontal">
 	  <a href="http://localhost:8000/3jo_jariyo/jsp/main/mainpage.jsp">검색</a>
-	  <a href="http://localhost:8000/3jo_jariyo/jsp/teammatching/teammatchingBoard.jsp">게시글</a>
+	  <a href="<c:url value="/teammatching/list.do" />">게시글</a>
 	  <a href="http://localhost:8000/3jo_jariyo/jsp/competition/competition.jsp">대회 정보</a>
 	  <a href="<c:url value="/mypage" />">마이 페이지</a>
       <c:choose>

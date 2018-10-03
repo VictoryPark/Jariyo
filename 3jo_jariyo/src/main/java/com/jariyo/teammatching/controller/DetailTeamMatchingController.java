@@ -18,6 +18,7 @@ public class DetailTeamMatchingController extends HttpServlet{
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		TeamMatchingMapper mapper = 
 				MyAppSqlConfig.getSqlSessionInstance().getMapper(TeamMatchingMapper.class);
 		int boardNo = Integer.parseInt(request.getParameter("boardNo"));

@@ -42,13 +42,13 @@
 	  <article>
         <aside>
 		 <p>
-	        <a href="<c:url value="/teammatching/list.do"/>">팀 매칭 게시판</a>
+	        <a href="<c:url value="/teammatching/list.j"/>">팀 매칭 게시판</a>
 	    </p>
 	    <p>    
-	        <a href="<c:url value="/mangather/list.do"/>">용병 모집 게시판</a>
+	        <a href="<c:url value="/mangather/list.j"/>">용병 모집 게시판</a>
 	    </p>
 	    <p>
-	    	<a href="<c:url value="/manvolun/list.do"/>">용병 신청 게시판</a>
+	    	<a href="<c:url value="/manvolun/list.j"/>">용병 신청 게시판</a>
 	    </p>
 	    </aside>
 	    <section>
@@ -72,8 +72,8 @@
 				</tr>
 				<tr>
 					<td>작성일시</td>
-					<td><fmt:formatDate value="${board.regDate}"
-										pattern="yyyy/MM/dd HH:mm:ss"/></td>
+					<td colspan="3"><fmt:formatDate value="${board.regDate}"
+										pattern="yyyy.MM.dd"/></td>
 				</tr>
 			</table> 
 			<textarea name="content" row="6" cols="96">${board.content}</textarea>
@@ -87,9 +87,9 @@
 			</table>
 			
 			<p>
-			<button><a href="<c:url value="/manvolun/delete.do?boardNo=${board.boardNo}"/>">삭제</a></button>
-			<button><a href="<c:url value="/manvolun/modifyForm.do?boardNo=${board.boardNo}"/>">수정</a></button>
-			<button><a href="<c:url value="/manvolun/list.do"/>">목록</a></button>
+			<button><a href="<c:url value="/manvolun/delete.j?boardNo=${board.boardNo}"/>">삭제</a></button>
+			<button><a href="<c:url value="/manvolun/modifyForm.j?boardNo=${board.boardNo}"/>">수정</a></button>
+			<button><a href="<c:url value="/manvolun/list.j"/>">목록</a></button>
 	    	</p>
 	    </section>
 	  </article>

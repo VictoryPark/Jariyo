@@ -14,6 +14,7 @@ public class WriteFormTeamMatchingController extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		RequestDispatcher rd = request.getRequestDispatcher("/jsp/teammatching/teammatchingWrite.jsp");
 		rd.forward(request, response);
 	}

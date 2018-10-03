@@ -42,19 +42,19 @@
 	  	<aside>
        	<div id="menu">
 		 <p>
-	        <a href="<c:url value="/teammatching/list.do"/>">팀 매칭 게시판</a>
+	        <a href="<c:url value="/teammatching/list.j"/>">팀 매칭 게시판</a>
 	    </p>
 	    <p>    
-	        <a href="<c:url value="/mangather/list.do"/>">용병 모집 게시판</a>
+	        <a href="<c:url value="/mangather/list.j"/>">용병 모집 게시판</a>
 	    </p>
 	    <p>
-	    	<a href="<c:url value="/manvolun/list.do"/>">용병 신청 게시판</a>
+	    	<a href="<c:url value="/manvolun/list.j"/>">용병 신청 게시판</a>
 	    </p>
 	    </aside>
 	    <section>
 	      <h3>팀 매칭 게시판</h3>
 	      <hr>
-	      <form method="post" action="<c:url value ='/teammatching/modify.do'/>">
+	      <form method="post" action="<c:url value ='/teammatching/modify.j'/>">
 	      <h5><input type="text" name="title" value='${board.title}'></h5>
 		    <div id="photobox"></div>
 		  <input type="hidden" name ="boardNo" value="${board.boardNo}">
@@ -72,7 +72,7 @@
 		  		<td><input type="text" name="placeName" value='${board.placeName}'></td> 	
 		  	</tr>
 		  	<tr>
-		  		<td>경기 일자</td>
+		  		<td>경기일정</td>
 		  		<td><input type="text" name="playDate" value='${board.playDate}'/></td>
 		  		<td>평균연령</td>
 		  		<td><input type="text" name="aveAge" value='${board.aveAge}'/></td>		  		
@@ -93,8 +93,8 @@
 	      </p>
 	      <p>
 	      <button>수정완료</button>
-	      <button><a href="<c:url value="/manvolun/delete.do?boardNo=${board.boardNo}"/>">삭제</a></button>      
-	      <button><a href="<c:url value="/teammatching/list.do"/>">목록</a></button>
+	      <button><a href="<c:url value="/manvolun/delete.j?boardNo=${board.boardNo}"/>">삭제</a></button>      
+	      <button><a href="<c:url value="/teammatching/list.j"/>">목록</a></button>
 	      </p>
 	      </form>
 	    </section>

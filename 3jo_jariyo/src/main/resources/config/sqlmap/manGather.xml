@@ -55,6 +55,5 @@
 		  from jariyo_mangather
 		 where board_no = #{boardNo}
 	</delete>
-	
-	
+
 </mapper>

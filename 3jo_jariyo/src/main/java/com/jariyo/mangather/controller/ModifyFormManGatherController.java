@@ -13,11 +13,13 @@ import com.jariyo.common.db.MyAppSqlConfig;
 import com.jariyo.repository.domain.ManGather;
 import com.jariyo.repository.mapper.ManGatherMapper;
 
-@WebServlet("/mangather/modifyForm.do")
+@WebServlet("/mangather/modifyForm.j")
 public class ModifyFormManGatherController extends HttpServlet{
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		
 		ManGatherMapper mapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(ManGatherMapper.class);
 		ManGather board = mapper.selectManGatherByNo(Integer.parseInt(request.getParameter("boardNo")));
 		request.setAttribute("board", board);

@@ -9,11 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/mangather/writeForm.do")
+@WebServlet("/mangather/writeForm.j")
 public class WriteFormManGatherController extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		RequestDispatcher rd = request.getRequestDispatcher("/jsp/mangather/manGatherWrite.jsp");
 		rd.forward(request, response);
 	}

@@ -15,14 +15,14 @@
 <title>manGatherDetail</title>
 <link rel="stylesheet" href="<c:url value="/css/common/headerfooter.css"/>">
 <style>
-	aside, section {
-		border : 2px solid black;
-	}
 	
 	#photobox {
 		width : 300px;
 		height : 200px;
 		background-color: gray;
+	}
+	aside, section {
+		border : 2px solid black;
 	}
 	tr, td {
 		width : 145px;
@@ -48,13 +48,13 @@
 	  <article>
         <aside>
 		<p>
-	        <a href="<c:url value="/teammatching/list.do"/>">팀 매칭 게시판</a>
+	        <a href="<c:url value="/teammatching/list.j"/>">팀 매칭 게시판</a>
 	    </p>
 	    <p>    
-	        <a href="<c:url value="/mangather/list.do"/>">용병 모집 게시판</a>
+	        <a href="<c:url value="/mangather/list.j"/>">용병 모집 게시판</a>
 	    </p>
 	    <p>
-	    	<a href="<c:url value="/manvolun/list.do"/>">용병 신청 게시판</a>
+	    	<a href="<c:url value="/manvolun/list.j"/>">용병 신청 게시판</a>
 	    </p>
 	    </aside>
 	    <section>
@@ -80,13 +80,8 @@
 				<tr>
 					<td>활동지역</td>
 					<td>${board.area}</td>
-					<td>작성일시</td>
-					<td><fmt:formatDate value="${board.regDate}"
-										pattern="yyyy/MM/dd HH:mm:ss"/></td>
-				</tr>
-				<tr>
-					<td>경기 일시</td>
-					<td colspan="3">${board.playDate}</td>
+					<td>경기일정</td>
+					<td>${board.playDate}</td>
 				</tr>
 			</table> 
 			<textarea name="content" row="6" cols="96">${board.content}</textarea>
@@ -100,9 +95,9 @@
 			</table>
 			
 			<p>
-			<button><a href="<c:url value="/mangather/delete.do?boardNo=${board.boardNo}"/>">삭제</a></button>
-			<button><a href="<c:url value="/mangather/modifyForm.do?boardNo=${board.boardNo}"/>">수정</a></button>
-			<button><a href="<c:url value="/mangather/list.do"/>">목록</a></button>
+			<button><a href="<c:url value="/mangather/delete.j?boardNo=${board.boardNo}"/>">삭제</a></button>
+			<button><a href="<c:url value="/mangather/modifyForm.j?boardNo=${board.boardNo}"/>">수정</a></button>
+			<button><a href="<c:url value="/mangather/list.j"/>">목록</a></button>
 	    	</p>
 	    </section>
 	  </article>

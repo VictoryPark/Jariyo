@@ -12,7 +12,7 @@ import com.jariyo.common.db.MyAppSqlConfig;
 import com.jariyo.repository.mapper.ManVolunMapper;
 
 
-@WebServlet("/manvolun/delete.do")
+@WebServlet("/manvolun/delete.j")
 public class DeleteManVolunController extends HttpServlet{
 
 	@Override
@@ -22,7 +22,7 @@ public class DeleteManVolunController extends HttpServlet{
 		ManVolunMapper mapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(ManVolunMapper.class);
 		mapper.deleteManVolun(boardNo);
 		
-		response.sendRedirect(request.getContextPath() + "/manvolun/list.do");
+		response.sendRedirect(request.getContextPath() + "/manvolun/list.j");
 	}
 	
 }

@@ -43,18 +43,21 @@
 	  <article>
         <aside>
 		 <p>
-	        <a href="<c:url value="/teammatching/list.do"/>">팀 매칭 게시판</a>
+	        <a href="<c:url value="/teammatching/list.j"/>">팀 매칭 게시판</a>
 	    </p>
 	    <p>    
-	        <a href="<c:url value="/mangather/list.do"/>">용병 모집 게시판</a>
+	        <a href="<c:url value="/mangather/list.j"/>">용병 모집 게시판</a>
 	    </p>
 	    <p>
-	    	<a href="<c:url value="/manvolun/list.do"/>">용병 신청 게시판</a>
+	    	<a href="<c:url value="/manvolun/list.j"/>">용병 신청 게시판</a>
 	    </p>
 	    </aside>
 	    <section>
-	 		<form method="post" action="<c:url value='/mangather/write.do' />">
-			<h4><input type="text" name="title"></h4>	
+	    
+	    	<h3>글쓰기</h3>
+	      	<hr>
+	 		<form method="post" action="<c:url value='/mangather/write.j' />">
+			<h4><input type="text" name="title" value="제목을 입력하세요."></h4>	
 	    
 	    	<div id = "photobox"></div>
 			<table>
@@ -68,7 +71,7 @@
 					<td>평균연령</td>
 					<td><input type="text" name="aveAge"></td>
 					<td>활동지역</td>
-					<td><textarea name="area" rows="1" cols="30"></textarea></td>
+					<td><input type="text" name="area"></td>
 
 				</tr>
 				<tr>

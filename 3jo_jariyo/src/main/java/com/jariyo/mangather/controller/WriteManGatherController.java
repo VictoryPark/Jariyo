@@ -13,7 +13,7 @@ import com.jariyo.common.db.MyAppSqlConfig;
 import com.jariyo.repository.domain.ManGather;
 import com.jariyo.repository.mapper.ManGatherMapper;
 
-@WebServlet("/mangather/write.do")
+@WebServlet("/mangather/write.j")
 public class WriteManGatherController extends HttpServlet {
 
 	@Override
@@ -35,7 +35,7 @@ public class WriteManGatherController extends HttpServlet {
 		ManGatherMapper mapper= MyAppSqlConfig.getSqlSessionInstance().getMapper(ManGatherMapper.class);
 		mapper.insertManGather(board);
 		
-		response.sendRedirect(request.getContextPath() + "/mangather/list.do");
+		response.sendRedirect(request.getContextPath() + "/mangather/list.j");
 		
 	}
 

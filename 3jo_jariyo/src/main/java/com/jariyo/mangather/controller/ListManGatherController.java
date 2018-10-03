@@ -14,11 +14,13 @@ import com.jariyo.common.db.MyAppSqlConfig;
 import com.jariyo.repository.domain.ManGather;
 import com.jariyo.repository.mapper.ManGatherMapper;
 
-@WebServlet("/mangather/list.do")
+@WebServlet("/mangather/list.j")
 public class ListManGatherController extends HttpServlet {
 
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		
 		ManGatherMapper mapper = 
 				MyAppSqlConfig.getSqlSessionInstance().getMapper(ManGatherMapper.class);
 		
@@ -30,5 +32,7 @@ public class ListManGatherController extends HttpServlet {
 				"/jsp/mangather/manGatherBoard.jsp"
 		);
 		rd.forward(request, response);
+	
 	}
+	
 }

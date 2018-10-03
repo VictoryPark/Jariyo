@@ -43,29 +43,33 @@
 	  <article>
         <aside>
 		 <p>
-	        <a href="<c:url value="/teammatching/list.do"/>">팀 매칭 게시판</a>
+	        <a href="<c:url value="/teammatching/list.j"/>">팀 매칭 게시판</a>
 	    </p>
 	    <p>    
-	        <a href="<c:url value="/mangather/list.do"/>">용병 모집 게시판</a>
+	        <a href="<c:url value="/mangather/list.j"/>">용병 모집 게시판</a>
 	    </p>
 	    <p>
-	    	<a href="<c:url value="/manvolun/list.do"/>">용병 신청 게시판</a>
+	    	<a href="<c:url value="/manvolun/list.j"/>">용병 신청 게시판</a>
 	    </p>
 	    </aside>
 	    <section>
-	    	<form method="post" action="<c:url value='/manvolun/write.do'/>">
-	    	<h4><textarea name="title" rows="1" cols="62"></textarea></h4>
+	    
+	    	<h3>글쓰기</h3>
+	      	<hr>
+	    	<form method="post" action="<c:url value='/manvolun/write.j'/>">
+	    	<h4><input type="text" name="title" placeholder="제목을 입력하세요."></h4>
 		   <div id = "photobox"></div>
 			<table>
 				<tr>
 					<td>이름</td>
-					<td><input type="text" name="writerId"></td>
+					<!-- <c:set var='b' value='${mName}'/> -->
+					<td><input type="text" name="writerName" value="${mName}" readonly="readonly"></td>
 					<td>종목</td>
 					<td><input type="text" name="kindofGame" ></td>
 				</tr>
 				<tr>
 					<td>활동지역</td>
-					<td><textarea name="area" rows="1" cols="30"></textarea> </td>
+					<td><input type="text" name="area"></td>
 				</tr>
 				<tr>
 					<td>선수출신 여부 </td>
@@ -78,7 +82,7 @@
 				</tr>
 
 			</table> 
-			<textarea name="content" row="6" cols="96">글 내용을 작성해주세요.</textarea>
+			<textarea name="content" row="6" cols="96" placeholder="글 내용을 작성해주세요."></textarea>
 			</p>
 			<p>
 			<button>작성하기</button>

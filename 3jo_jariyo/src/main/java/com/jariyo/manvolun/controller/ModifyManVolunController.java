@@ -13,7 +13,7 @@ import com.jariyo.repository.domain.ManVolun;
 import com.jariyo.repository.mapper.ManVolunMapper;
 
 
-@WebServlet("/manvolun/modify.do")
+@WebServlet("/manvolun/modify.j")
 public class ModifyManVolunController extends HttpServlet {
 
 	@Override
@@ -30,6 +30,7 @@ public class ModifyManVolunController extends HttpServlet {
 		board.setArea(request.getParameter("area"));
 		board.setCareer(request.getParameter("career"));
 		board.setContent(request.getParameter("content"));
+		
 //		System.out.println(request.getParameter("title"));
 //		System.out.println(request.getParameter("kindofGame"));
 //		System.out.println(request.getParameter("area"));
@@ -38,7 +39,7 @@ public class ModifyManVolunController extends HttpServlet {
 		mapper.modifyManVolun(board);
 		
 		
-		response.sendRedirect(request.getContextPath() + "/manvolun/list.do");
+		response.sendRedirect(request.getContextPath() + "/manvolun/list.j");
 	
 	}
 	

@@ -14,11 +14,12 @@ import com.jariyo.repository.domain.ManVolun;
 import com.jariyo.repository.mapper.ManVolunMapper;
 
 
-@WebServlet("/manvolun/modifyForm.do")
+@WebServlet("/manvolun/modifyForm.j")
 public class ModifyFormManVolunController extends HttpServlet{
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		ManVolunMapper mapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(ManVolunMapper.class);
 		ManVolun board = mapper.selectManVolunByNo(Integer.parseInt(request.getParameter("boardNo")));
 		request.setAttribute("board", board);

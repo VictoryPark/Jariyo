@@ -41,18 +41,18 @@
         <aside>
 	    <div id="menu">
 		 <p>
-	        <a href="<c:url value="/teammatching/list.do"/>">팀 매칭 게시판</a>
+	        <a href="<c:url value="/teammatching/list.j"/>">팀 매칭 게시판</a>
 	    </p>
 	    <p>    
-	        <a href="<c:url value="/mangather/list.do"/>">용병 모집 게시판</a>
+	        <a href="<c:url value="/mangather/list.j"/>">용병 모집 게시판</a>
 	    </p>
 	    <p>
-	    	<a href="<c:url value="/manvolun/list.do"/>">용병 신청 게시판</a>
+	    	<a href="<c:url value="/manvolun/list.j"/>">용병 신청 게시판</a>
 	    </p>
 	    </aside>
 	    <section>
 		    <hr>
-		    <form method="post" action="<c:url value='/manvolun/modify.do'/>">
+		    <form method="post" action="<c:url value='/manvolun/modify.j'/>">
 			<h4><input type="text" name="title" value='${board.title}'></h4>	 
 		   <div id = "photobox"></div>
 		   <input type="hidden" name ="boardNo" value="${board.boardNo}">
@@ -65,19 +65,28 @@
 				</tr>
 				<tr>
 					<td>활동 지역</td>
-					<td><textarea name="area" rows="1" cols="30">${board.area}</textarea> </td>
+					<td><input type="text" name="area">${board.area}</td>
+					
 				</tr>
-
+				<tr>
+				<td>선수출신 여부 </td>
+					<td colspan="3"><input type="radio" name="career" value="비선출" checked="checked"/>비선출
+						<input type="radio" name="career" value="초등부"/>초등부
+						<input type="radio" name="career" value="중등부"/>중등부
+						<input type="radio" name="career" value="고등부"/>고등부
+						<input type="radio" name="career" value="대학이상"/>대학 이상
+				</td>
+				</tr>
 			</table>
 			<p>
 			<div>
-			<textarea name="content" row="6" cols="115">${board.content}</textarea>
+			<textarea name="content" row="6" cols="96">${board.content}</textarea>
 			</div>
 			</p>
 			<p>
 			<button>수정완료</button>
-			<button><a href="<c:url value="/manvolun/delete.do?boardNo=${board.boardNo}"/>">삭제</a></button>
-			<button><a href="<c:url value="/manvolun/list.do"/>">목록</a></button>
+			<button><a href="<c:url value="/manvolun/delete.j?boardNo=${board.boardNo}"/>">삭제</a></button>
+			<button><a href="<c:url value="/manvolun/list.j"/>">목록</a></button>
 	    	</p>
 	    </section>
 	  </article>

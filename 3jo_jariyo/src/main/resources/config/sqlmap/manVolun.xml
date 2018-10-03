@@ -11,6 +11,7 @@
 		<result column="career" property="career"/>
 		<result column="area" property="area"/>
 		<result column="reg_date" property="regDate"/>
+		<result column="writer_name" property="writerName"/>
 	</resultMap>
 	
 	<select id = "selectManVolun" resultMap="manVolunMap">
@@ -27,10 +28,10 @@
 
 	<insert id="insertManVolun" parameterType="ManVolun">
 		insert into jariyo_manvolunteer (
-			board_no, title, kindof_game, area, career, content
+			board_no, title, kindof_game, area, career, content, writer_name
 		) values (
 			s_jmanvolunteer_no.nextval, #{title}, #{kindofGame},
-			#{area}, #{career}, #{content}
+			#{area}, #{career}, #{content}, #{writerName}
 		)
 	</insert>
 	

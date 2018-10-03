@@ -14,11 +14,12 @@ import com.jariyo.repository.domain.ManVolun;
 import com.jariyo.repository.mapper.ManGatherMapper;
 import com.jariyo.repository.mapper.ManVolunMapper;
 
-@WebServlet("/manvolun/detail.do")
+@WebServlet("/manvolun/detail.j")
 public class DetailManVolunController extends HttpServlet{
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		ManVolunMapper mapper = 
 				MyAppSqlConfig.getSqlSessionInstance().getMapper(ManVolunMapper.class);
 		int boardNo = Integer.parseInt(request.getParameter("boardNo"));

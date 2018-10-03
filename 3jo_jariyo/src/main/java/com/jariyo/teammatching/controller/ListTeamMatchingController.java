@@ -19,9 +19,11 @@ public class ListTeamMatchingController extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		
 		TeamMatchingMapper mapper =
 				MyAppSqlConfig.getSqlSessionInstance().getMapper(TeamMatchingMapper.class);
-	
+		
 		List<TeamMatching> list = mapper.selectTeamMatching();
 		
 		request.setAttribute("list", list);

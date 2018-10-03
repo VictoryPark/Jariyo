@@ -10,10 +10,17 @@ public class ManVolun {
 	private String area;
 	private String content;
 	private String career;
+	private String writerName;
 	private Date regDate;
 	
 	public Date getRegDate() {
 		return regDate;
+	}
+	public String getWriterName() {
+		return writerName;
+	}
+	public void setWriterName(String writerName) {
+		this.writerName = writerName;
 	}
 	public void setRegDate(Date regDate) {
 		this.regDate = regDate;

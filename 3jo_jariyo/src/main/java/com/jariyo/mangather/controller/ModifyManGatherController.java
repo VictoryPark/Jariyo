@@ -12,11 +12,13 @@ import com.jariyo.common.db.MyAppSqlConfig;
 import com.jariyo.repository.domain.ManGather;
 import com.jariyo.repository.mapper.ManGatherMapper;
 
-@WebServlet("/mangather/modify.do")
+@WebServlet("/mangather/modify.j")
 public class ModifyManGatherController extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		
 		ManGatherMapper mapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(ManGatherMapper.class);
 		
 		ManGather board = new ManGather();
@@ -35,7 +37,7 @@ public class ModifyManGatherController extends HttpServlet {
 		System.out.println(request.getParameter("career"));
 		mapper.modifyManGather(board);
 		
-		response.sendRedirect(request.getContextPath() + "/mangather/list.do");
+		response.sendRedirect(request.getContextPath() + "/mangather/list.j");
 	
 	}
 	

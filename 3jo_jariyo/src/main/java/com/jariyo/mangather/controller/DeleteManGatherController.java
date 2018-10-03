@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.jariyo.common.db.MyAppSqlConfig;
 import com.jariyo.repository.mapper.ManGatherMapper;
 
-@WebServlet("/mangather/delete.do")
+@WebServlet("/mangather/delete.j")
 public class DeleteManGatherController extends HttpServlet{
 
 	@Override
@@ -21,7 +21,7 @@ public class DeleteManGatherController extends HttpServlet{
 		ManGatherMapper mapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(ManGatherMapper.class);
 		mapper.deleteManGather(boardNo);
 		
-		response.sendRedirect(request.getContextPath() + "/mangather/list.do");
+		response.sendRedirect(request.getContextPath() + "/mangather/list.j");
 	}
 	
 }
