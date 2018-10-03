@@ -12,7 +12,7 @@ import com.jariyo.common.db.MyAppSqlConfig;
 import com.jariyo.repository.domain.TeamMatching;
 import com.jariyo.repository.mapper.TeamMatchingMapper;
 
-@WebServlet("/teammatching/write.do")
+@WebServlet("/teammatching/write.j")
 public class WriteTeamMatchingController extends HttpServlet{
 
 	@Override
@@ -37,7 +37,7 @@ public class WriteTeamMatchingController extends HttpServlet{
 				MyAppSqlConfig.getSqlSessionInstance().getMapper(TeamMatchingMapper.class);
 		mapper.insertTeamMatching(board);
 		
-		response.sendRedirect(request.getContextPath() + "/teammatching/list.do");
+		response.sendRedirect(request.getContextPath() + "/teammatching/list.j");
 	}
 	
 }

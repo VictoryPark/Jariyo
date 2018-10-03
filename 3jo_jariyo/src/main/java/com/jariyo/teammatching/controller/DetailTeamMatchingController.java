@@ -13,7 +13,7 @@ import com.jariyo.common.db.MyAppSqlConfig;
 import com.jariyo.repository.domain.TeamMatching;
 import com.jariyo.repository.mapper.TeamMatchingMapper;
 
-@WebServlet("/teammatching/detail.do")
+@WebServlet("/teammatching/detail.j")
 public class DetailTeamMatchingController extends HttpServlet{
 
 	@Override

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/teammatching/writeForm.do")
+@WebServlet("/teammatching/writeForm.j")
 public class WriteFormTeamMatchingController extends HttpServlet {
 
 	@Override

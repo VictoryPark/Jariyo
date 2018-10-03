@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.jariyo.common.db.MyAppSqlConfig;
 import com.jariyo.repository.mapper.TeamMatchingMapper;
 
-@WebServlet("/teammatching/delete.do")
+@WebServlet("/teammatching/delete.j")
 public class DeleteTeamMatchingController extends HttpServlet {
 
 	@Override
@@ -22,7 +22,7 @@ public class DeleteTeamMatchingController extends HttpServlet {
 			MyAppSqlConfig.getSqlSessionInstance().getMapper(TeamMatchingMapper.class);
 	mapper.deleteTeamMatching(boardNo);
 	
-	response.sendRedirect(request.getContextPath() + "/teammatching/list.do");
+	response.sendRedirect(request.getContextPath() + "/teammatching/list.j");
 	}
 
 }

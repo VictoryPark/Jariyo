@@ -14,7 +14,7 @@ import com.jariyo.common.db.MyAppSqlConfig;
 import com.jariyo.repository.domain.TeamMatching;
 import com.jariyo.repository.mapper.TeamMatchingMapper;
 
-@WebServlet("/teammatching/list.do")
+@WebServlet("/teammatching/list.j")
 public class ListTeamMatchingController extends HttpServlet {
 
 	@Override
