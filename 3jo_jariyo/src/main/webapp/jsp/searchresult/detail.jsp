@@ -136,7 +136,7 @@
 				if(list.length!=0){
 					for(let r of list){
 						var regDate = new Date(r.regDate);
-						/* console.log(regDate)
+						/* console.log(regDate) 
 						console.log(pe) */
 						html += "<table id='review"+r.evalNo+"' width='80%'><tr>"
 						html += `<td id="starPoint"><img src="<c:url value='/img/placeeval/`+r.starPoint+`.png'/>" /></td>`

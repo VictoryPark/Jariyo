@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>자리YO 마이페이지</title>
-<link rel="stylesheet" href="<c:url value="/css/mypage/myPage.css"/>">
+<link rel="stylesheet" href="<c:url value='/css/common/headerfooter.css'/>" />
 <link rel="stylesheet" href="<c:url value='/css/mypage/profile.css' />" />
 <link rel="stylesheet" href="<c:url value='/css/mypage/section.css' />" />
 </head>
