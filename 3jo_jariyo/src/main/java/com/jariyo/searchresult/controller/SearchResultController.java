@@ -36,8 +36,16 @@ public class SearchResultController extends HttpServlet {
 		// 서블릿에서 세션 얻어오기(서버에서 만들어진것을 가져오는것)
 		HttpSession session = request.getSession();
 		Member user = (Member)session.getAttribute("user");
-		double mx = user.getPositionX();
-		double my = user.getPositionY();
+		
+		double mx, my;
+		if (user == null) {
+			mx = 127.0843802;
+			my = 37.5569892;
+		} else {
+			mx = user.getPositionX();
+			my = user.getPositionY();
+			
+		}
 //		double mx = 127.0843802;
 //		double my = 37.5569892;
 		
