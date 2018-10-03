@@ -12,10 +12,8 @@
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous">
     </script>
-<link rel="stylesheet" href="<c:url value="/css/mypage/myInfo.css"/>" />
 <link rel="stylesheet" href="<c:url value='/css/common/headerfooter.css'/>" />
-<link rel="stylesheet" href="<c:url value="/css/mypage/profile.css"/>" />
-<link rel="stylesheet" href="<c:url value="/css/mypage/section.css"/>" />
+<link rel="stylesheet" href="<c:url value='/css/mypage/myPage.css'/>" />
 </head>
 <body>
 	<c:import url="../common/mainbarheader.jsp" />
