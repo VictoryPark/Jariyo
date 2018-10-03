@@ -10,12 +10,13 @@
 <link rel="stylesheet" href="<c:url value="/css/common/headerfooter.css"/>">
 <style>
 	aside, section {
-		border : 2px solid black;
+		border : 2px solid rgb(27, 116, 93);
 	}
-	#photobox {
-		width : 300px;
-		height : 200px;
-		background-color: gray;
+	a {
+		color: #345;
+	}
+	body{
+	   background: #F2F1ED;
 	}
 	tr, td {
 		width : 145px;
@@ -33,7 +34,10 @@
 	hr{
 		border : 1px solid black;
 	}
-	
+	h3{
+		margin : 10px;
+		font-weight: bold;
+	}	
 	
 </style>
 </head>
@@ -54,22 +58,21 @@
 	    </aside>
 	    <section>
 	    
-	    	<h3>글쓰기</h3>
+	    	<h3>용병 모집 게시판</h3>
 	      	<hr>
 	    	<form method="post" action="<c:url value='/manvolun/write.j'/>">
 	    	<h4><input type="text" name="title" placeholder="제목을 입력하세요."></h4>
-		   <div id = "photobox"></div>
 			<table>
 				<tr>
 					<td>이름</td>
 					<!-- <c:set var='b' value='${mName}'/> -->
 					<td><input type="text" name="writerName" value="${mName}" readonly="readonly"></td>
 					<td>종목</td>
-					<td><input type="text" name="kindofGame" ></td>
+					<td><input type="text" name="kindofGame" placeholder="종목을 입력하세요."></td>
 				</tr>
 				<tr>
 					<td>활동지역</td>
-					<td><input type="text" name="area"></td>
+					<td><input type="text" name="area" placeholder="활동지역을 입력하세요."></td>
 				</tr>
 				<tr>
 					<td>선수출신 여부 </td>
@@ -86,7 +89,7 @@
 			</p>
 			<p>
 			<button>작성하기</button>
-			<button>닫기</button>
+			<button>목록</button>
 	    	</p>
 	    </section>
 	    </form>

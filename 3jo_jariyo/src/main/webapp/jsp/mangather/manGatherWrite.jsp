@@ -11,12 +11,10 @@
 
 <style>
 	aside, section {
-		border : 2px solid black;
+		border : 2px solid rgb(27, 116, 93);
 	}
-	#photobox {
-		width : 300px;
-		height : 200px;
-		background-color: gray;
+	a {
+		color: #345;
 	}
 	tr, td {
 		width : 135px;
@@ -34,7 +32,13 @@
 	hr {
 		border : 1px solid black;
 	}
-
+	body{
+	   background: #F2F1ED;
+	}
+	h3{
+		margin : 10px;
+		font-weight: bold;
+	}
 </style>
 </head>
 <body>	
@@ -54,32 +58,30 @@
 	    </aside>
 	    <section>
 	    
-	    	<h3>글쓰기</h3>
+	    	<h3>용병 모집 게시판</h3>
 	      	<hr>
 	 		<form method="post" action="<c:url value='/mangather/write.j' />">
-			<h4><input type="text" name="title" value="제목을 입력하세요."></h4>	
+			<h4><input type="text" name="title" placeholder="제목을 입력하세요."></h4>	
 	    
-	    	<div id = "photobox"></div>
 			<table>
 				<tr>
 					<td>팀명</td>
-					<td><input type="text" name="teamName"></td>
+					<td><input type="text" name="teamName" placeholder="팀명을 입력하세요."></td>
 					<td>종목</td>
-					<td><input type="text" name="kindofGame"></td>
+					<td><input type="text" name="kindofGame" placeholder="종목을 입력하세요."></td>
 				</tr>
 				<tr>
 					<td>평균연령</td>
-					<td><input type="text" name="aveAge"></td>
+					<td><input type="text" name="aveAge" placeholder="평균연령을 입력하세요."></td>
 					<td>활동지역</td>
-					<td><input type="text" name="area"></td>
+					<td><input type="text" name="area" placeholder="활동지역을 입력하세요."></td>
 
 				</tr>
 				<tr>
 					<td>경기 일시</td>
 					<td colspan="3">
 					<div>
-			    		<input type="text" name="playDate">
-			    		
+			    		<input type="text" name="playDate" placeholder="경기일시을 입력하세요. 예)2018-10-04 13:00">
 	    		    </div>
 					</td>
 				<tr>
@@ -87,12 +89,12 @@
 			
 			<p> 
 			<div>
-			<textarea name="content" row="6" cols="96">글 내용을 작성해주세요.</textarea>
+			<textarea name="content" row="6" cols="96" placeholder="글 내용을 작성해주세요."></textarea>
 			</div>
 			</p>
 			<p>
 			<button>작성하기</button>
-			<button>닫기</button>
+			<button>목록</button>
 	    	</p>
 	   		</form>
 	    </section>

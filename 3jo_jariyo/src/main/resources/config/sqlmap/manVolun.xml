@@ -51,6 +51,47 @@
 		 where board_no = #{boardNo}
 	</delete>
 	
+	<resultMap id="manVolunCommentMap" type="ManVolunComment">
+		<result column="comment_no" property="commentNo" />
+		<result column="board_no" property="boardNo" />
+		<result column="writer_id" property="writerId" />
+		<result column="content" property="content" />
+		<result column="reg_date" property="regDate" />
+	</resultMap>
+	
+
+	<select id="selectManVolunCommentByNo" parameterType="int" 
+	        resultMap="manVolunCommentMap">
+	    select *
+	      from jariyo_manvoluncomment
+	     where board_no = #{boardNo}  
+	     order by comment_no    
+	</select>
+    
+
+	<insert id="insertManVolunComment" parameterType="ManVolunComment">
+		insert into jariyo_manvoluncomment(
+			comment_no, board_no, writer_id, content
+		) values (
+			j_manvoluncomment_no.nextval, #{boardNo}, #{writerId}, #{content}
+		)
+	</insert>
+	
+
+	<delete id="deleteManVolunComment" parameterType="int">
+	    delete 
+	      from jariyo_manvoluncomment
+	     where comment_no = #{commentNo}
+	</delete>
+	
+	
+	<update id="updateManVolunComment" parameterType="ManVolunComment">
+	    update jariyo_manvoluncomment
+	       set content = #{content}
+	     where comment_no = #{commentNo}
+	</update>
+	
+	
 	
 	
 </mapper>

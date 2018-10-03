@@ -55,5 +55,46 @@
 		  from jariyo_mangather
 		 where board_no = #{boardNo}
 	</delete>
+	
+		<resultMap id="gatherCommentMap" type="ManGatherComment">
+		<result column="comment_no" property="commentNo" />
+		<result column="board_no" property="boardNo" />
+		<result column="writer_id" property="writerId" />
+		<result column="content" property="content" />
+		<result column="reg_date" property="regDate" />
+	</resultMap>
+	
+
+	<select id="selectGatherCommentByNo" parameterType="int" 
+	        resultMap="gatherCommentMap">
+	    select *
+	      from jariyo_mangathercomment
+	     where board_no = #{boardNo}  
+	     order by comment_no    
+	</select>
+    
+
+	<insert id="insertGatherComment" parameterType="ManGatherComment">
+		insert into jariyo_mangathercomment(
+			comment_no, board_no, writer_id, content
+		) values (
+			j_mangathercomment_no.nextval, #{boardNo}, #{writerId}, #{content}
+		)
+	</insert>
+	
+
+	<delete id="deleteGatherComment" parameterType="int">
+	    delete 
+	      from jariyo_mangathercomment
+	     where comment_no = #{commentNo}
+	</delete>
+	
+	
+	<update id="updateGatherComment" parameterType="ManGatherComment">
+	    update jariyo_mangathercomment
+	       set content = #{content}
+	     where comment_no = #{commentNo}
+	</update>
+	
 
 </mapper>

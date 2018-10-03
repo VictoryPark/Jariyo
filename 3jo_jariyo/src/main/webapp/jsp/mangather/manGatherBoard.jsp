@@ -22,9 +22,18 @@
 		border : 10px solid green;
 	}
 	aside, section {
-		border : 2px solid black;
+		border : 2px solid rgb(27, 116, 93);
 	}
-
+	a {
+		color: #345;
+	}
+	h3{
+		margin : 10px;
+		font-weight: bold;
+	}
+	body{
+	   background: #F2F1ED;
+	}
 </style>
 
 </head>

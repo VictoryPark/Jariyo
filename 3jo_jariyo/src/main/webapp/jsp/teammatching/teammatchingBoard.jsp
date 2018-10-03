@@ -22,10 +22,18 @@
 		border : 10px solid green;
 	}
 	aside, section {
-		border : 2px solid black;
+		border : 2px solid rgb(27, 116, 93);
 	}
-
-
+	a {
+		color: #345;
+	}
+	body{
+	   background: #F2F1ED;
+	}
+	h3{
+		margin : 10px;
+		font-weight: bold;
+	}
 
 </style>
 </head>
@@ -50,7 +58,6 @@
 		    <hr>
 		    <div>
 		    <span>
-			<button>검색</button>
 			</span>
 		    <button><a href="<c:url value="/teammatching/writeForm.j"/>">글쓰기</a></button>
 		    </div>

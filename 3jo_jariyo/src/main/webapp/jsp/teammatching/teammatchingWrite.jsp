@@ -10,17 +10,18 @@
 <link rel="stylesheet" href="<c:url value="/css/common/headerfooter.css"/>">
 
 <style>
-	#photobox {
-		width : 300px;
-		height : 200px;
-		background-color: gray;
-	}
 	th, td{
 		width : 135px;
 		border: 1px solid #345;
 	}
 	aside, section {
-		border : 2px solid black;
+		border : 2px solid rgb(27, 116, 93);
+	}
+	a {
+		color: #345;
+	}
+	body{
+	   background: #F2F1ED;
 	}
 	hr{
 		border : 1px solid black;
@@ -30,8 +31,10 @@
 		height : 80px;
 		border: 1px solid black;
 	}
-	
-
+	h3{
+		margin : 10px;
+		font-weight: bold;
+	}
 </style>
 </head>
 <body>
@@ -51,35 +54,34 @@
 	    </aside>
 	    <section>
 	      
-	      <h3>글쓰기</h3>
+	      <h3>팀 매칭 게시판</h3>
 	      <hr>
 	      <form method="post" action="<c:url value='/teammatching/write.j'/>">
-	      <h5><input type="text" name="title" value="제목을 입력하세요."></h5>
-		  <div id="photobox"></div>
+	      <h5><input type="text" name="title" placeholder="제목을 입력하세요."></h5>
 		  <table>
 		  	<tr>
 		  		<td>팀명</td>
-		  		<td><input type="text" name="teamName"></td>
+		  		<td><input type="text" name="teamName" placeholder="팀명을 입력하세요."></td>
 		  		<td>종목</td>
-		  		<td><input type="text" name="kindofGame"></td>
+		  		<td><input type="text" name="kindofGame" placeholder="종목을 입력하세요."></td>
 		  	</tr>
 		  	<tr>
 		  		<td>활동 지역</td>
-		  		<td><input type="text" name="area"></td>
+		  		<td><input type="text" name="area" placeholder="활동지역을 입력하세요."></td>
 		  		<td>경기장</td>
-		  		<td><input type="text" name="placeName"></td>
+		  		<td><input type="text" name="placeName" placeholder="경기장을 입력하세요."></td>
 		  	</tr>
 		  	<tr>
 		  		<td>경기일정</td>
-		  		<td><input type="text" name="playDate"></td>
+		  		<td><input type="text" name="playDate" placeholder="경기일시을 입력하세요. 예)2018-10-04 13:00"></td>
 		  		<td>평균연령</td>
-		  		<td><input type="text" name="aveAge"></td>		  		
+		  		<td><input type="text" name="aveAge" placeholder="평균연령을 입력하세요."></td>		  		
 		  	</tr>
 
 		  </table>
 		  <p>
 		  <div>
-		  <textarea name="content" row="10" cols="80">내용을 입력하세요.</textarea>
+		  <textarea name="content" row="10" cols="80" placeholder="글 내용을 작성해주세요."></textarea>
 	      </div>
 	      </p>
 	      <p>

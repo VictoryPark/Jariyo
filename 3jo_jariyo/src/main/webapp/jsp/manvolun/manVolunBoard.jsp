@@ -22,10 +22,17 @@
 		border : 10px solid green;
 	}
 	aside, section {
-		border : 2px solid black;
+		border : 2px solid rgb(27, 116, 93);
 	}
 	a {
 		color: #345;
+	}
+	body{
+	   background: #F2F1ED;
+	}
+	h3{
+		margin : 10px;
+		font-weight: bold;
 	}
 
 </style>
@@ -53,7 +60,6 @@
 	    	<hr>
 		    <div>
 		    <span>
-		    <button>검색</button>
 		    <button><a href="<c:url value="/manvolun/writeForm.j"/>">글쓰기</a></button>
 		    </span>
 		    </div>

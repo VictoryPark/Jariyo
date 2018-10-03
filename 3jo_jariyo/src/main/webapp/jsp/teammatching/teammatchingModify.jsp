@@ -9,21 +9,26 @@
 <title>teammatchingModify</title>
 <link rel="stylesheet" href="<c:url value="/css/common/headerfooter.css"/>">
 <style>
-	#photobox {
-		width : 300px;
-		height : 200px;
-		background-color: gray;
-	}
+
 	th, td{
 		border: 1px solid #345;
 	}
 	aside, section {
-		border : 2px solid black;
+		border : 2px solid rgb(27, 116, 93);
+	}
+	a {
+		color: #345;
+	}
+	body{
+	   background: #F2F1ED;
 	}
 	hr{
 		border : 1px solid black;
 	}
-
+	h3{
+		margin : 10px;
+		font-weight: bold;
+	}
 	#content{
 		width: 630px;
 		height : 80px;
@@ -56,7 +61,6 @@
 	      <hr>
 	      <form method="post" action="<c:url value ='/teammatching/modify.j'/>">
 	      <h5><input type="text" name="title" value='${board.title}'></h5>
-		    <div id="photobox"></div>
 		  <input type="hidden" name ="boardNo" value="${board.boardNo}">
 		  <table>
 		  	<tr>

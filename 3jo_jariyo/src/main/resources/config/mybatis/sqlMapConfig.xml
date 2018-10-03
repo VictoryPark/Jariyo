@@ -20,6 +20,9 @@
 		<typeAlias alias="ManVolun" type="com.jariyo.repository.domain.ManVolun" />
 		<typeAlias alias="Comment" type="com.jariyo.repository.domain.Comment" />
 		<typeAlias alias="Msg" type="com.jariyo.repository.domain.Msg" />
+		<typeAlias alias="MatchingComment" type="com.jariyo.repository.domain.MatchingComment" />
+		<typeAlias alias="ManVolunComment" type="com.jariyo.repository.domain.ManVolunComment" />
+		<typeAlias alias="ManGatherComment" type="com.jariyo.repository.domain.ManGatherComment" />
 	</typeAliases>
 	
 	<environments default="development">

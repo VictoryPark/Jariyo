@@ -8,13 +8,15 @@
 <title>manVolunModify</title>
 <link rel="stylesheet" href="<c:url value="/css/common/headerfooter.css"/>">
 <style>
-	#photobox {
-		width : 300px;
-		height : 200px;
-		background-color: gray;
-	}
+
 	aside, section {
-		border : 2px solid black;
+		border : 2px solid rgb(27, 116, 93);
+	}
+	a {
+		color: #345;
+	}
+	body{
+	   background: #F2F1ED;
 	}
 		tr, td {
 		width : 145px;
@@ -31,6 +33,10 @@
 	}
 	hr {
 		border : 1px solid black;
+	}
+	h3{
+		margin : 10px;
+		font-weight: bold;
 	}
 </style>
 </head>
@@ -51,10 +57,11 @@
 	    </p>
 	    </aside>
 	    <section>
+	    	<h3>용병 신청 게시판</h3>
 		    <hr>
 		    <form method="post" action="<c:url value='/manvolun/modify.j'/>">
 			<h4><input type="text" name="title" value='${board.title}'></h4>	 
-		   <div id = "photobox"></div>
+
 		   <input type="hidden" name ="boardNo" value="${board.boardNo}">
 			<table>
 				<tr>

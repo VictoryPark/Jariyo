@@ -9,14 +9,12 @@
 <title>manGatherModify</title>
 <link rel="stylesheet" href="<c:url value="/css/common/headerfooter.css"/>">
 <style>
-	#photobox {
-		width : 300px;
-		height : 200px;
-		background-color: gray;
-	}
-	
+
 	aside, section {
-		border : 2px solid black;
+		border : 2px solid rgb(27, 116, 93);
+	}
+	a {
+		color: #345;
 	}
 	
 	tr, td {
@@ -34,6 +32,13 @@
 	}
 	hr {
 		border : 1px solid black;
+	}
+	body{
+	   background: #F2F1ED;
+	}
+	h3{
+		margin : 10px;
+		font-weight: bold;
 	}
 </style>
 </head>
@@ -54,10 +59,12 @@
 	    </p>
 	    </aside>
 	    <section>
+		    <h3>용병 모집 게시판</h3>
 		    <hr>
 		    <form method="post" action="<c:url value ='/mangather/modify.j'/>">
+			
 			<h4><input type="text" name="title" value='${board.title}'/></h4>	 
-		   <div id = "photobox"></div>
+			
 		   <input type="hidden" name="boardNo" value="${board.boardNo}">
 			<table>
 				<tr>

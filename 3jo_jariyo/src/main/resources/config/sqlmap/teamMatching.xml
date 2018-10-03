@@ -54,5 +54,45 @@
 		  from jariyo_matching
 		 where board_no = #{boardNo}
 	</delete>
+
+	<resultMap id="matchingCommentMap" type="MatchingComment">
+		<result column="comment_no" property="commentNo" />
+		<result column="board_no" property="boardNo" />
+		<result column="writer_id" property="writerId" />
+		<result column="content" property="content" />
+		<result column="reg_date" property="regDate" />
+	</resultMap>
 	
+
+	<select id="selectMatchingCommentByNo" parameterType="int" 
+	        resultMap="matchingCommentMap">
+	    select *
+	      from jariyo_matchingcomment
+	     where board_no = #{boardNo}  
+	     order by comment_no    
+	</select>
+    
+
+	<insert id="insertMatchingComment" parameterType="MatchingComment">
+		insert into jariyo_matchingcomment(
+			comment_no, board_no, writer_id, content
+		) values (
+			j_matchingcomment_no.nextval, #{boardNo}, #{writerId}, #{content}
+		)
+	</insert>
+	
+
+	<delete id="deleteMatchingComment" parameterType="int">
+	    delete 
+	      from jariyo_matchingcomment
+	     where comment_no = #{commentNo}
+	</delete>
+	
+	
+	<update id="updateMatchingComment" parameterType="MatchingComment">
+	    update jariyo_matchingcomment
+	       set content = #{content}
+	     where comment_no = #{commentNo}
+	</update>
+
 </mapper>
