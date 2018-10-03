@@ -15,30 +15,26 @@ import com.jariyo.common.db.MyAppSqlConfig;
 import com.jariyo.repository.domain.Booking;
 import com.jariyo.repository.mapper.BookingMapper;
 
-@WebServlet("/booking/list.j")
-public class ListBooking extends HttpServlet{
+@WebServlet("/booking/delete.j")
+public class DeleteBooking extends HttpServlet{
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		String date = request.getParameter("date");
-		int placeNo = Integer.parseInt(request.getParameter("plno"));
-//		System.out.println(placeNo);
-		
-		String year = date.substring(0, 4);
-		String month = date.substring(5, 7);
-		String day = date.substring(8, 10);
-		
-		Booking bo = new Booking();
-		bo.setBookingDate(year+month+day);
-		bo.setPlaceNo(placeNo);
+		int bookingNo = Integer.parseInt(request.getParameter("bno"));
 		
 		BookingMapper mapper = 
 				MyAppSqlConfig.getSqlSessionInstance().getMapper(BookingMapper.class);
-
 		
-		List<Booking> list = mapper.selectListByDateAndPlno(bo);
-//		System.out.println(list);
+		Booking b = mapper.selectOnebyNo(bookingNo);
+		
+		Booking booking = new Booking();
+		booking.setBookingDate(b.getBookingDate());
+		booking.setPlaceNo(b.getPlaceNo());
+		
+		mapper.deleteBooking(bookingNo);
+		
+		List<Booking> list = mapper.selectListByDateAndPlno(booking);
 		
 		if(list!=null) {
 			for(Booking bk : list) {
@@ -63,5 +59,4 @@ public class ListBooking extends HttpServlet{
 		} //if
 		
 	}
-	
-}// end class
+} //end class

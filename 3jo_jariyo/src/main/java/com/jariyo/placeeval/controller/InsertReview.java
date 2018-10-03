@@ -13,7 +13,7 @@ import com.jariyo.common.db.MyAppSqlConfig;
 import com.jariyo.repository.domain.PlaceEval;
 import com.jariyo.repository.mapper.PlaceEvalMapper;
 
-@WebServlet("/placeeval/insert.do")
+@WebServlet("/placeeval/insert.j")
 public class InsertReview extends HttpServlet{
 
 	@Override
@@ -25,6 +25,7 @@ public class InsertReview extends HttpServlet{
 		String star = request.getParameter("star");
 		String content = request.getParameter("content");
 		int placeNo = Integer.parseInt(request.getParameter("no"));
+		String id = request.getParameter("id");
 		
 		System.out.println(star);
 		System.out.println(content);
@@ -33,7 +34,7 @@ public class InsertReview extends HttpServlet{
 		
 		pe.setStarPoint(star);
 		pe.setContent(content);
-		pe.setId("victory");
+		pe.setId(id);
 		pe.setPlaceNo(placeNo);
 		pe.setRegDate(new Date());
 		

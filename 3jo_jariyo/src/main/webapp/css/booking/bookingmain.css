@@ -16,10 +16,24 @@ input[type="email"], input[type="tel"] {
 	width: 300px;
 }
 
+input[name="starttime"], input[name="endtime"]{
+	width : 100px;
+}
 div#bookinginfo {
     margin-top : 30px;
 }
 
 div#bookingdate {
     margin: 10px;
+}
+
+table#listbooking {
+	width: 100%;
+	text-align : center;
+	border : 1px solid salmon;
+}
+
+div#set {
+	float : right;
+	display : inline-block;
 }

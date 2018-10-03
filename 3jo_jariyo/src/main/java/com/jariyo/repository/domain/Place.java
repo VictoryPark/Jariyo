@@ -4,8 +4,8 @@ public class Place {
 
 	private int placeNo;
 	private String placeName;
-	private String placeRoadArrd;
-	private String placeDetailArrd;
+	private String placeRoadAddr;
+	private String placeDetailAddr;
 	private String placePostNo;
 	private String placePhoneNo;
 	private String placeFacility;
@@ -20,8 +20,6 @@ public class Place {
 	private String weekdaysEnd;
 	private String weekendsStart;
 	private String weekendsEnd;
-	
-	
 	public int getPlaceNo() {
 		return placeNo;
 	}
@@ -34,17 +32,17 @@ public class Place {
 	public void setPlaceName(String placeName) {
 		this.placeName = placeName;
 	}
-	public String getPlaceRoadArrd() {
-		return placeRoadArrd;
+	public String getPlaceRoadAddr() {
+		return placeRoadAddr;
 	}
-	public void setPlaceRoadArrd(String placeRoadArrd) {
-		this.placeRoadArrd = placeRoadArrd;
+	public void setPlaceRoadAddr(String placeRoadAddr) {
+		this.placeRoadAddr = placeRoadAddr;
 	}
-	public String getPlaceDetailArrd() {
-		return placeDetailArrd;
+	public String getPlaceDetailAddr() {
+		return placeDetailAddr;
 	}
-	public void setPlaceDetailArrd(String placeDetailArrd) {
-		this.placeDetailArrd = placeDetailArrd;
+	public void setPlaceDetailAddr(String placeDetailAddr) {
+		this.placeDetailAddr = placeDetailAddr;
 	}
 	public String getPlacePostNo() {
 		return placePostNo;
@@ -130,8 +128,7 @@ public class Place {
 	public void setWeekendsEnd(String weekendsEnd) {
 		this.weekendsEnd = weekendsEnd;
 	}
-	
-	
+
 	
 	
 } //end class

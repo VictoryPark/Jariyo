@@ -12,7 +12,7 @@ import javax.xml.ws.WebServiceClient;
 import com.jariyo.common.db.MyAppSqlConfig;
 import com.jariyo.repository.mapper.PlaceEvalMapper;
 
-@WebServlet("/placeeval/delete.do")
+@WebServlet("/placeeval/delete.j")
 public class DeleteReview extends HttpServlet{
 
 	@Override

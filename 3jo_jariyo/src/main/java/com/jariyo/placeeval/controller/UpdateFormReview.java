@@ -15,7 +15,7 @@ import com.jariyo.common.db.MyAppSqlConfig;
 import com.jariyo.repository.domain.PlaceEval;
 import com.jariyo.repository.mapper.PlaceEvalMapper;
 
-@WebServlet("/placeeval/updateform.do")
+@WebServlet("/placeeval/updateform.j")
 public class UpdateFormReview extends HttpServlet{
 
 	@Override

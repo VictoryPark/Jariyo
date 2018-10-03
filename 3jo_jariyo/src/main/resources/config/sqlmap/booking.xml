@@ -29,10 +29,28 @@
 			where booking_no = #{bookingNo}
 	</delete>
 	
-	<select id="selectListOnDate" parameterType="string" resultMap="bookingMap">
+	<select id="selectListByDateAndPlno" parameterType="Booking" resultMap="bookingMap">
 		select * from jariyo_booking
 			where booking_date = #{bookingDate} 
+			  and place_no = #{placeNo}
+			order by start_time
 	</select>
+	
+	<select id="selectOnebyNo" parameterType="int" resultMap="bookingMap">
+		select * from jariyo_booking
+			where booking_no = #{bookingNo}
+			order by start_time
+	</select>
+	
+	<update id="updateBooking" parameterType="Booking">
+		update jariyo_booking
+			set start_time = #{startTime},
+				end_time = #{endTime},
+				booking_team_name = #{bookingTeamName},
+				booking_phone_no = #{bookingPhoneNo}
+		 where booking_no = ${bookingNo}	
+	</update>
+	
 	
 	
 </mapper>

@@ -5,8 +5,8 @@
 	<resultMap id="placeMap" type="Place">
 		<result column="place_no" property="placeNo"/>
 		<result column="place_name" property="placeName"/>
-		<result column="place_road_addr" property="placeRoadArrd"/>
-		<result column="place_detail_addr" property="placeDetailArrd"/>
+		<result column="place_road_addr" property="placeRoadAddr"/>
+		<result column="place_detail_addr" property="placeDetailAddr"/>
 		<result column="place_post_no" property="placePostNo"/>
 		<result column="place_phone_no" property="placePhoneNo"/>
 		<result column="place_facility" property="placeFacility"/>

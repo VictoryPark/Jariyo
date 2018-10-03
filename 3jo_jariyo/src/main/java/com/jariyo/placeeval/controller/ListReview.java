@@ -16,7 +16,7 @@ import com.jariyo.common.db.MyAppSqlConfig;
 import com.jariyo.repository.domain.PlaceEval;
 import com.jariyo.repository.mapper.PlaceEvalMapper;
 
-@WebServlet("/placeeval/list.do")
+@WebServlet("/placeeval/list.j")
 public class ListReview extends HttpServlet{
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
