@@ -4,7 +4,7 @@
 
 	<header>
 	    <h1>
-	      자리Y<img id="ball" src="<c:url value='/img/common/ball-icon.gif'/>" width="58px"/>
+	      <a href="<c:url value="/jariyo/main.j" />">자리Y<img id="ball" src="<c:url value='/img/common/ball-icon.gif'/>" width="58px"/></a>
 	    </h1>
 	  <nav am-layout="horizontal">
 	  <a href="<c:url value="/jariyo/main.j" />">검색</a>

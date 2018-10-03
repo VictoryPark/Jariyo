@@ -2,14 +2,6 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>3jo_jariyo</display-name>
   
-  <servlet>
-    <servlet-name>test01</servlet-name>
-    <servlet-class>kr.co.mlec.servlet.basic.Test01</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>test01</servlet-name>
-    <url-pattern>/servlet/basic/test01</url-pattern>
-  </servlet-mapping>
   
    <filter>
    	<filter-name>logincheck</filter-name>
@@ -17,19 +9,22 @@
    	<init-param>
    		<param-name>pages</param-name>
    		<param-value>
-   			/;
-   			/login-form;
-   			/login/login.do;
-   			/signup/signup.do;
-   			/signup/signup-form.do;
-   			/board/list.do
+   			/login-form.j;
+   			/login.j;
+   			/signup.j;
+   			/signup-form.j;
+   			/teammatching/list.j;
+   			/mangather/list.j;
+   			/manvolun/list.j;
+   			/jariyo/main.j;
+   			/jariyo/searchresult.j
    		</param-value>
    	</init-param>
    </filter>
   
    <filter-mapping>
    	<filter-name>logincheck</filter-name>
-   	<url-pattern>/jariyo</url-pattern>
+   	<url-pattern>*.j</url-pattern>
    </filter-mapping>
    
   <welcome-file-list>

@@ -17,7 +17,10 @@ body {
   color: #5e5e5e;
   font: 400 87.5%/1.5em 'Open Sans', sans-serif;
 }
-
+a {
+	text-decoration : none;
+	color: #666;
+}
 /* Form Layout */
 .form-wrapper {
   background: #fafafa;

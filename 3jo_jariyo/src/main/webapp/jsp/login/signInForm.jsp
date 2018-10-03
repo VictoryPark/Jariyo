@@ -10,7 +10,8 @@
 </head>
 <body>
 <div class="form-wrapper">
-  <h1>자리Y<img id="ball" src="http://localhost:8000/3jo_jariyo/img/common/ball-icon.gif" width="58px"/></h1>
+  <a href="<c:url value="/jariyo/main.j" />">
+  <h1>자리Y<img id="ball" src="http://localhost:8000/3jo_jariyo/img/common/ball-icon.gif" width="58px"/></h1></a>
   <form action="<c:url value="/login.j" />">
     <div class="form-item">
       <label for="email"></label>

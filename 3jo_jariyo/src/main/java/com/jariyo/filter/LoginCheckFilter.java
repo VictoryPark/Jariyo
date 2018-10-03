@@ -45,13 +45,13 @@ public class LoginCheckFilter implements Filter {
 		HttpServletResponse hRes = (HttpServletResponse)response;
 		
 		String uri = hReq.getRequestURI();
-		System.out.println("uri : " + uri);
+		//System.out.println("uri : " + uri);
 		
 		String contextPath = hReq.getContextPath();
-		System.out.println("contextPath : " + contextPath);
+		//System.out.println("contextPath : " + contextPath);
 		
 		uri = uri.substring(contextPath.length());
-		System.out.println("변경후 uri : " + uri);
+		//System.out.println("변경후 uri : " + uri);
 		
 		// 1. 로그인이 필요한 페이지에 대해서 로그인이 되어 있는지 체크하고
 		//    list 안에 uri가 포함되어 있는지 확인한다.
@@ -69,7 +69,7 @@ public class LoginCheckFilter implements Filter {
 			// 만약, 로그인이 필요한 페이지인데 로그인을 하지 않은 상태로 접근한 경우
 			if (user == null) {
 				// 로그인 폼으로 페이지를 이동
-				hRes.sendRedirect(contextPath +"/login-form");
+				hRes.sendRedirect(contextPath +"/login-form.j");
 				return;
 			} // inner if
 		} // outer if
