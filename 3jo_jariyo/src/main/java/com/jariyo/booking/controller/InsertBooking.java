@@ -28,6 +28,7 @@ public class InsertBooking extends HttpServlet{
 		String date = request.getParameter("date");
 		String st = request.getParameter("starttime");
 		String et = request.getParameter("endtime");
+		String id = request.getParameter("userid");
 		
 		String year = date.substring(0, 4);
 		//System.out.println(year);
@@ -49,7 +50,7 @@ public class InsertBooking extends HttpServlet{
 		b.setBookingEmail(email);
 		b.setMailSend(emailSend);
 		b.setBookingPhoneNo(tel);
-		b.setId("vic");
+		b.setId(id);
 		b.setPlaceNo(placeNo);
 		b.setStartTime(hour1+min1);
 		b.setEndTime(hour2+min2);
@@ -59,7 +60,7 @@ public class InsertBooking extends HttpServlet{
 		
 		mapper.insertBooking(b);
 		
-		response.sendRedirect("/3jo_jariyo/booking/main.do?no="+placeNo);
+		response.sendRedirect("/3jo_jariyo/booking/main.j?no="+placeNo);
 		
 	}
 

@@ -55,6 +55,7 @@
             <div id="bookinginfo" >
             <form action="<c:url value="/booking/insert.j"/>" method="post"/>
             	<input type="hidden" id="hidden" name ="plno" value="${place.placeNo}" userid="${user.id}"/>
+            	<input type="hidden" id="hidden" name ="userid" value="${user.id}" />
 	                <p>*예약자 성명 : <input type="text" name="name" value="${user.name }" disabled/>
 	                   </p>
 	                 <p>*예약 날짜 : <input type="text" id="date" name="date" value="달력에서 표시한 날짜"/></p>
