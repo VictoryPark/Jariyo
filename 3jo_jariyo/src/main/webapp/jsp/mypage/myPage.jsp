@@ -34,25 +34,28 @@
 	    <section class="section">
 		    <div class="wrapper">
 		    	<div class="reservation">
-		    		<h2 class="nice">
+		    		<h4 class="nice">
 		    			내 예약내역
-		    		</h2>
+		    		</h4>
 	    			<table class="nice-border">
 		    			<tr>
-						    <th>시설</th>
-						    <th>날짜</th>
+						    <th>시설이름</th>
+						    <th>예약팀</th>
+						    <th>예약날짜</th>
 					    </tr>
-					    <tr>
-						    <td>서원초등학교</td>
-						    <td>20:00 ~ 21:00</td>
-						    <td>정인용</td>
-					    </tr>
+					    <c:forEach var="i" begin="0" end="5">					    
+						    <tr>
+							    <td><c:out value="${plnamelist[i]}"/></td>
+							    <td><c:out value="${bookingList[i].bookingTeamName}"/></td>
+							    <td><c:out value="${bookingList[i].bookingDate}"/></td>
+						    </tr>
+					    </c:forEach>
 	    			</table>
 		    	</div>
 		    	<div class="my-game-post">
-		    		<h2 class="nice">
+		    		<h4 class="nice">
 		    			내가 작성한 경기매칭
-		    		</h2>
+		    		</h4>
 	    			<table class="nice-border">
 		    			<tr>
 						    <th>제목</th>
@@ -69,9 +72,9 @@
 	    			</table>
 		    	</div>
 		    	<div class="player-post">
-		    		<h2 class="nice">
+		    		<h4 class="nice">
 		    			내가 작성한 용병모집
-		    		</h2>
+		    		</h4>
 	    			<table class="nice-border">
 		    			<tr>
 						    <th>제목</th>
@@ -88,9 +91,9 @@
 	    			</table>
 		    	</div>
 		    	<div class="playground-score">
-		    		<h2 class="nice">
+		    		<h4 class="nice">
 		    			내가 작성한 용병신청
-		    		</h2>
+		    		</h4>
 	    			<table class="nice-border">
 		    			<tr>
 						    <th>제목</th>
@@ -109,47 +112,22 @@
 	    			</table>
 		    	</div>
 		    	<div class="player-score">
-		    		<h2 class="nice">
-		    			내가 평가한 용병
-		    		</h2>
+		    		<h4 class="nice">
+		    			내가 평가한 시설
+		    		</h4>
 	    			<table class="nice-border">
 		    			<tr>
-						    <th>용병이름</th>
-						    <th>제목</th>
+						    <th>시설 이름</th>
+						    <th>내용</th>
 						    <th>작성일</th>
 					    </tr>
-					    <tr>
-						    <td>이득재</td>
-						    <td>매너도 좋으시구 잘하시는 분</td>
-						    <td>2018-08-28</td>
-					    </tr>
-					    <tr>
-						    <td>김도훈</td>
-						    <td>최고의 스트라이커</td>
-						    <td>2018-09-15</td>
-					    </tr>
-	    			</table>
-		    	</div>
-		    	<div class="team-score">
-		    		<h2 class="nice">
-		    			내가 평가한 팀
-		    		</h2>
-	    			<table class="nice-border">
-		    			<tr>
-						    <th>팀명</th>
-						    <th>제목</th>
-						    <th>작성일</th>
-					    </tr>
-					    <tr>
-						    <td>FCDJ</td>
-						    <td>좀 거칠게 공을 차는 팀이에요</td>
-						    <td>2018-08-28</td>
-					    </tr>
-					    <tr>
-						    <td>FCAR</td>
-						    <td>매너도 좋으시고 잘하십니다!</td>
-						    <td>2018-09-15</td>
-					    </tr>
+					    <c:forEach var="j" begin="0" end="5">					    
+						    <tr>
+							    <td><c:out value="${peNameList[j]}"/></td>
+							    <td><c:out value="${evalList[j].content}"/></td>
+							    <td><c:out value="${evalList[j].regDate}"/></td>
+						    </tr>
+					    </c:forEach>
 	    			</table>
 		    	</div>
 		    </div>		    

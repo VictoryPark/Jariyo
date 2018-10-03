@@ -61,6 +61,7 @@
 		<result column="career" property="career"/>
 		<result column="area" property="area"/>
 		<result column="reg_date" property="regDate"/>
+		<result column="writer_name" property="writerName"/>
 	</resultMap>
 	
 	<!-- 회원정보 수정 -->
@@ -83,6 +84,44 @@
 		 where id = #{id}
 	</update>
 	
+	<resultMap type="Booking" id="bookingMap">
+		<result column="booking_no" property="bookingNo"/>
+		<result column="place_no" property="placeNo"/>
+		<result column="booking_team_name" property="bookingTeamName"/>
+		<result column="booking_email" property="bookingEmail"/>
+		<result column="booking_phone_no" property="bookingPhoneNo"/>
+		<result column="booking_date" property="bookingDate"/>
+		<result column="start_time" property="startTime"/>
+		<result column="end_time" property="endTime"/>
+		<result column="mail_send" property="mailSend"/>
+	</resultMap>
+	
+	<resultMap type="Place" id="placeMap">
+		<result column="place_no" property="placeNo"/>
+		<result column="place_name" property="placeName"/>
+		<result column="place_road_addr" property="placeRoadAddr"/>
+		<result column="place_detail_addr" property="placeDetailAddr"/>
+		<result column="place_post_no" property="placePostNo"/>
+		<result column="place_phone_no" property="placePhoneNo"/>
+		<result column="place_facility" property="placeFacility"/>
+		<result column="place_position_x" property="placePositionX"/>
+		<result column="place_position_y" property="placePositionY"/>
+		<result column="star_point" property="starPoint"/>
+		<result column="weekdays_start" property="weekdaysStart"/>
+		<result column="weekdays_end" property="weekdaysEnd"/>
+		<result column="weekends_start" property="weekendsStart"/>
+		<result column="weekends_end" property="weekendsEnd"/>	
+	</resultMap>
+	
+	<resultMap type="PlaceEval" id="placeEvalMap">
+		<result column="eval_no" property="evalNo"/>
+		<result column="id" property="id"/>
+		<result column="place_no" property="placeNo"/>
+		<result column="content" property="content"/>
+		<result column="reg_date" property="regDate"/>
+		<result column="star_point" property="starPoint"/>
+	</resultMap>
+	
 	<!-- 내가 작성한 경기매칭 게시글 -->
 	<select id="selectMyTeamMatching" parameterType="string" resultMap="teamMatchingMap">
 		select title, place_name, play_date
@@ -101,6 +140,27 @@
 	<select id="selectMyManVolun" parameterType="string" resultMap="manVolunMap">
 		select title, area, reg_date
 		  from jariyo_manvolunteer
-		 where writer_id = #{writerId}
+		 where writer_name = #{writerName}
+	</select>
+	
+	<!-- 내 예약내역 가져오기. -->
+	<select id="selectMyBooking" parameterType="string" resultMap="bookingMap">
+		select *
+		  from jariyo_booking
+		 where id = #{id}
+	</select>
+	
+	<!-- 시설이름 가져오기  -->
+	<select id="selectPlaceName" parameterType="int" resultType="string">
+		select place_name
+		  from jariyo_place
+		 where place_no = #{placeNo}
+	</select>
+	
+	<!-- 내가 평가한 시설 가져오기 -->
+	<select id="selectMyPlaceEval" parameterType="string" resultMap="placeEvalMap">
+		select *
+		  from jariyo_place_eval
+		 where id = #{id}
 	</select>
 </mapper>

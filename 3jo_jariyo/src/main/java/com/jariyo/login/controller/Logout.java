@@ -25,7 +25,7 @@ public class Logout extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.invalidate();
 		
-		response.sendRedirect(request.getContextPath() + "/jsp/main/mainpage.jsp");
+		response.sendRedirect(request.getContextPath() + "/jariyo/main.j");
 	}
 
 }
