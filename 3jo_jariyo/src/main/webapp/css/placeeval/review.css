@@ -7,9 +7,14 @@ body{
 div#mapimg {
     border: 2px solid salmon
 }
-aside, section {
+aside {
     margin: 10px;
     border : 2px solid rgb(27, 116, 93);
+}
+
+section {
+    margin: 10px;
+    border-left : 2px solid #adadad;
 }
 section p#main {
     width: inherit;
@@ -26,6 +31,10 @@ section p#main {
 
 div[id='list-container'] {
 	margin : 30px 20px;
+}
+
+div[id='reviewList'] {
+	margin : 20px;
 }
 
 table[id^='review']  {

@@ -9,7 +9,7 @@
 <title>Review</title>
 	<c:import url="reviewCSS.jsp"/>
 <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=BBjwCvbrK6T1vbhMtGbc&submodules=geocoder"></script>
-	<script
+<script
         src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous">
@@ -78,6 +78,7 @@
 			<button>등록</button>
 			</div>
 		</form>
+		</div>
 		<div id="reviewList">
 			
 		</div>
@@ -148,10 +149,15 @@
 						html += '<td id="id">'+r.id+'</td>'
 						html += "</tr><tr>"
 						html +=	'<td id="regDate">'+regDate.getFullYear()+'.'+(regDate.getMonth()+1)+'.'+regDate.getDate()+'</td>'
-						html += "</tr><tr>" 
-						html += '<td id="buttons"><a href="#'+r.evalNo+'" id="update" plno="'+r.placeNo+'">수정 </a>'
-								+ '<a href="#'+r.evalNo+'" id="delete" plno="'+r.placeNo+'"> 삭제</a>'
-						html += '</tr></table>' 
+						html += "</tr>" 
+						
+						if(r.id==$("input#hidden").val()){
+							html += '<tr><td id="buttons"><a href="#'+r.evalNo+'" id="update" plno="'+r.placeNo+'">수정 </a>'
+									+ '<a href="#'+r.evalNo+'" id="delete" plno="'+r.placeNo+'"> 삭제</a>'
+							html += '</tr>' 	
+						} else {
+							html += "</table>"
+						}
 						
 					} //for
 					div.html(html);

@@ -43,7 +43,7 @@ public class InsertReview extends HttpServlet{
 		
 		mapper.insertReview(pe);
 		
-		response.sendRedirect("/3jo_jariyo/placeeval/insertform.j?no="+placeNo);
+		response.sendRedirect("/3jo_jariyo/jariyo/detailView.j?no="+placeNo+"#panel2");
 		
 	}
 
