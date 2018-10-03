@@ -146,7 +146,7 @@ A:hover {
 		<div id="box3">
 			<div class="title_more">
 				<div class="mini_title">
-					<a>경기매칭</a>
+					<a href="/3jo_jariyo/teammatching/list.j">경기매칭</a>
 				</div>
 			</div>
 			<div class="minilist">

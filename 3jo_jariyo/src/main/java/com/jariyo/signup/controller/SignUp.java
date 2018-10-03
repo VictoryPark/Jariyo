@@ -51,7 +51,7 @@ public class SignUp extends HttpServlet {
 		
 		mapper.insertMember(member);
 		
-		response.sendRedirect(request.getContextPath() + "/login-form");
+		response.sendRedirect(request.getContextPath() + "/login-form.j");
 	}
 
 }
