@@ -52,28 +52,28 @@ A:hover {
 
 #box1 {
 	width: 40%;
-	height: 200px;
+	height: 300px;
 	margin: auto;
 	display: inline-block;
 }
 
 #box2 {
 	width: 40%;
-	height: 200px;
+	height: 300px;
 	margin: auto;
 	display: inline-block;
 }
 
 #box3 {
 	width: 40%;
-	height: 200px;
+	height: 300px;
 	margin: auto;
 	display: inline-block;
 }
 
 #box4 {
 	width: 40%;
-	height: 200px;
+	height: 300px;
 	margin: auto;
 	display: inline-block;
 }
@@ -113,14 +113,9 @@ A:hover {
 					<tr>
 						<td>
 							<ul>
-								<%-- <c:forEach var="mv" items="${manvolunlist}" begin="1" end="4"
-									varStatus="stat">
-									<li><a href='detailView.do?no=${mv.no}'>${mv.title}</a></li>
-								</c:forEach> --%>
-								<li>1시에 수원 월드컵 경기장 대타 한명 구합니다</li>
-								<li>월 12일 저녁에 풋살 경기 대타 가능하신분 구합니다...</li>
-								<li>월 12일 저녁에 풋살 경기 대타 가능하신분 구합니다...</li>
-								<li>1시에 수원 월드컵 경기장 대타 한명 구합니다</li>
+								<c:forEach var="mv" items="${manvolunlist}" begin="0" end="5">
+									<li><a href="/3jo_jariyo/manvolun/list.j?boardNo=${mv.boardNo}">${mv.title}</a></li>
+								</c:forEach>
 							</ul>
 						</td>
 					</tr>
@@ -130,7 +125,7 @@ A:hover {
 		<div id="box2">
 			<div class="title_more">
 				<div class="mini_title">
-					<a>용병 모집</a>
+					<a href="/3jo_jariyo/mangather/list.j">용병 모집</a>
 				</div>
 			</div>
 			<div class="minilist">
@@ -138,8 +133,8 @@ A:hover {
 					<tr>
 						<td>
 						<ul>
-						<c:forEach var="mg" items="${mangatlist}">
-								<li><a href="#">${mg.title}</a></li>
+						<c:forEach var="mg" items="${mangatlist}" begin="0" end="5">
+								<li><a href="/3jo_jariyo/mangather/detail.j?boardNo=${mg.boardNo}">${mg.title}</a></li>
 						</c:forEach>
 						</ul>
 						</td>
@@ -159,14 +154,9 @@ A:hover {
 					<tr>
 						<td>
 							<ul>
-								<%-- <c:forEach var="team" items="${teamlist}" begin="1" end="4"
-									varStatus="stat">
-									<li><a href='detailView.do?no=${team.no}'>${team.title}</a></li>
-								</c:forEach> --%>
-								<li>권선동 5대5 풋살 하실분 구합니다</li>
-								<li>연남동 일요일 축구 가능한 팀 있나요?</li>
-								<li>연남동 일요일 축구 가능한 팀 있나요?</li>
-								<li>연남동 일요일 축구 가능한 팀 있나요?</li>
+								<c:forEach var="team" items="${teamlist}" begin="0" end="5">
+									<li><a href="/3jo_jariyo/teammatching/detail.j?boardNo=${team.boardNo}">${team.title}</a></li>
+								</c:forEach>
 							</ul>
 						</td>
 					</tr>

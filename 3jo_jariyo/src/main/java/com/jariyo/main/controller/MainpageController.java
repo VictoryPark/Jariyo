@@ -20,20 +20,21 @@ import com.jariyo.repository.mapper.ManVolunMapper;
 import com.jariyo.repository.mapper.PlaceMapper;
 import com.jariyo.repository.mapper.TeamMatchingMapper;
 
-@WebServlet("/board/main.do")
+@WebServlet("/jariyo/main.j")
 public class MainpageController extends HttpServlet {
 	
 	
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		//용병신청 테이블
-//		ManVolunMapper manVmapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(ManVolunMapper.class);
-//		// 데이터베이스 게시물 목록 가져오기
-//		List<ManVolun> manvolunlist =  manVmapper.selectBoard();
-//		
-//		// 준비된 데이터를 공유
-//		request.setAttribute("manvolunlist", manvolunlist);
+		request.setCharacterEncoding("utf-8");
+		
+		//용병신청 테이블
+		ManVolunMapper manVmapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(ManVolunMapper.class);
+		// 데이터베이스 게시물 목록 가져오기
+		List<ManVolun> manvolunlist =  manVmapper.selectManVolun();
+		// 준비된 데이터를 공유
+		request.setAttribute("manvolunlist", manvolunlist);
 		
 		//용병모집 테이블
 		ManGatherMapper manGmapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(ManGatherMapper.class);
@@ -42,18 +43,18 @@ public class MainpageController extends HttpServlet {
 		// 준비된 데이터를 공유
 		request.setAttribute("mangatlist", mangatlist);
 		
-//		//팀구해요 테이블
-//		TeamMatchingMapper teamMapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(TeamMatchingMapper.class);
-//		// 데이터베이스 게시물 목록 가져오기
-//		List<TeamMatching> teamlist =  teamMapper.selectBoard();
-//		
-//		// 준비된 데이터를 공유
-//		request.setAttribute("teamlist", teamlist);
-//		
+		//팀구해요 테이블
+		TeamMatchingMapper teamMapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(TeamMatchingMapper.class);
+		// 데이터베이스 게시물 목록 가져오기
+		List<TeamMatching> teamlist =  teamMapper.selectTeamMatching();
+		
+		// 준비된 데이터를 공유
+		request.setAttribute("teamlist", teamlist);
+		
 //		// 시설정보 테이블 접근
 //		PlaceMapper placeMapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(PlaceMapper.class);
 //		// 게시물 목록 가져오기
-//		List<Place> placelist = placeMapper.selectBoard();
+//		List<Place> placelist = placeMapper.PlaceList();
 //		// 준비된 데이터를 공유
 //		request.setAttribute("placelist", placelist);
 		
