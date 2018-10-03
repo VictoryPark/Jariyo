@@ -4,12 +4,11 @@
 
 	<header>
 	    <h1>
-	      자리Y<img id="ball" src="http://localhost:8000/3jo_jariyo/img/common/ball-icon.gif" width="58px"/>
+	      자리Y<img id="ball" src="<c:url value='/img/common/ball-icon.gif'/>" width="58px"/>
 	    </h1>
 	  <nav am-layout="horizontal">
 	  <a href="<c:url value="/jariyo/main.j" />">검색</a>
 	  <a href="<c:url value="/teammatching/list.j" />">게시글</a>
-	  <a href="http://localhost:8000/3jo_jariyo/jsp/competition/competition.jsp">대회 정보</a>
 	  <a href="<c:url value="/mypage.j" />">마이 페이지</a>
       <c:choose>
 	    <c:when test="${empty user}">
