@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/myinfo-form")
+@WebServlet("/myinfo-form.j")
 public class MyInfoForm extends HttpServlet {
 
 	@Override

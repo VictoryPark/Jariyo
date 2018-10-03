@@ -18,7 +18,7 @@ import com.jariyo.repository.domain.Member;
 import com.jariyo.repository.domain.TeamMatching;
 import com.jariyo.repository.mapper.MyPageMapper;
 
-@WebServlet("/mypage")
+@WebServlet("/mypage.j")
 public class MyPage extends HttpServlet {
 
 	@Override

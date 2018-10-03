@@ -17,7 +17,7 @@ import com.jariyo.repository.mapper.LoginMapper;
 import com.jariyo.repository.mapper.MyPageMapper;
 import com.oreilly.servlet.MultipartRequest;
 
-@WebServlet("/myinfo")
+@WebServlet("/myinfo.j")
 public class MyInfo extends HttpServlet {
 
 	@Override

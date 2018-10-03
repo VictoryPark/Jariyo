@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.jariyo.common.db.MyAppSqlConfig;
 import com.jariyo.repository.mapper.SignupMapper;
 
-@WebServlet("/signup-form")
+@WebServlet("/signup-form.j")
 public class SignUpForm extends HttpServlet {
 
 	@Override

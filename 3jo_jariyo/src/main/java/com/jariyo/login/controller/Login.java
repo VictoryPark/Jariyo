@@ -14,7 +14,7 @@ import com.jariyo.common.db.MyAppSqlConfig;
 import com.jariyo.repository.domain.Member;
 import com.jariyo.repository.mapper.LoginMapper;
 
-@WebServlet("/login")
+@WebServlet("/login.j")
 public class Login extends HttpServlet {
 
 	@Override

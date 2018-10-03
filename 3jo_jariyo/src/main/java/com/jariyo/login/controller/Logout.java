@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 import com.jariyo.common.db.MyAppSqlConfig;
 import com.jariyo.repository.mapper.LoginMapper;
 
-@WebServlet("/logout")
+@WebServlet("/logout.j")
 public class Logout extends HttpServlet {
 
 	@Override

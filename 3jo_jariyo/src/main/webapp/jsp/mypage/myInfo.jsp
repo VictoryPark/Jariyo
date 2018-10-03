@@ -29,7 +29,7 @@
 			    <div class="description">${ user.teamName }</div>
 			  <ul class="data">
 			    <li>
-			      <a class="my-profile" href="<c:url value="/myinfo-form"/>"><span class="entypo-heart"> 내정보</span></a>
+			      <a class="my-profile" href="<c:url value="/myinfo-form.j"/>"><span class="entypo-heart"> 내정보</span></a>
 			    </li>
 			    <li>
 			      <a class="my-profile"  href="../msg/messagelist.jsp"><span class="entypo-eye"> 쪽지</span></a>
@@ -37,7 +37,7 @@
 			</div>
 	    </aside>
 	    <section>
-	    	<form action="<c:url value="/myinfo" />" method="post" encType="multipart/form-data" >
+	    	<form action="<c:url value="/myinfo.j" />" method="post" encType="multipart/form-data" >
 	    	<div class="left">
 	    	<span>아이디 : </span>
 	    	<input type="text" name="id" placeholder="아이디 입력" value="${ user.id }" readonly="readonly" />

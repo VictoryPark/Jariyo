@@ -12,7 +12,7 @@ import com.jariyo.common.db.MyAppSqlConfig;
 import com.jariyo.repository.domain.Member;
 import com.jariyo.repository.mapper.SignupMapper;
 
-@WebServlet("/signup")
+@WebServlet("/signup.j")
 public class SignUp extends HttpServlet {
 
 	@Override

@@ -15,7 +15,7 @@
 </head>
 <body>
 <div id="login-box">
-    <form action="<c:url value="/signup" />">
+    <form action="<c:url value="/signup.j" />">
   <div class="left">
     <h1>자리Y<img id="ball" src="http://localhost:8000/3jo_jariyo/img/common/ball-icon.gif" width="58px"/></h1>
     <!-- id="idCheck" -->
