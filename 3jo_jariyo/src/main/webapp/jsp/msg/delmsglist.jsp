@@ -48,15 +48,15 @@ table tr:hover{
 <body>
 	<header>
 	    <h1>
-	      자리Y<img id="ball" src="../img/common/ball-icon.gif" width="58px"/>
+	      자리Y<img id="ball" src="<c:url value='/img/common/ball-icon.gif'/>" width="58px"/>
 	    </h1>
 	    <center>
 	  <table id="htable">
 			
-	 			<th> <a href="remsglist.do">받은쪽지함</a>&nbsp</th>
+	 			<th> <a href="remsglist.j">받은쪽지함</a>&nbsp</th>
 	  		
 	  		
-	  			<th><a href="semsglist.do">보낸쪽지함</a>&nbsp</th>
+	  			<th><a href="semsglist.j">보낸쪽지함</a>&nbsp</th>
 	  		
 	  	
 	 			<!-- <th> <a href="extralist.jsp">임시보관함</a>&nbsp</th> -->
@@ -111,7 +111,7 @@ table tr:hover{
 				    	<a<td><%= m.getMsgNo() %></td>
 				    	<td><%= m.getKind() %></td>
 				    	<td><%= m.getFromName() %></td>
-				    	<td><a href='detailmsg.do?no=<%=m.getNo() %>'><%=m.getTitle() %></a></td>/a>
+				    	<td><a href='detailmsg.j?no=<%=m.getNo() %>'><%=m.getTitle() %></a></td>/a>
 				    	<td><%= m.getRegDate() %></td>
 				   	</tr>
 				   	<%
@@ -133,7 +133,7 @@ table tr:hover{
 		    <a href=#4>4</a>   
 		    <a href=#5>5</a>   
 		    <a href=#1 >></a>
-		    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="writeform.do">쪽지쓰기</a>&nbsp&nbsp&nbsp<a href="delete.do"><button>삭제하기</button></a>
+		    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="writeform.j">쪽지쓰기</a>&nbsp&nbsp&nbsp<a href="delete.j"><button>삭제하기</button></a>
 		    </p>  
 		    <input type="text" width=8 hight=1><button>검색</button>
 			    </center>

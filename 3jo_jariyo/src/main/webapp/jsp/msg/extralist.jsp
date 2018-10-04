@@ -33,7 +33,7 @@ table tr:hover{
 <body>
 	<header>
 	    <h1>
-	      자리Y<img id="ball" src="ball-icon.gif" width="58px"/>
+	      자리Y<img id="ball" src="<c:url value='ball-icon.gif'/>" width="58px"/>
 	    </h1>
 	    <center>
 	  <table id="htable">

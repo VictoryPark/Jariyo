@@ -45,21 +45,21 @@ textarea.reciver {
 <body>
 	<header>
 	<h1>
-		자리Y<img id="ball" src="../img/common/ball-icon.gif" width="58px" />
+		자리Y<img id="ball" src="<c:url value='ball-icon.gif'/>" width="58px" />
 	</h1>
 	<center>
 		<table id="htable">
 
-			<th><a href="remsglist.do">받은쪽지함</a>&nbsp</th>
+			<th><a href="remsglist.j">받은쪽지함</a>&nbsp</th>
 
 
-			<th><a href="semsglist.do">보낸쪽지함</a>&nbsp</th>
+			<th><a href="semsglist.j">보낸쪽지함</a>&nbsp</th>
 
 
 			<!-- <th> <a href="extralist.jsp">임시보관함</a>&nbsp</th> -->
 
 
-			<th><a href="delmsglist.do">휴지통</a>&nbsp</th>
+			<th><a href="delmsglist.j">휴지통</a>&nbsp</th>
 
 		</table>
 	</center>
@@ -76,7 +76,7 @@ textarea.reciver {
 			<h2 id="cap">쪽지 쓰기</h2>
 
 
-			<form action="writemsg.do" method="post">
+			<form action="writemsg.j" method="post">
 				<tr>
 					<th>받는 사람</th>
 					<th><textarea class="reciver" name="toName" rows=1 cols=60></textarea>
@@ -106,7 +106,7 @@ textarea.reciver {
 		<p></p>
 		<button>보내기</button>
 		</form>
-		<a href="<c:url value="/msg/remsglist.do"/>"><button>취소</button></a>
+		<a href="<c:url value="/msg/remsglist.j"/>"><button>취소</button></a>
 	</center>
 	</section> </main>
 

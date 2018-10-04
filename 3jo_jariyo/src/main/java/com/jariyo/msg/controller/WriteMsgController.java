@@ -33,7 +33,7 @@ public class WriteMsgController extends HttpServlet{
 		mm.insertMsg(msg);
 		
 		RequestDispatcher rd = request.getRequestDispatcher(
-					"/msg/remsglist.do"
+					"/msg/remsglist.j"
 				);
 		
 		rd.forward(request,response);
