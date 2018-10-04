@@ -34,10 +34,10 @@ public class MyPage extends HttpServlet {
 		Member mem = (Member)session.getAttribute("user");
 		String id = mem.getId();
 		String name = mem.getName();
-		List<TeamMatching> matchList = mapper.selectMyTeamMatching(id);
+		List<TeamMatching> matchList = mapper.selectMyTeamMatching(name);
 		request.setAttribute("matchList", matchList);
 		
-		List<ManGather> gatherList = mapper.selectMyManGather(id);
+		List<ManGather> gatherList = mapper.selectMyManGather(name);
 		request.setAttribute("gatherList", gatherList);
 		
 		List<ManVolun> volunList = mapper.selectMyManVolun(name);

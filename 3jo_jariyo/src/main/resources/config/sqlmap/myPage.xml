@@ -35,6 +35,7 @@
 		<result column="place_name" property="placeName"/>
 		<result column="reg_date" property="regDate"/>
 		<result column="complete" property="complete"/>
+		<result column="writer_name" property="writerName"/>
 	</resultMap>
 	
 	<resultMap type="ManGather" id="manGatherMap">
@@ -50,6 +51,7 @@
 		<result column="place_addr" property="placeAddr"/>
 		<result column="reg_date" property="regDate"/>
 		<result column="complete" property="complete"/>
+		<result column="writer_name" property="writerName"/>
 	</resultMap>
 	
 	<resultMap type="ManVolun" id="manVolunMap">
@@ -64,25 +66,6 @@
 		<result column="writer_name" property="writerName"/>
 	</resultMap>
 	
-	<!-- 회원정보 수정 -->
-	<update id="updateMyInfo" parameterType="Member">
-		update jariyo_member
-		   set id = #{id},
-		       name = #{name},
-		       email = #{email},
-		       password = #{password},
-		       phone_no = #{phoneNo},
-		       post_no = #{postNo},
-		       road_addr = #{roadAddr},
-		       detail_addr = #{detailAddr},
-		       position_x = #{positionX},
-		       position_y = #{positionY},
-		       birth_date = #{birthDate},
-		       team_name = #{teamName},
-		       profile_img_path = #{profileImgPath},
-		       profile_img_name = #{profileImgName}
-		 where id = #{id}
-	</update>
 	
 	<resultMap type="Booking" id="bookingMap">
 		<result column="booking_no" property="bookingNo"/>
@@ -122,18 +105,38 @@
 		<result column="star_point" property="starPoint"/>
 	</resultMap>
 	
+	<!-- 회원정보 수정 -->
+	<update id="updateMyInfo" parameterType="Member">
+		update jariyo_member
+		   set id = #{id},
+		       name = #{name},
+		       email = #{email},
+		       password = #{password},
+		       phone_no = #{phoneNo},
+		       post_no = #{postNo},
+		       road_addr = #{roadAddr},
+		       detail_addr = #{detailAddr},
+		       position_x = #{positionX},
+		       position_y = #{positionY},
+		       birth_date = #{birthDate},
+		       team_name = #{teamName},
+		       profile_img_path = #{profileImgPath},
+		       profile_img_name = #{profileImgName}
+		 where id = #{id}
+	</update>
+	
 	<!-- 내가 작성한 경기매칭 게시글 -->
 	<select id="selectMyTeamMatching" parameterType="string" resultMap="teamMatchingMap">
 		select title, place_name, play_date
 		  from jariyo_matching
-		 where writer_id = #{writerId}
+		 where writer_name = #{writerName}
 	</select>
 	
 	<!-- 내가 작성한 용병모집 게시글 -->
 	<select id="selectMyManGather" parameterType="string" resultMap="manGatherMap">
 		select title, team_name, play_date
 		  from jariyo_mangather
-		 where writer_id = #{writerId}
+		 where writer_name = #{writerName}
 	</select>
 	
 	<!-- 내가 작성한 용병신청 게시글 -->

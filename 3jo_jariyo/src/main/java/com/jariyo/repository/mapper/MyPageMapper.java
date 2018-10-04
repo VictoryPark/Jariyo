@@ -11,8 +11,8 @@ import com.jariyo.repository.domain.TeamMatching;
 
 public interface MyPageMapper {
 	void updateMyInfo(Member member);
-	List<TeamMatching> selectMyTeamMatching(String id);
-	List<ManGather> selectMyManGather(String id);
+	List<TeamMatching> selectMyTeamMatching(String name);
+	List<ManGather> selectMyManGather(String name);
 	List<ManVolun> selectMyManVolun(String name);
 	List<Booking> selectMyBooking(String id);
 	String selectPlaceName(int no);

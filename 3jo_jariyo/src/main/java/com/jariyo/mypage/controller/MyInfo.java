@@ -28,7 +28,8 @@ public class MyInfo extends HttpServlet {
 		MyPageMapper mapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(MyPageMapper.class);
 		LoginMapper lMapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(LoginMapper.class);
 		
-		String uploadPath = "C:/git/first_miniproject/3jo_jariyo/src/main/webapp/img/mypage";
+		// tomcat-work에 내 프로젝트에 이미지가 올라가는 경로를 주면 바로 이클립스를 업데이트하지 않아도 올라간다.
+		String uploadPath = "C:\\app\\tomcat-work\\wtpwebapps\\3jo_jariyo\\img\\mypage";
 		
 //		SimpleDateFormat sdf = new SimpleDateFormat("/yyyy/MM/dd/HH");
 //		String datePath = sdf.format(new Date());

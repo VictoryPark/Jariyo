@@ -206,20 +206,20 @@
 			$("#id").val("").focus();
 		} else {
 			
-			var emailArr = new Array();
-			<c:forEach var="item" items="${emailList}">
-				emailArr.push('${item}');
-			</c:forEach>
-			
-			for (let i = 0; i < emailArr.length; i++) {
-				if ($("#email").val() == emailArr[i]) {
-					alert("사용할 수 없는 이메일 입니다.");
-					$("#email").val("").focus();
-					return false;
-				}
+		var emailArr = new Array();
+		<c:forEach var="item" items="${emailList}">
+			emailArr.push('${item}');
+		</c:forEach>
+		
+		for (let i = 0; i < emailArr.length; i++) {
+			if ($("#email").val() == emailArr[i]) {
+				alert("사용할 수 없는 이메일 입니다.");
+				$("#email").val("").focus();
+				return false;
 			}
-			$("#password").val("").focus();
-			alert("사용가능한 이메일 입니다.")
+		}
+		$("#password").val("").focus();
+		alert("사용가능한 이메일 입니다.")
 		}
 	}
 	
@@ -262,7 +262,7 @@
 	
 	var mapContainer = document.getElementById('map'), // 지도를 표시할 div
     mapOption = {
-        center: new daum.maps.LatLng(), // 지도의 중심좌표
+        center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
         // level: 5 // 지도의 확대 레벨
     };
     var geocoder = new daum.maps.services.Geocoder();
