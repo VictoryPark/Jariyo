@@ -13,7 +13,7 @@ import com.jariyo.common.db.MyAppSqlConfig;
 import com.jariyo.repository.domain.Msg;
 import com.jariyo.repository.mapper.MsgMapper;
 
-@WebServlet("/msg/writemsg.do")
+@WebServlet("/msg/writemsg.j")
 public class WriteMsgController extends HttpServlet{
 
 	@Override

@@ -14,7 +14,7 @@ import com.jariyo.common.db.MyAppSqlConfig;
 import com.jariyo.repository.domain.Msg;
 import com.jariyo.repository.mapper.MsgMapper;
 
-@WebServlet("/msg/remsglist.do")
+@WebServlet("/msg/remsglist.j")
 public class ReMsgListController extends HttpServlet{
 
 	@Override

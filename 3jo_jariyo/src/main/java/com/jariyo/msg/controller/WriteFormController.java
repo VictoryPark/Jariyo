@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
-@WebServlet("/msg/writeform.do")
+@WebServlet("/msg/writeform.j")
 public class WriteFormController extends HttpServlet{
 
 	@Override
