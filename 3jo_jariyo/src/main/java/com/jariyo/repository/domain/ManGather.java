@@ -15,7 +15,16 @@ public class ManGather {
 	private String placeAddr;
 	private Date regDate;
 	private String complete;
+	private String writerName;
 	
+	
+	
+	public String getWriterName() {
+		return writerName;
+	}
+	public void setWriterName(String writerName) {
+		this.writerName = writerName;
+	}
 	public int getBoardNo() {
 		return boardNo;
 	}

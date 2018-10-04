@@ -66,11 +66,10 @@
 	    <h3>용병 모집 게시판</h3>
 			<hr>
 	    	<h4>${board.title}</h4>
-
 			<table>
 				<tr>
 					<td>이름</td>
-					<td>${board.writerId}</td>
+					<td>${board.writerName}</td>
 					<td>팀명</td>
 					<td>${board.teamName}</td>
 					
@@ -105,10 +104,10 @@
 		</form>
 	</div>
 	       
+	<div id="commentList">
 	<form method="post" action="<c:url value="/mangather/updatecomment.j"/>">
 		<input type="hidden" name="boardNo" value="${board.boardNo}" />
 		<input type="hidden" name="commentNo" value="${commentNo}" />
-	<div id="commentList">
 	
 	  <table width='80%' border='1'>
 		 <tr>

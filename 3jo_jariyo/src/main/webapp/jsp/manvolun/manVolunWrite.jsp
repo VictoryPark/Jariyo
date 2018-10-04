@@ -89,7 +89,7 @@
 			</p>
 			<p>
 			<button>작성하기</button>
-			<button>목록</button>
+			<button><a href="<c:url value="/mangather/list.j"/>">목록</a></button>
 	    	</p>
 	    </section>
 	    </form>

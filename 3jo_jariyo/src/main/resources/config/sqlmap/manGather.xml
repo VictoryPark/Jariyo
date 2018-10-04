@@ -15,6 +15,7 @@
 		<result column="place_addr" property="placeAddr"/>		
 		<result column="reg_date" property="regDate"/>		
 		<result column="complete" property="complete"/>		
+		<result column="writer_name" property="writerName"/>		
 	</resultMap>
 	
 	<select id = "selectManGather" resultMap="manGatherMap">
@@ -31,10 +32,10 @@
 	
 	<insert id="insertManGather" parameterType="ManGather">
 		insert into jariyo_mangather (
-			board_no, title, team_name, kindof_game, ave_age, area, play_date, content
+			board_no, title, team_name, kindof_game, ave_age, area, play_date, content, writer_name
 		) values (
-			s_jmangather_no.nextval, #{title}, #{teamName}, #{kindofGame}, #{aveAge},
-			#{area}, #{playDate}, #{content}
+			s_jmangather_no.nextval, #{title}, #{teamName}, #{kindofGame}, #{aveAge}, 
+			#{area}, #{playDate}, #{content}, #{writerName}
 		)
 	</insert>
 	

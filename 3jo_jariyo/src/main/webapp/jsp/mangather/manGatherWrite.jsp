@@ -39,6 +39,9 @@
 		margin : 10px;
 		font-weight: bold;
 	}
+	input[name='playDate'] {
+		width : 600px;
+	}
 </style>
 </head>
 <body>	
@@ -62,20 +65,23 @@
 	      	<hr>
 	 		<form method="post" action="<c:url value='/mangather/write.j' />">
 			<h4><input type="text" name="title" placeholder="제목을 입력하세요."></h4>	
-	    
 			<table>
 				<tr>
+					<td>이름</td>
+					<td><input type="text" name="writerName" value="${gName}" readonly="readonly"></td>
 					<td>팀명</td>
 					<td><input type="text" name="teamName" placeholder="팀명을 입력하세요."></td>
-					<td>종목</td>
-					<td><input type="text" name="kindofGame" placeholder="종목을 입력하세요."></td>
 				</tr>
 				<tr>
+					<td>종목</td>
+					<td><input type="text" name="kindofGame" placeholder="종목을 입력하세요."></td>
 					<td>평균연령</td>
 					<td><input type="text" name="aveAge" placeholder="평균연령을 입력하세요."></td>
+
+				</tr>
+				<tr>
 					<td>활동지역</td>
 					<td><input type="text" name="area" placeholder="활동지역을 입력하세요."></td>
-
 				</tr>
 				<tr>
 					<td>경기 일시</td>
@@ -84,7 +90,7 @@
 			    		<input type="text" name="playDate" placeholder="경기일시을 입력하세요. 예)2018-10-04 13:00">
 	    		    </div>
 					</td>
-				<tr>
+				</tr>
 			</table>
 			
 			<p> 
@@ -94,7 +100,7 @@
 			</p>
 			<p>
 			<button>작성하기</button>
-			<button>목록</button>
+			<button><a href="<c:url value="/mangather/list.j"/>">목록</a></button>
 	    	</p>
 	   		</form>
 	    </section>

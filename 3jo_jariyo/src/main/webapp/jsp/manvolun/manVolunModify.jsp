@@ -65,15 +65,10 @@
 		   <input type="hidden" name ="boardNo" value="${board.boardNo}">
 			<table>
 				<tr>
-					<td>이름</td>
-					<td><input type="text" name="name" value='${board.writerId}'></td>
 					<td>종목</td>
 					<td><input type="text" name="kindofGame" value='${board.kindofGame}'></td>
-				</tr>
-				<tr>
 					<td>활동 지역</td>
-					<td><input type="text" name="area">${board.area}</td>
-					
+					<td><input type="text" name="area" value="${board.area}"></td>
 				</tr>
 				<tr>
 				<td>선수출신 여부 </td>

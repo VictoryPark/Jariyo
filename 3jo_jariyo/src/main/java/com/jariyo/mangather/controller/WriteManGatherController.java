@@ -21,19 +21,20 @@ public class WriteManGatherController extends HttpServlet {
 		
 		request.setCharacterEncoding("utf-8");
 		
+		ManGatherMapper mapper= MyAppSqlConfig.getSqlSessionInstance().getMapper(ManGatherMapper.class);
 		ManGather board = new ManGather();
 		
 //		board.setBoardNo(boardNo);
 		board.setTitle(request.getParameter("title"));
 		board.setTeamName(request.getParameter("teamName"));
+		board.setWriterName(request.getParameter("writerName"));
 		board.setKindofGame(request.getParameter("kindofGame"));
 		board.setAveAge(request.getParameter("aveAge"));
 		board.setArea(request.getParameter("area"));
 		board.setPlayDate(request.getParameter("playDate"));
 		board.setContent(request.getParameter("content"));
-		
-		ManGatherMapper mapper= MyAppSqlConfig.getSqlSessionInstance().getMapper(ManGatherMapper.class);
 		mapper.insertManGather(board);
+		
 		
 		response.sendRedirect(request.getContextPath() + "/mangather/list.j");
 		

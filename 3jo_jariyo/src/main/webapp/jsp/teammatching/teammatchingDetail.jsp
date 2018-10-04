@@ -57,48 +57,40 @@
 	    <p>
 	    	<a href="<c:url value="/manvolun/list.j"/>">용병 신청 게시판</a>
 	    </p>
-	    </aside>
+	    </aside>	
 	    <section>
 	      
 	      <h3>팀 매칭 게시판</h3>
 	      <hr>
 	      <h5>${board.title}</h5>
+	      
 		  <table>
 		  	<tr>
+		  		<td>이름</td>
+		  		<td>${board.writerName}</td>
 		  		<td>팀명</td>
 		  		<td>${board.teamName}</td>
+		  	</tr>
+		  	<tr>
 		  		<td>종목</td>
 		  		<td>${board.kindofGame}</td>
-		  	</tr>
-		  	<tr>
 		  		<td>활동 지역</td>
 		  		<td>${board.area}</div></td>
-		  		<td>경기장</td>
-		  		<td>${board.placeName}</td>
 		  	</tr>
 		  	<tr>
+		  		<td>경기장</td>
+		  		<td>${board.placeName}</td>
 		  		<td>경기일정</td>
 		  		<td>${board.playDate}</td>
+		  	</tr>
+		  	<tr>
 		  		<td>평균연령</td>
 		  		<td>${board.aveAge}</td>  		
-		  	</tr>
-
+			</tr>
 		  </table>
 		  
-		  <p>
-		  <div>
-		  	<teatarea name="content" row="6" cols="96" readonly="readonly">${board.content}</teatarea>
-		  </div>
-	      </p>
-	      <!-- 
-	      <table id="comment">
-	      	<tr>
-	      		<td>정인용</td>
-	      		<td colspan="2">시간대가 어떻게 되시나요?</td>
-	      		<td>09-14 10:10</td>
-	      	</tr>
-	      </table>
-	       -->
+		  <textarea name="content" row="6" cols="96" readonly="readonly">${board.content}</textarea>
+		  
 	       <div id="comment">
 			<form method="post" action="<c:url value="/teammatching/registcomment.j"/>">
 			 <input type="hidden" name="boardNo" value="${board.boardNo}" />	
@@ -111,18 +103,18 @@
 			 </table>
 		</form>
 	</div>
+	<br>
 	       
+	<div id="commentList">
 	<form method="post" action="<c:url value="/teammatching/updatecomment.j"/>">
 		<input type="hidden" name="boardNo" value="${board.boardNo}" />
 		<input type="hidden" name="commentNo" value="${commentNo}" />
-	<div id="commentList">
 	
 	  <table width='80%' border='1'>
 		 <tr>
 			<c:forEach var="comment" items="${commentList}">
 			<c:choose>
 		  		<c:when test="${commentNo eq comment.commentNo}">	
-		</tr>
 
 			<tr>
 			  <td><c:out value="${comment.writerId}" /></td>
@@ -138,8 +130,7 @@
 		<c:otherwise>
 				<tr>
 				  <td><c:out value="${comment.writerId}" /></td>
-				  <td>
-				  		<c:out value="${comment.content}" /></td>
+				  <td><c:out value="${comment.content}" /></td>
 				  <td><fmt:formatDate var="regDate" value="${comment.regDate}" 
 				                      pattern="yyyy-MM-dd" />
 				      <c:out value="${regDate}" />

@@ -13,6 +13,7 @@
 		<result column="kindof_game" property="kindofGame"/>
 		<result column="place_name" property="placeName"/>
 		<result column="reg_date" property="regDate"/>
+		<result column="writer_name" property="writerName"/>		
 	</resultMap>
 	
 	<select id = "selectTeamMatching" resultMap="teamMatchingMap">
@@ -29,10 +30,10 @@
 	
 	<insert id="insertTeamMatching" parameterType="TeamMatching">
 		insert into jariyo_matching (
-			board_no, title, team_name, kindof_game, place_name, ave_age, area, play_date, content
+			board_no, title, team_name, kindof_game, place_name, ave_age, area, play_date, content, writer_name
 		) values (
 			s_jmatching_no.nextval, #{title}, #{teamName}, #{kindofGame}, #{placeName}, #{aveAge},
-			#{area}, #{playDate}, #{content}
+			#{area}, #{playDate}, #{content}, #{writerName}
 		)
 	</insert>	
 	

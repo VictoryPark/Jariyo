@@ -13,7 +13,16 @@ public class TeamMatching {
 	private String aveAge;
 	private String placeName;
 	private Date regDate;
+	private String writerName;
 	
+	
+	
+	public String getWriterName() {
+		return writerName;
+	}
+	public void setWriterName(String writerName) {
+		this.writerName = writerName;
+	}
 	public int getBoardNo() {
 		return boardNo;
 	}

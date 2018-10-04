@@ -57,13 +57,13 @@
 	    </p>
 	    </aside>
 	    <section>
+			<h3>용병 신청 게시판</h3>
 			<hr>
 	    	<h4>${board.title}</h4>
 			<table>
 				<tr>
 					<td>이름</td>
 					<td>${board.writerName}</td>
-					
 					<td>종목</td>
 					<td>${board.kindofGame}</td>
 				
@@ -74,23 +74,9 @@
 					<td>활동지역</td>
 					<td>${board.area}</td>
 				</tr>
-				<tr>
-					<td>작성일시</td>
-					<td colspan="3"><fmt:formatDate value="${board.regDate}"
-										pattern="yyyy.MM.dd"/></td>
-				</tr>
 			</table> 
 			<textarea name="content" row="6" cols="96" readonly="readonly">${board.content}</textarea>
 			</p>
-			<!-- 
-			<table id="comment">
-				<tr>
-					<td>이득재</td>
-					<td colspan="2">쪽지 보냈습니다 확인해주세요</td>
-					<td>09-16 13:01</td>
-				</tr>
-			</table>
-			 -->
 			 
 			 <div id="comment">
 			<form method="post" action="<c:url value="/manvolun/registcomment.j"/>">
@@ -105,34 +91,39 @@
 		</form>
 	</div>
 	       
+	<div id="commentList">
 	<form method="post" action="<c:url value="/manvolun/updatecomment.j"/>">
 		<input type="hidden" name="boardNo" value="${board.boardNo}" />
 		<input type="hidden" name="commentNo" value="${commentNo}" />
-	<div id="commentList">
-	
+	<c:choose>
+	<c:when test="${empty commentList}">
+	<table width="80%">
+		<tr>
+		    <td colspan='20'>댓글이 존재하지 않습니다.</td>
+		</tr>
+	</table>
+	</c:when>
+	<c:otherwise>
 	  <table width='80%' border='1'>
 		 <tr>
 			<c:forEach var="comment" items="${commentList}">
 			<c:choose>
 		  		<c:when test="${commentNo eq comment.commentNo}">	
-		</tr>
-
-			<tr>
-			  <td><c:out value="${comment.writerId}" /></td>
-			  <td>
-			  	<textarea name="content" rows="2" cols="60"><c:out value="${comment.content}" /></textarea>
-			  </td>
-			  <td colspan="2">
-			  	  <input type="submit" value="수정" />	
-			  	  <a href=<c:url value="/manvolun/detail.j?boardNo=${board.boardNo}"/>">취소</a>	
-			  </td>
-		 </tr>
+					<tr>
+					  <td><c:out value="${comment.writerId}" /></td>
+					  <td>
+					  	<textarea name="content" rows="2" cols="60"><c:out value="${comment.content}" /></textarea>
+					  </td>
+					  <td colspan="2">
+					  	  <input type="submit" value="수정" />	
+					  	  <a href=<c:url value="/manvolun/detail.j?boardNo=${board.boardNo}"/>">취소</a>	
+					  </td>
+					 </tr>
 		</c:when>
 		<c:otherwise>
 				<tr>
 				  <td><c:out value="${comment.writerId}" /></td>
-				  <td>
-				  		<c:out value="${comment.content}" /></td>
+				  <td><c:out value="${comment.content}" /></td>
 				  <td><fmt:formatDate var="regDate" value="${comment.regDate}" 
 				                      pattern="yyyy-MM-dd" />
 				      <c:out value="${regDate}" />
@@ -145,12 +136,12 @@
 		 	</c:otherwise>		 	
 		 </c:choose>	
 		 </c:forEach>
-		<c:if test="${empty commentList}">
-		<tr>
-		    <td colspan='4'>댓글이 존재하지 않습니다.</td>
-		</tr>
-		</c:if>
+		<%-- <c:if test="${empty commentList}">
+		
+		</c:if> --%>
 	</table>
+	</c:otherwise>
+	</c:choose>
 	</div>
 	</form>	
 					 

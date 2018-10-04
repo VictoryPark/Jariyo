@@ -23,6 +23,7 @@ public class WriteTeamMatchingController extends HttpServlet{
 		TeamMatching board = new TeamMatching();
 		
 		board.setTitle(request.getParameter("title"));
+		board.setWriterName(request.getParameter("writerName"));
 		board.setTeamName(request.getParameter("teamName"));
 		board.setAveAge(request.getParameter("aveAge"));
 		board.setArea(request.getParameter("area"));
