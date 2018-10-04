@@ -79,8 +79,8 @@
 		       position_y = #{positionY},
 		       birth_date = #{birthDate},
 		       team_name = #{teamName},
-		       profile_img_real = #{profileImgReal},
-		       profile_img_sys = #{profileImgSys}
+		       profile_img_path = #{profileImgPath},
+		       profile_img_name = #{profileImgName}
 		 where id = #{id}
 	</update>
 	
