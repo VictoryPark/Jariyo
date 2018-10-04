@@ -6,13 +6,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<%
-    	List<Msg> list = (List<Msg>)request.getAttribute("list");
-		Msg msg = new Msg();
-		String kind = (String)request.getAttribute("kind");
-    %>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -48,7 +42,7 @@ table tr:hover{
 <body>
 	<header>
 	    <h1>
-	      자리Y<img id="ball" src="<c:url value='ball-icon.gif'/>" width="58px"/>
+	      자리Y<img id="ball" src="../img/common/ball-icon.gif" width="58px"/>
 	    </h1>
 	    <center>
 	  <table id="htable">
@@ -56,13 +50,13 @@ table tr:hover{
 	 			<th> <a href=#>받은쪽지함</a>&nbsp</th>
 	  		
 	  		
-	  			<th><a href="semsglist.j">보낸쪽지함</a>&nbsp</th>
+	  			<th><a href="<c:url value="/msg/semsglist.j"/>">보낸쪽지함</a>&nbsp</th>
 	  		
 	  	
 	 			<!-- <th> <a href="extralist.jsp">임시보관함</a>&nbsp</th> -->
 	  	
 	  	
-	  			<th><a href="delmsglist.j">휴지통</a>&nbsp</th>
+	  			<th><a href="delmsglist.do">휴지통</a>&nbsp</th>
 	  	
 	  </table>
 	    </center>
@@ -80,14 +74,9 @@ table tr:hover{
 		 </p>  
 			    <table id="msglist">
 				     <tr id="title">
-				     	<th>
-				     	<input type="checkbox">
-				     	</th>
+				     	
 				     	<th> 
 				   		  글번호
-				    	</th>
-				     	<th> 
-				   		  분류
 				    	</th>
 				     	<th>
 				  		  보낸 사람
@@ -100,30 +89,16 @@ table tr:hover{
 				   		</th>
 				     	
 				    </tr>
-				    <%
-				    for (Msg m : list) {
-				    	%>
-				    	<%
-				    	if(m.getMsgFromTo() == 1){
-				   		 %>
+
+					<c:forEach var="b" items="${list}">
 				    <tr>
-				    
-				    	<td><input type="checkbox"></td>
-				    	<td><%= m.getMsgNo() %></td>
-				    	<td><%= kind %></td>
-				    	<td><%= m.getFromName() %></td>
-				    	<td><a href='redetailmsg.j?no=<%=m.getMsgNo() %>'><%=m.getTitle() %></a></td>
-				    	<td><%= m.getRegDate() %></td>
+				    	<td>${b.msgNo}</td>
+				    	<td>${b.writerId}</td>
+				    	<td><a href='<c:url value="/msg/redetailmsg.j?msgNo=${b.msgNo}"/>'>${b.title}</a></td>
+				    	<td><fmt:formatDate value="${b.regDate}" pattern="yyyy-MM-dd"/></td>
 				   	</tr>
-				   	<%
-				    }
-				    
-				   	%>
-				   	<%
-				    }
-				    
-				   	%>
-				    
+					</c:forEach>
+
 				   
 				    
 				    
@@ -139,7 +114,7 @@ table tr:hover{
 		    <a href=#4>4</a>   
 		    <a href=#5>5</a>   
 		    <a href=#1 >></a>
-		    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="writeform.j">쪽지쓰기</a>&nbsp&nbsp&nbsp<a href="deletemsglist.j"><button>삭제하기</button></a>
+		    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="<c:url value="/msg/writeform.j"/>">쪽지쓰기</a>&nbsp&nbsp&nbsp<a href="<c:url value="#"/>"><button>삭제하기</button></a>
 		    </p>  
 		    <input type="text" width=8 hight=1><button>검색</button>
 			    </center>

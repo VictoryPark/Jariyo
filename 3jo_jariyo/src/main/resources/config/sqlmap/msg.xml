@@ -5,29 +5,25 @@
 
 	<resultMap id="MsgMap" type="Msg" >
 		<result column="msg_no" property="msgNo"></result>
-		<result column="msg_from_to" property="msgFromTo"></result>
-		<result column="from_name" property="fromName"></result>
-		<result column="content" property="content"></result>
+		<result column="writer_id" property="writerId"></result>
+		<result column="receiver_id" property="receiverId"></result>
 		<result column="title" property="title"></result>
-		<result column="trash" property="trash"></result>
-		<result column="kind" property="kind"></result>
+		<result column="content" property="content"></result>
 		<result column="reg_date" property="regDate"></result>
-		<result column="to_name" property="toName"></result>
 		
 	</resultMap>
 	
-	<!-- 전체 목록 가져오기 -->
-	<select id ="selectReMsg" resultMap="MsgMap">
-	select *
-	from jariyo_message
-	  where msg_from_to = 1
-	order by msg_no desc
+	<!-- 내가 받은 쪽지 목록 가져오기 -->
+	<select id ="selectReMsg" parameterType="string" resultMap="MsgMap">
+		select *
+		  from jariyo_message
+		 where receiver_id = #{receiverId}
 	</select>
-	<select id ="selectSeMsg" resultMap="MsgMap">
-	select *
-	from jariyo_message
-	  where msg_from_to = 2
-	order by msg_no desc
+	<!-- 내가 보낸 쪽지 목록 가져오기 -->
+	<select id ="selectSeMsg" parameterType="string" resultMap="MsgMap">
+		select *
+		  from jariyo_message
+		 where writer_id = #{writerId}
 	</select>
 	
 <!-- 	<insert id="insertMsg" parameterType="Msg">
@@ -62,11 +58,6 @@
     delete jariyo_message 
      where msg_no = #{msgNo}
     </delete>
-    
-  <!--      <send id = "sendMsg" parameterType = "Msg">
-    send jariyo_message set title = #{title}
-     content = #{content} 
-      where no = #{no} 
-    </send> -->
+
 	
 </mapper>

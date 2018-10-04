@@ -9,8 +9,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.jariyo.common.db.MyAppSqlConfig;
+import com.jariyo.repository.domain.Member;
 import com.jariyo.repository.domain.Msg;
 import com.jariyo.repository.mapper.MsgMapper;
 
@@ -20,18 +22,18 @@ public class ReMsgListController extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		MsgMapper mm = MyAppSqlConfig.getSqlSessionInstance().getMapper(MsgMapper.class);
+		MsgMapper mapper = MyAppSqlConfig.getSqlSessionInstance().getMapper(MsgMapper.class);
 		
-	List<Msg> list =mm.selectReMsg();
-	
-	System.out.println(list.size());
-	
-	request.setAttribute("list", list);
-	System.out.println(list);
-	RequestDispatcher rd = request.getRequestDispatcher(
-			"/jsp/msg/remsglist.jsp"
-			);
-	rd.forward(request, response);
+		HttpSession session = request.getSession();
+		Member mem = (Member)session.getAttribute("user");
+		String id = mem.getId();
+		List<Msg> list = mapper.selectReMsg(id);
+		
+		request.setAttribute("list", list);
+		RequestDispatcher rd = request.getRequestDispatcher(
+				"/jsp/msg/remsglist.jsp"
+				);
+		rd.forward(request, response);
 		
 		
 	}
