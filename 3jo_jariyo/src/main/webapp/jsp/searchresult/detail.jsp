@@ -83,41 +83,11 @@
 		<div id="reviewList">
 			
 		</div>
-<!-- 
-				<div class="reviewcontent">
-					<h5>김아무개</h5>
-					<p>역에서도 가깝고, 운동장 깔끔하고 좋네요! 상대로 만난 팀들도 매너있게 플레이하시고 잘 즐기다 갑니다! 다음에는 교회 청년부 축구회를 여기서 해야겠네요 ㅎㅎ!</p>
-					<hr>
-				</div>
-				<div class="reviewcontent">
-					<h5>홍길동</h5>
-					<p>사평역에서 바로 앞인데다가 축구장도 엄청 넓고 좋네요! 주차장도 여유가 있으니 차를 타고 축구하시러 오시는
-						분들에게도 무리가 없을 것 같고, 축구장 잔디도 잘 관리된 듯 느낌이 좋았습니다.</p>
-					<hr>
-				</div>
-				<div class="reviewcontent">
-					<h5>김아무개</h5>
-					<p>역에서도 가깝고, 운동장 깔끔하고 좋네요! 상대로 만난 팀들도 매너있게 플레이하시고 잘 즐기다 갑니다! 다음에는 교회 청년부 축구회를 여기서 해야겠네요 ㅎㅎ!</p>
-					<hr>
-				</div>
-				
-				<div class="reviewcontent">
-					<h5>김아무개</h5>
-					<p>역에서도 가깝고, 운동장 깔끔하고 좋네요! 상대로 만난 팀들도 매너있게 플레이하시고 잘 즐기다 갑니다! 다음에는 교회 청년부 축구회를 여기서 해야겠네요 ㅎㅎ!</p>
-					<hr>
-				</div>
 
-
-				<div id="searchcontent">
-					<h5>김자바</h5>
-					<p>역에서 가깝고, 잔디도 깔끔하고 좋았습니다. 자주 이용하겠습니다~</p>
-					<hr>
-				</div>
-
- -->
 		</div>
 		</main>
 	<c:import url="../common/mainbarfooter.jsp" />
+	<script src="<c:url value="/jsp/placeeval/review.js"/>"></script>
 	<script>
 	
 	$("a[href='#panel2']").click(function () {
