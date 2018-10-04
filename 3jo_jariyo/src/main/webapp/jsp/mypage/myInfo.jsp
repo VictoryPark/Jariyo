@@ -23,7 +23,6 @@
 	      <div class="user-profile">
 				<div class="profile-img" style="background-image: url('/3jo_jariyo/img/mypage/${user.profileImgName}');"></div>
 			    <div class="username">${ user.name }</div>
-			  	<div id="map"></div>
 			    <div class="description">${ user.teamName }</div>
 			  	<ul class="data">
 			    <li>
@@ -38,7 +37,7 @@
 	    <section>
 	    	<form action="<c:url value="/myinfo.j" />" method="post" encType="multipart/form-data" >
 	    	<div class="left">
-	    			    	<span>아이디 : </span>
+	    		<span>아이디 : </span>
 		    	<input type="text" name="id" placeholder="아이디 입력" value="${ user.id }" readonly="readonly" />
 		    	<span>이름 : </span>
 			    <input type="text" name="name" placeholder="이름 입력" value="${ user.name }" readonly="readonly" />
@@ -199,10 +198,6 @@
 			</div>
 			</form>
 		</section>
-	    <aside>
-	    	<h1></h1>
-	        <h1></h1>
-	    </aside>
 	  </article>
 	</main>
 	<c:import url="../common/mainbarfooter.jsp" />
@@ -272,13 +267,6 @@
         }
     }).open();
 }
-	/*
-    function check() {
-    	alert($("#password").val());
-    	console.log($("#password"));
-    	$("#password").val("").focus();
-	};
-	*/
     
 	</script>
 </body>

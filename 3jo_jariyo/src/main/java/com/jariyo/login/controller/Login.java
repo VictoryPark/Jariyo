@@ -37,7 +37,7 @@ public class Login extends HttpServlet {
 		Member login = mapper.selectMemberInfo(member);
 		mapper.updateLogonToIn(email);
 		if (login == null) {
-			response.sendRedirect(request.getContextPath() + "/login-form");
+			response.sendRedirect(request.getContextPath() + "/login-form.j");
 			return;
 		} // if
 

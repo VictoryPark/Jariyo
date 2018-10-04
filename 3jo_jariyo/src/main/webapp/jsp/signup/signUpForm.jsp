@@ -177,37 +177,50 @@
 <script>
 	
 	function idCheck() {
-		var idArr = new Array();
-		<c:forEach var="item" items="${idList}">
-			idArr.push('${item}');
-		</c:forEach>
-		
-		for (let i = 0; i < idArr.length; i++) {
-			if ($("#id").val() == idArr[i]) {
-				alert("사용할 수 없는 아이디 입니다.");
-				$("#id").val("").focus();
-				return false;
+		if ($("#id").val() == "") {
+			alert("아이디를 입력해주세요.");
+			$("#id").val("").focus();
+		} else {
+			
+			var idArr = new Array();
+			<c:forEach var="item" items="${idList}">
+				idArr.push('${item}');
+			</c:forEach>
+			
+			for (let i = 0; i < idArr.length; i++) {
+				if ($("#id").val() == idArr[i]) {
+					alert("사용할 수 없는 아이디 입니다.");
+					$("#id").val("").focus();
+					return false;
+				}
 			}
+			$("#name").val("").focus();
+			alert("사용가능한 아이디 입니다.")
 		}
-		$("#name").val("").focus();
-		alert("사용가능한 아이디 입니다.")
 	}
 	
 	function emailCheck() {
-		var emailArr = new Array();
-		<c:forEach var="item" items="${emailList}">
-			emailArr.push('${item}');
-		</c:forEach>
 		
-		for (let i = 0; i < emailArr.length; i++) {
-			if ($("#email").val() == emailArr[i]) {
-				alert("사용할 수 없는 이메일 입니다.");
-				$("#email").val("").focus();
-				return false;
+		if ($("#email").val() == "") {
+			alert("이메일을 입력해주세요.")
+			$("#id").val("").focus();
+		} else {
+			
+			var emailArr = new Array();
+			<c:forEach var="item" items="${emailList}">
+				emailArr.push('${item}');
+			</c:forEach>
+			
+			for (let i = 0; i < emailArr.length; i++) {
+				if ($("#email").val() == emailArr[i]) {
+					alert("사용할 수 없는 이메일 입니다.");
+					$("#email").val("").focus();
+					return false;
+				}
 			}
+			$("#password").val("").focus();
+			alert("사용가능한 이메일 입니다.")
 		}
-		$("#password").val("").focus();
-		alert("사용가능한 이메일 입니다.")
 	}
 	
 	/*

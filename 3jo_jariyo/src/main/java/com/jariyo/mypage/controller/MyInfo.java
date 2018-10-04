@@ -85,41 +85,7 @@ public class MyInfo extends HttpServlet {
 		member.setPositionY(positionY);
 		member.setBirthDate(birthDate);
 		member.setTeamName(teamName);
-		
-		
-		//System.out.println("login : "+login);
-//		System.out.println("password : "+password);
-//		System.out.println("member.getPassword : " + member.getPassword());
-//		
-//		if (login == null) {
-//			RequestDispatcher rd = request.getRequestDispatcher("/myinfo-form");
-//			rd.forward(request, response);
-//		}
-		
-//		if (password == null) {
-//			RequestDispatcher rd = request.getRequestDispatcher("/myinfo-form");
-//			rd.forward(request, response);
-//		}
-//		
-//		if (member.getPassword() == null) {
-//			RequestDispatcher rd = request.getRequestDispatcher("/myinfo-form");
-//			rd.forward(request, response);
-//		}
-		
-//		if (login == "") {
-//			RequestDispatcher rd = request.getRequestDispatcher("/myinfo-form");
-//			rd.forward(request, response);
-//		}
-		
-//		if (password == "") {
-//			RequestDispatcher rd = request.getRequestDispatcher("/myinfo-form");
-//			rd.forward(request, response);
-//		}
-//		
-//		if (member.getPassword() == "") {
-//			RequestDispatcher rd = request.getRequestDispatcher("/myinfo-form");
-//			rd.forward(request, response);
-//		}
+				
 		mapper.updateMyInfo(member);
 		Member login = lMapper.selectMemberInfo(member);
 		
@@ -127,7 +93,7 @@ public class MyInfo extends HttpServlet {
 		session.setAttribute("user", login);
 		
 		
-		response.sendRedirect(request.getContextPath() + "/myinfo-form");
+		response.sendRedirect(request.getContextPath() + "/myinfo-form.j");
 		
 	}
 

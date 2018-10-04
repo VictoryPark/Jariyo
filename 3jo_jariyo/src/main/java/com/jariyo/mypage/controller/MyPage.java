@@ -34,7 +34,6 @@ public class MyPage extends HttpServlet {
 		Member mem = (Member)session.getAttribute("user");
 		String id = mem.getId();
 		String name = mem.getName();
-		
 		List<TeamMatching> matchList = mapper.selectMyTeamMatching(id);
 		request.setAttribute("matchList", matchList);
 		
@@ -61,7 +60,7 @@ public class MyPage extends HttpServlet {
 		List<PlaceEval> evalList = mapper.selectMyPlaceEval(id);
 		List<Integer> penolist = new ArrayList<>();
 		List<String> peNameList = new ArrayList<>();
-		System.out.println(evalList);
+		
 		for (PlaceEval e : evalList) {
 			penolist.add(e.getPlaceNo());
 		}
